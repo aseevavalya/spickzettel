@@ -98,7 +98,7 @@
   .footer{color:var(--muted);text-align:center;padding:28px 0 10px;font-size:13px}
   @media (max-width:1000px){.wrap{padding:8px}.grid{grid-template-columns:1fr}}
 
-  .topic-head{display:flex;align-items:center;gap:8px;width:100%}.topic-title{flex:1}
+  .topic-head{display:flex;align-items:flex-start;gap:8px;width:100%;position:relative;padding-right:70px}.topic-title{flex:1;min-width:0}
   .img-plus{width:28px;height:28px;border:0;border-radius:50%;cursor:pointer;background:var(--bg);color:var(--accent);font-size:20px;font-weight:800;box-shadow:3px 3px 7px var(--shadow-dark),-3px -3px 7px var(--shadow-light);display:inline-flex;align-items:center;justify-content:center}
   .image-note{font-size:12px;color:var(--muted);margin:8px 0}.user-images{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:10px}.user-img-card{position:relative;padding:8px;border-radius:14px;background:var(--bg);box-shadow:4px 4px 10px var(--shadow-dark),-4px -4px 10px var(--shadow-light)}.user-img-card img{width:100%;height:auto;display:block;border-radius:10px}.user-img-name{font-size:11px;color:var(--muted);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.delete-img{position:absolute;right:10px;top:10px;border:0;border-radius:50%;width:25px;height:25px;cursor:pointer;background:rgba(233,238,245,.95);color:var(--danger);font-weight:800}
   .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}.mini-card{padding:12px;border-radius:14px;background:#f2f6fa}.mini-card b{color:var(--accent)}.steps{counter-reset:s;list-style:none;padding:0}.steps li{counter-increment:s;position:relative;padding:9px 10px 9px 42px;margin:8px 0;border-radius:12px;background:#f2f6fa}.steps li:before{content:counter(s);position:absolute;left:10px;top:8px;width:23px;height:23px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent);font-weight:800;font-size:12px}.compact-table td,.compact-table th{padding:7px 8px;font-size:13px;vertical-align:top}.component-symbol{min-width:80px;display:inline-block;text-align:center;padding:9px;border:2px solid #8295aa;border-radius:8px;background:#f7f9fb;font-weight:800}.hierarchy{display:flex;flex-direction:column;gap:7px;margin:10px auto;max-width:520px}.hierarchy div{padding:10px 14px;border-radius:12px;text-align:center;background:#f2f6fa}.hierarchy div:nth-child(1){width:45%;align-self:center}.hierarchy div:nth-child(2){width:58%;align-self:center}.hierarchy div:nth-child(3){width:72%;align-self:center}.hierarchy div:nth-child(4){width:88%;align-self:center}.hierarchy div:nth-child(5){width:100%;align-self:center}.subtle{color:var(--muted);font-size:13px}@media(max-width:700px){.mini-grid{grid-template-columns:1fr}.user-images{grid-template-columns:1fr}}
@@ -159,12 +159,15 @@
     width:28px;height:28px;border:0;border-radius:50%;cursor:pointer;
     background:var(--bg);color:var(--accent);font-size:14px;font-weight:800;line-height:1;
     box-shadow:3px 3px 7px var(--shadow-dark),-3px -3px 7px var(--shadow-light);
-    display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;margin-left:auto;
+    display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
   }
-  .topic-head .edit-topic-btn + .img-plus{margin-left:2px}
+  .topic-head .edit-topic-btn{position:absolute;right:36px;top:0}
+  .topic-head .img-plus{position:absolute;right:0;top:0}
+  .topic-head .edit-topic-btn:only-of-type{right:0}
+  .topic-head .edit-topic-btn + .img-plus{margin-left:0}
   summary .topic-title{flex:1}
-  summary .edit-topic-btn{margin-right:3px}
-  summary .img-plus{margin-right:27px}
+  summary .edit-topic-btn,
+  summary .img-plus{margin-right:0}
   .edit-toolbar{
     display:none;gap:8px;flex-wrap:wrap;padding:10px 0 12px;position:sticky;top:8px;z-index:6;
     background:linear-gradient(to bottom,rgba(232,238,244,.98),rgba(232,238,244,.90));
@@ -416,7 +419,7 @@
     }
     summary{
       min-height:42px;
-      padding:11px 36px 11px 12px;
+      padding:11px 12px;
       font-size:12px;
       line-height:1.35;
     }
@@ -429,7 +432,10 @@
       width:26px;height:26px;
       font-size:12px;
     }
-    summary .img-plus{margin-right:20px}
+    summary .topic-head{padding-right:62px}
+    summary .topic-head .edit-topic-btn{right:34px;top:0}
+    summary .topic-head .img-plus,
+    summary .topic-head .edit-topic-btn:only-of-type{right:0;top:0}
 
     .content{
       padding:2px 12px 14px;
@@ -864,6 +870,29 @@ quickSort (p:xs) =
   async function deleteDTImage(id){const db=await openDTDB();return new Promise((res,rej)=>{const tx=db.transaction(DT_STORE,'readwrite');tx.objectStore(DT_STORE).delete(id);tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});}
   function imageCard(rec){const c=document.createElement('div');c.className='user-img-card';const im=document.createElement('img');im.src=rec.dataUrl;im.alt=rec.name||'Referenzbild';const n=document.createElement('div');n.className='user-img-name';n.textContent=rec.name||'Bild';const b=document.createElement('button');b.className='delete-img';b.type='button';b.textContent='×';b.title='Bild löschen';b.onclick=async e=>{e.stopPropagation();if(confirm('Dieses lokal gespeicherte Bild löschen?')){await deleteDTImage(rec.id);c.remove();}};c.append(im,n,b);return c;}
   async function renderTopicGallery(topic){const g=document.querySelector(`[data-gallery="${topic}"]`);if(!g)return;g.innerHTML='';try{(await getDTImages(topic)).forEach(x=>g.appendChild(imageCard(x)));}catch(e){console.warn(e)}}
+  // Give every topic card the same image controls. The original markup only
+  // contained them in Digitaltechnik, so the other subjects missed the button.
+  document.querySelectorAll('details[data-edit-id]').forEach(det=>{
+    const topic=det.dataset.editId;
+    const head=det.querySelector(':scope > summary .topic-head');
+    const content=det.querySelector(':scope > .content');
+    if(!head||!content||head.querySelector('[data-add-image]'))return;
+
+    const add=document.createElement('button');
+    add.className='img-plus'; add.type='button'; add.textContent='+';
+    add.dataset.addImage=topic; add.title='Bild hinzufügen';
+    head.appendChild(add);
+
+    const input=document.createElement('input');
+    input.className='topic-image-input'; input.type='file'; input.accept='image/*';
+    input.multiple=true; input.hidden=true; input.dataset.topic=topic;
+    const note=document.createElement('div');
+    note.className='image-note';
+    note.textContent='＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.';
+    const gallery=document.createElement('div');
+    gallery.className='user-images'; gallery.dataset.gallery=topic;
+    content.append(input,note,gallery);
+  });
   document.querySelectorAll('[data-add-image]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();document.querySelector(`.topic-image-input[data-topic="${b.dataset.addImage}"]`)?.click();}));
   document.querySelectorAll('.topic-image-input').forEach(inp=>inp.addEventListener('change',async()=>{for(const f of inp.files)if(f.type.startsWith('image/'))await saveDTImage(inp.dataset.topic,f);inp.value='';await renderTopicGallery(inp.dataset.topic);}));
   document.querySelectorAll('[data-gallery]').forEach(g=>renderTopicGallery(g.dataset.gallery));
