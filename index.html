@@ -243,6 +243,263 @@
     box-shadow:inset 3px 3px 7px rgba(196,205,215,.65),inset -3px -3px 7px rgba(255,255,255,.9)
   }
   .auth-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+
+  /* ---------- Responsive mobile redesign ---------- */
+  .sync-sidebar-open{
+    position:absolute;right:20px;top:20px;
+    width:38px;height:38px;border:0;border-radius:50%;
+    background:var(--bg);color:var(--accent);cursor:pointer;
+    font-size:17px;font-weight:800;
+    box-shadow:5px 5px 12px var(--shadow-dark),-5px -5px 12px var(--shadow-light);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero{position:relative}
+
+  .sync-sidebar-backdrop{
+    display:none;position:fixed;inset:0;z-index:1400;
+    background:rgba(28,42,57,.24);backdrop-filter:blur(4px);
+  }
+  .sync-sidebar-backdrop.open{display:block}
+  .sync-sidebar{
+    position:absolute;right:0;top:0;height:100%;width:min(370px,92vw);
+    background:var(--bg);padding:18px;
+    box-shadow:-14px 0 34px rgba(86,103,121,.26);
+    overflow-y:auto;
+  }
+  .sync-sidebar-header{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding-bottom:12px;margin-bottom:14px;
+    border-bottom:1px solid rgba(84,108,132,.12);
+  }
+  .sync-sidebar-header h3{margin:0;font-size:18px;color:var(--accent)}
+  .sync-sidebar-close{
+    width:34px;height:34px;border:0;border-radius:50%;
+    background:var(--bg);cursor:pointer;font-size:22px;color:var(--text);
+    box-shadow:3px 3px 8px var(--shadow-dark),-3px -3px 8px var(--shadow-light);
+  }
+  .sync-sidebar-body .sync-bar{
+    display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:0;
+  }
+  .sync-sidebar-body .sync-pill,
+  .sync-sidebar-body .auth-btn{
+    width:100%;justify-content:center;
+  }
+  .sync-sidebar-note{
+    margin-top:14px;padding:11px 12px;border-radius:12px;
+    background:rgba(219,231,242,.48);
+    color:var(--muted);font-size:12px;line-height:1.5;
+  }
+
+  .mobile-subject-select{display:none}
+
+  @media (max-width: 760px){
+    body{
+      overflow-x:hidden;
+      font-size:13px;
+    }
+    .wrap{
+      width:100%;
+      padding:8px;
+    }
+    .hero{
+      padding:18px 16px 16px;
+      border-radius:20px;
+      margin-bottom:10px;
+    }
+    .hero .badge{
+      margin-bottom:10px;
+      font-size:9px;
+      padding:5px 8px;
+    }
+    h1{
+      margin:0 44px 7px 0;
+      font-size:clamp(24px,8vw,34px);
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+    .subtitle{
+      font-size:12.5px;
+      line-height:1.55;
+      max-width:none;
+    }
+    .sync-sidebar-open{
+      right:14px;top:14px;width:34px;height:34px;
+      font-size:15px;
+    }
+
+    .toolbar{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:9px;
+      margin-top:16px;
+    }
+
+    /* Hide desktop filter buttons on phone */
+    .toolbar > .tab{
+      display:none!important;
+    }
+
+    .mobile-subject-select{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+    }
+    .mobile-subject-select label{
+      font-size:11px;
+      font-weight:800;
+      color:var(--muted);
+      flex:0 0 auto;
+    }
+    .mobile-subject-select select{
+      width:100%;
+      min-width:0;
+      border:0;
+      outline:0;
+      appearance:none;
+      -webkit-appearance:none;
+      padding:10px 36px 10px 12px;
+      border-radius:13px;
+      background:
+        linear-gradient(45deg,transparent 50%,var(--accent) 50%) calc(100% - 16px) 48%/5px 5px no-repeat,
+        linear-gradient(135deg,var(--accent) 50%,transparent 50%) calc(100% - 11px) 48%/5px 5px no-repeat,
+        var(--bg);
+      color:var(--text);
+      font-family:"Manrope","Segoe UI Variable","Segoe UI",system-ui,sans-serif;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:5px 5px 11px var(--shadow-dark),-5px -5px 11px var(--shadow-light);
+    }
+
+    .search{
+      width:100%;
+      min-width:0;
+      padding:10px 12px;
+      border-radius:13px;
+      font-size:12px;
+    }
+
+    /* Only one subject is visible on phone */
+    .grid{
+      display:block;
+      width:100%;
+    }
+    .subject{
+      display:none;
+      width:100%;
+      padding:14px;
+      border-radius:20px;
+      box-shadow:6px 6px 15px var(--shadow-dark),-6px -6px 15px var(--shadow-light);
+    }
+    .subject.mobile-active{
+      display:block!important;
+    }
+    .subject h2{
+      font-size:20px;
+      margin-bottom:8px;
+    }
+    .subject > .badge{
+      display:block;
+      width:fit-content;
+      max-width:100%;
+      white-space:normal;
+      line-height:1.35;
+      font-size:9px;
+      padding:5px 8px;
+      margin-bottom:9px;
+    }
+    details{
+      margin:8px 0;
+      border-radius:14px;
+    }
+    summary{
+      min-height:42px;
+      padding:11px 36px 11px 12px;
+      font-size:12px;
+      line-height:1.35;
+    }
+    summary::after{
+      right:11px;
+      font-size:17px;
+    }
+    summary .img-plus,
+    summary .edit-topic-btn{
+      width:26px;height:26px;
+      font-size:12px;
+    }
+    summary .img-plus{margin-right:20px}
+
+    .content{
+      padding:2px 12px 14px;
+      font-size:12.5px;
+      line-height:1.62;
+    }
+    .content h3{
+      margin:16px 0 8px;
+      font-size:14px;
+    }
+    .formula{
+      font-size:15px;
+      padding:11px 12px;
+      border-radius:12px;
+      margin:9px 0;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+    }
+    .tip,.warn,.mini-card{
+      padding:10px 11px;
+      font-size:12px;
+      border-radius:12px;
+    }
+    .tip,.warn{padding-left:34px}
+    .tip::before,.warn::before{left:12px;top:10px}
+    .mini-grid{grid-template-columns:1fr;gap:8px}
+    .steps li{
+      padding:8px 9px 8px 38px;
+      font-size:12px;
+      margin:6px 0;
+      border-radius:10px;
+    }
+    .steps li:before{
+      left:9px;top:8px;width:21px;height:21px;font-size:10px;
+    }
+
+    table{
+      display:block;
+      width:100%;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      font-size:11.5px;
+      border-radius:11px;
+    }
+    th,td{
+      min-width:88px;
+      padding:7px 8px;
+      white-space:normal;
+    }
+    code{
+      font-size:11px;
+      padding:10px;
+      border-radius:11px;
+    }
+
+    .footer{
+      padding:15px 6px 6px;
+      font-size:10px;
+      line-height:1.4;
+    }
+
+    .sync-sidebar{
+      width:min(330px,90vw);
+      padding:14px;
+    }
+  }
+
+  @media (min-width:761px) and (max-width:1100px){
+    .wrap{padding:10px}
+    .grid{grid-template-columns:1fr}
+    .subject{width:100%}
+  }
 </style>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><script>
 window.MathJax = {
@@ -261,18 +518,14 @@ window.MathJax = {
 <div class="badge">PRÜFUNGSVORBEREITUNG SS 2026</div>
 <h1>Formeln · Logik · Algorithmen</h1>
 <div class="subtitle">Kompakter Lernbegleiter im Neomorphism-Stil für Digitaltechnik, Diskrete Mathematik und Algorithmen &amp; Programmierung.</div>
-<div class="toolbar">
+<div class="toolbar"><div class="mobile-subject-select"><label for="mobileSubjectSelect">Fach</label><select aria-label="Fach auswählen" id="mobileSubjectSelect"><option value="dt">Digitaltechnik</option><option value="dm">Diskrete Mathematik</option><option value="ap">Algorithmen &amp; Programmierung</option></select></div>
 <button class="tab active" data-filter="all">Alle</button>
 <button class="tab" data-filter="dt">Digitaltechnik</button>
 <button class="tab" data-filter="dm">Diskrete Mathematik</button>
 <button class="tab" data-filter="ap">Algorithmen &amp; Programmierung</button>
-<input class="search" id="search" placeholder="Thema suchen, z. B. De Morgan, Induktion, Mergesort …"/>
-</div><div class="sync-bar">
-<span class="sync-pill warn" id="syncStatus"><span class="sync-dot"></span><span id="syncStatusText">Nicht angemeldet</span></span>
-<button class="auth-btn" id="authOpenBtn" type="button">Anmelden</button>
-<button class="auth-btn" id="syncNowBtn" style="display:none" type="button">Jetzt synchronisieren</button>
+<input aria-label="Thema suchen" autocapitalize="off" autocomplete="off" autocorrect="off" class="search" data-1p-ignore="true" data-lpignore="true" id="search" inputmode="search" name="study-topic-search" placeholder="Thema suchen, z. B. De Morgan, Induktion, Mergesort …" spellcheck="false"/>
 </div>
-</section>
+<button aria-label="Synchronisierung öffnen" class="sync-sidebar-open" id="syncSidebarOpen" title="Synchronisierung" type="button">☁</button></section>
 <main class="grid">
 <section class="subject" data-subject="dt"><h2>Digitaltechnik</h2><div class="badge">Zahlendarstellung · Logik · BDD · Schaltungen · Automaten · Timing · Speicher · Datenpfad · MIPS · Leistung</div><details class="dt-topic" data-edit-id="zahlen" data-topic-id="zahlen"><summary><span class="topic-head"><span class="topic-title">1. Zahlensysteme, Komplement &amp; Gleitkomma<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="zahlen" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="zahlen" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="zahlen" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="zahlen" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="zahlen" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Für Formeln erscheint rechts ƒx — dort bearbeitest du die MathJax-/LaTeX-Formel. Änderungen werden nur lokal in diesem Browser gespeichert.</div>
 <div class="editable-prose tip"><b>Prüfungsblick:</b> Immer zuerst Basis, Bitbreite und Interpretation klären: unsigned/signed, Festkomma/Gleitkomma.</div>
@@ -1069,6 +1322,69 @@ window.addEventListener('DOMContentLoaded', async () => {
   },true);
 
   await updateAuthUI();
+});
+</script><div class="sync-sidebar-backdrop" id="syncSidebarBackdrop"><aside aria-label="Synchronisierung" class="sync-sidebar" id="syncSidebar"><div class="sync-sidebar-header"><h3>Synchronisierung</h3><button aria-label="Synchronisierung schließen" class="sync-sidebar-close" id="syncSidebarClose" type="button">×</button></div><div class="sync-sidebar-body"><div class="sync-bar">
+<span class="sync-pill warn" id="syncStatus"><span class="sync-dot"></span><span id="syncStatusText">Nicht angemeldet</span></span>
+<button class="auth-btn" id="authOpenBtn" type="button">Anmelden</button>
+<button class="auth-btn" id="syncNowBtn" style="display:none" type="button">Jetzt synchronisieren</button>
+</div><div class="sync-sidebar-note">Anmeldung, Online-Speichern und manuelle Synchronisierung findest du hier.</div></div></aside></div><script>
+window.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('search');
+  if(search){
+    search.setAttribute('autocomplete','off');
+    search.setAttribute('name','study-topic-search');
+    search.value = ''; // removes accidental browser-filled email
+    setTimeout(()=>{ if(search.value.includes('@')) search.value=''; }, 50);
+    setTimeout(()=>{ if(search.value.includes('@')) search.value=''; }, 500);
+  }
+
+  const select = document.getElementById('mobileSubjectSelect');
+  const subjects = [...document.querySelectorAll('.subject[data-subject]')];
+
+  function activateMobileSubject(id){
+    subjects.forEach(s => s.classList.toggle('mobile-active', s.dataset.subject === id));
+    if(select && select.value !== id) select.value = id;
+  }
+
+  if(select){
+    activateMobileSubject(select.value || 'dt');
+    select.addEventListener('change', () => {
+      activateMobileSubject(select.value);
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  // Desktop filter buttons keep working, but also sync the mobile dropdown.
+  document.querySelectorAll('.tab[data-filter]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const f=btn.dataset.filter;
+      if(f && f !== 'all' && select) select.value=f;
+    });
+  });
+
+  const backdrop = document.getElementById('syncSidebarBackdrop');
+  const openBtn = document.getElementById('syncSidebarOpen');
+  const closeBtn = document.getElementById('syncSidebarClose');
+
+  function openSidebar(){ backdrop?.classList.add('open'); }
+  function closeSidebar(){ backdrop?.classList.remove('open'); }
+
+  openBtn?.addEventListener('click', openSidebar);
+  closeBtn?.addEventListener('click', closeSidebar);
+  backdrop?.addEventListener('click', e=>{ if(e.target===backdrop) closeSidebar(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeSidebar(); });
+
+  // On resize, ensure desktop state isn't polluted by mobile-only display classes.
+  const mq = window.matchMedia('(max-width:760px)');
+  function syncMode(){
+    if(mq.matches){
+      activateMobileSubject(select?.value || 'dt');
+    }else{
+      subjects.forEach(s=>s.classList.remove('mobile-active'));
+    }
+  }
+  mq.addEventListener?.('change', syncMode);
+  syncMode();
 });
 </script></body>
 </html>
