@@ -517,6 +517,32 @@
     .grid{grid-template-columns:1fr}
     .subject{width:100%}
   }
+
+  /* Compact desktop layout; phone and tablet sizing stays unchanged. */
+  @media (min-width:1101px){
+    .wrap{max-width:1480px;margin:0 auto;padding:10px}
+    .hero{padding:20px 24px;border-radius:24px;margin-bottom:12px}
+    h1{font-size:36px;line-height:1.12}
+    .subtitle{font-size:14px}
+    .toolbar{gap:10px;margin-top:17px}
+    .tab,.search{padding:10px 13px;border-radius:14px;font-size:12px}
+    .grid{gap:12px}
+    .subject{padding:17px;border-radius:23px}
+    .subject h2{font-size:21px;margin-bottom:10px}
+    .subject > .badge{font-size:10px;margin-bottom:10px;padding:5px 9px}
+    details{margin:9px 0;border-radius:15px}
+    summary{padding:11px 13px;font-size:12.5px;line-height:1.35}
+    .topic-head{padding-right:64px}
+    .edit-topic-btn,.img-plus{width:25px;height:25px}
+    .topic-head .edit-topic-btn{right:33px}
+    .content{padding:0 13px 13px;font-size:12.5px;line-height:1.58}
+    .content h3{margin:17px 0 8px;font-size:14px}
+    .formula{margin:9px 0;padding:10px 12px;font-size:15px}
+    .tip,.warn,.mini-card{padding:9px 11px;font-size:12px}
+    .steps li{padding-top:8px;padding-bottom:8px;font-size:12px}
+    .compact-table td,.compact-table th{padding:6px 7px;font-size:11.5px}
+    .footer{padding-top:20px}
+  }
 </style>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><script>
 window.MathJax = {
