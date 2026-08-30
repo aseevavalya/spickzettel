@@ -523,7 +523,7 @@ window.MathJax = {
 <button class="tab" data-filter="dt">Digitaltechnik</button>
 <button class="tab" data-filter="dm">Diskrete Mathematik</button>
 <button class="tab" data-filter="ap">Algorithmen &amp; Programmierung</button>
-<input aria-label="Thema suchen" autocapitalize="off" autocomplete="off" autocorrect="off" class="search" data-1p-ignore="true" data-lpignore="true" id="search" inputmode="search" name="study-topic-search" placeholder="Thema suchen, z. B. De Morgan, Induktion, Mergesort …" spellcheck="false"/>
+<input aria-autocomplete="none" aria-label="Thema suchen" autocapitalize="off" autocomplete="new-password" autocorrect="off" class="search" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" id="search" inputmode="search" name="topic_query_not_username" placeholder="Thema suchen, z. B. De Morgan, Induktion, Mergesort …" readonly="" spellcheck="false" type="search"/>
 </div>
 <button aria-label="Synchronisierung öffnen" class="sync-sidebar-open" id="syncSidebarOpen" title="Synchronisierung" type="button">☁</button></section>
 <main class="grid">
@@ -1003,8 +1003,8 @@ quickSort (p:xs) =
 <div class="auth-modal">
 <h3>Supabase Anmeldung</h3>
 <p>Mit demselben Benutzer auf Computer und iPhone anmelden. Dann werden Textänderungen, Formeln und eigene Bilder online synchronisiert.</p>
-<input autocomplete="email" id="authEmail" placeholder="E-Mail" type="email"/>
-<input autocomplete="current-password" id="authPassword" placeholder="Passwort" type="password"/>
+<input autocomplete="username" id="authEmail" inputmode="email" name="email" placeholder="E-Mail" type="email"/>
+<input autocomplete="current-password" id="authPassword" name="password" placeholder="Passwort" type="password"/>
 <div class="subtle" id="authMessage"></div>
 <div class="auth-actions">
 <button class="edit-action" id="authCancelBtn" type="button">Abbrechen</button>
@@ -1385,6 +1385,65 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   mq.addEventListener?.('change', syncMode);
   syncMode();
+});
+</script><script>
+window.addEventListener('DOMContentLoaded', () => {
+  const s = document.getElementById('search');
+  if (!s) return;
+
+  let userActivatedSearch = false;
+  let userTyped = false;
+
+  function looksLikeAutofilledEmail(v){
+    return typeof v === 'string' &&
+           v.includes('@') &&
+           /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+  }
+
+  function scrubAutofill(){
+    if (!userTyped && looksLikeAutofilledEmail(s.value)) {
+      s.value = '';
+      s.dispatchEvent(new Event('input', {bubbles:true}));
+    }
+  }
+
+  // Keep it readonly during browser/password-manager autofill phase.
+  // Remove readonly only after an actual pointer/touch/keyboard interaction with search.
+  function activateSearch(){
+    if (!userActivatedSearch) {
+      userActivatedSearch = true;
+      s.removeAttribute('readonly');
+      scrubAutofill();
+    }
+  }
+
+  s.addEventListener('pointerdown', activateSearch, {once:true});
+  s.addEventListener('touchstart', activateSearch, {once:true, passive:true});
+  s.addEventListener('keydown', activateSearch, {once:true});
+
+  s.addEventListener('beforeinput', () => {
+    activateSearch();
+    userTyped = true;
+  });
+  s.addEventListener('input', e => {
+    if (e.isTrusted) userTyped = true;
+  });
+
+  // Password managers sometimes inject values after DOMContentLoaded.
+  [0, 50, 150, 400, 900, 1800, 3500].forEach(ms =>
+    setTimeout(scrubAutofill, ms)
+  );
+
+  // Watch for late DOM/property changes caused by autofill extensions.
+  const observer = new MutationObserver(scrubAutofill);
+  observer.observe(s, {attributes:true, attributeFilter:['value']});
+
+  // Some browsers change the .value property without an attribute mutation.
+  const interval = setInterval(() => {
+    scrubAutofill();
+    if (userTyped) clearInterval(interval);
+  }, 300);
+  setTimeout(() => clearInterval(interval), 6000);
 });
 </script></body>
 </html>
