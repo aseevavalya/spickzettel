@@ -629,364 +629,75 @@ window.MathJax = {
 <input accept="image/*" class="topic-image-input" data-topic="optimierung" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="optimierung"></div></div></details><details class="dt-topic" data-edit-id="si" data-topic-id="si"><summary><span class="topic-head"><span class="topic-title">16. SI-Präfixe<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="si" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="si" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="si" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="si" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="si" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div><table class="compact-table"><tr><th class="editable-prose">Präfix</th><th class="editable-prose">Symbol</th><th class="editable-prose">Faktor</th></tr><tr><td class="editable-prose">Tera</td><td class="editable-prose">T</td><td class="editable-prose">\(10^{12}\)</td></tr><tr><td class="editable-prose">Giga</td><td class="editable-prose">G</td><td class="editable-prose">\(10^{9}\)</td></tr><tr><td class="editable-prose">Mega</td><td class="editable-prose">M</td><td class="editable-prose">\(10^{6}\)</td></tr><tr><td class="editable-prose">Kilo</td><td class="editable-prose">k</td><td class="editable-prose">\(10^{3}\)</td></tr><tr><td class="editable-prose">Milli</td><td class="editable-prose">m</td><td class="editable-prose">\(10^{-3}\)</td></tr><tr><td class="editable-prose">Mikro</td><td class="editable-prose">µ</td><td class="editable-prose">\(10^{-6}\)</td></tr><tr><td class="editable-prose">Nano</td><td class="editable-prose">n</td><td class="editable-prose">\(10^{-9}\)</td></tr><tr><td class="editable-prose">Piko</td><td class="editable-prose">p</td><td class="editable-prose">\(10^{-12}\)</td></tr></table><div class="formula" data-formula-id="si-formula-1" data-tex="3{,}5\,\mathrm{MHz}=3{,}5\cdot10^6\,\mathrm{Hz}\qquad|\qquad250\,\mu\mathrm{s}=2{,}5\cdot10^{-4}\,\mathrm{s}">\[3{,}5\,\mathrm{MHz}=3{,}5\cdot10^6\,\mathrm{Hz}\qquad|\qquad250\,\mu\mathrm{s}=2{,}5\cdot10^{-4}\,\mathrm{s}\]<button class="formula-edit-btn" data-edit-formula="si-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="editable-prose warn">M=Mega, m=Milli.</div><input accept="image/*" class="topic-image-input" data-topic="si" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="si"></div></div></details></section>
 <section class="subject" data-subject="dm">
 <h2>Diskrete Mathematik</h2>
-<div class="badge">Rechnen · Logik · Mengen · Relationen · Funktionen · Kombinatorik · Graphen · BFS · DFS</div>
-
-<details data-edit-id="dm-01" open>
-<summary><span class="topic-head"><span class="topic-title">1. Ausdrücke vereinfachen, ausmultiplizieren &amp; faktorisieren<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-01" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-01" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-01" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-01" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip"><b>Prüfungsstrategie:</b> Erst Struktur lesen, dann rechnen. Ziel klären: <b>vereinfachen</b>, <b>ausmultiplizieren</b>, <b>faktorisieren</b> oder <b>Brüche auf gemeinsamen Nenner bringen</b>.</div>
-<ol class="steps">
-<li class="editable-prose"><b>Klammern markieren:</b> Vorzeichen direkt vor jeder Klammer prüfen. Ein Minus vor der Klammer ändert <b>alle</b> Vorzeichen darin.</li>
-<li class="editable-prose"><b>Innere Klammern zuerst.</b> Potenzen vor Produkten, Produkte vor Summen.</li>
-<li class="editable-prose"><b>Gemeinsame Faktoren suchen:</b> \(ab+ac=a(b+c)\). Oft ist Faktorisieren kürzer als Ausmultiplizieren.</li>
-<li class="editable-prose"><b>Gleichartige Terme sammeln:</b> Nur Terme mit exakt gleichem Variablenteil dürfen addiert werden.</li>
-<li class="editable-prose"><b>Brüche:</b> erst kürzen/faktorisieren, dann gemeinsamen Nenner bilden.</li>
-<li class="editable-prose"><b>Plausibilitätscheck:</b> Einsetzen eines einfachen Werts, z. B. \(x=0,1,-1\), entdeckt viele Vorzeichenfehler.</li>
-</ol>
-<table class="compact-table">
-<tr><th>Situation</th><th>Merke</th></tr>
-<tr><td class="editable-prose">\(-(a-b+c)\)</td><td class="editable-prose">\(-a+b-c\)</td></tr>
-<tr><td class="editable-prose">\(a(b+c)\)</td><td class="editable-prose">\(ab+ac\)</td></tr>
-<tr><td class="editable-prose">\(ab+ac\)</td><td class="editable-prose">\(a(b+c)\)</td></tr>
-<tr><td class="editable-prose">\((a+b)^2\)</td><td class="editable-prose">\(a^2+2ab+b^2\)</td></tr>
-<tr><td class="editable-prose">\((a-b)^2\)</td><td class="editable-prose">\(a^2-2ab+b^2\)</td></tr>
-<tr><td class="editable-prose">\((a+b)(a-b)\)</td><td class="editable-prose">\(a^2-b^2\)</td></tr>
-</table>
-<div class="editable-prose warn"><b>Typische Falle:</b> \((a+b)^2\neq a^2+b^2\). Und: Kürzen ist nur bei <b>Faktoren</b> erlaubt, nicht über Plus/Minus.</div>
-
-</div></details>
-
-<details data-edit-id="dm-02">
-<summary><span class="topic-head"><span class="topic-title">2. Wurzeln, Potenzen, Brüche &amp; Logarithmen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-02" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-02" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-02" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-02" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<h3 class="editable-prose">Potenzen</h3>
-<div class="formula">\[a^m a^n=a^{m+n},\qquad \frac{a^m}{a^n}=a^{m-n},\qquad (a^m)^n=a^{mn}\]</div>
-<div class="formula">\[(ab)^n=a^n b^n,\qquad \left(\frac ab\right)^n=\frac{a^n}{b^n},\qquad a^0=1,\qquad a^{-n}=\frac1{a^n}\]</div>
-<h3 class="editable-prose">Wurzeln</h3>
-<div class="formula">\[\sqrt[n]{a}=a^{1/n},\qquad a^{m/n}=\sqrt[n]{a^m},\qquad \sqrt{a^2}=|a|\]</div>
-<div class="formula">\[\sqrt{ab}=\sqrt a\,\sqrt b,\qquad \sqrt{\frac ab}=\frac{\sqrt a}{\sqrt b}\]</div>
-<h3 class="editable-prose">Brüche</h3>
-<div class="formula">\[\frac ab\cdot\frac cd=\frac{ac}{bd},\qquad \frac ab:\frac cd=\frac ab\cdot\frac dc\]</div>
-<div class="formula">\[\frac ab\pm\frac cd=\frac{ad\pm bc}{bd}\]</div>
-<h3 class="editable-prose">Logarithmen</h3>
-<div class="formula">\[\log_a(xy)=\log_a x+\log_a y,\quad \log_a\frac xy=\log_a x-\log_a y,\quad \log_a(x^k)=k\log_a x\]</div>
-<div class="formula">\[\log_a a=1,\qquad \log_a1=0,\qquad \log_a x=\frac{\log_b x}{\log_b a}\]</div>
-<div class="editable-prose warn"><b>Definitionsbedingungen:</b> Nenner \(\neq0\); bei reellen Wurzeln geraden Grades Radikand \(\ge0\); beim Logarithmus \(x>0,\ a>0,\ a\neq1\).</div>
-
-</div></details>
-
-<details data-edit-id="dm-03">
-<summary><span class="topic-head"><span class="topic-title">3. Komplexe Zahlen — kurz<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-03" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-03" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-03" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-03" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="formula">\[i^2=-1,\qquad z=a+bi,\qquad \operatorname{Re}(z)=a,\quad \operatorname{Im}(z)=b\]</div>
-<table class="compact-table">
-<tr><th>Operation</th><th>Regel</th></tr>
-<tr><td class="editable-prose">Addition</td><td class="editable-prose">\((a+bi)+(c+di)=(a+c)+(b+d)i\)</td></tr>
-<tr><td class="editable-prose">Subtraktion</td><td class="editable-prose">\((a+bi)-(c+di)=(a-c)+(b-d)i\)</td></tr>
-<tr><td class="editable-prose">Multiplikation</td><td class="editable-prose">\((a+bi)(c+di)=(ac-bd)+(ad+bc)i\)</td></tr>
-<tr><td class="editable-prose">Konjugation</td><td class="editable-prose">\(\overline{a+bi}=a-bi\)</td></tr>
-<tr><td class="editable-prose">Betrag</td><td class="editable-prose">\(|a+bi|=\sqrt{a^2+b^2}\)</td></tr>
-</table>
-<div class="formula">\[z\overline z=|z|^2\]</div>
-<div class="editable-prose tip"><b>Rechenregel:</b> Normal ausmultiplizieren und danach jedes \(i^2\) durch \(-1\) ersetzen.</div>
-
-</div></details>
-
-<details data-edit-id="dm-04">
-<summary><span class="topic-head"><span class="topic-title">4. Logische Implikation<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-04" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-04" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-04" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-04" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<table class="compact-table"><tr><th>A</th><th>B</th><th>\(A\Rightarrow B\)</th></tr>
-<tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table>
-<div class="formula">\[A\Rightarrow B\equiv \neg A\lor B\equiv \neg(A\land\neg B)\]</div>
-<div class="formula">\[\neg(A\Rightarrow B)\equiv A\land\neg B,\qquad A\Rightarrow B\equiv \neg B\Rightarrow\neg A\]</div>
-<div class="editable-prose tip"><b>Merksatz:</b> Eine Implikation ist nur in einem Fall falsch: Voraussetzung wahr, Folgerung falsch.</div>
-
-</div></details>
-
-<details data-edit-id="dm-05">
-<summary><span class="topic-head"><span class="topic-title">5. Mengenoperationen &amp; Potenzmenge<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-05" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-05" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-05" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-05" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<table class="compact-table"><tr><th>Zeichen</th><th>Bedeutung</th></tr>
-<tr><td>\(A\cup B\)</td><td class="editable-prose">in A <b>oder</b> B (inklusive oder)</td></tr>
-<tr><td>\(A\cap B\)</td><td class="editable-prose">in A <b>und</b> B</td></tr>
-<tr><td>\(A\setminus B\)</td><td class="editable-prose">in A, aber nicht in B</td></tr>
-<tr><td>\(A^\complement\)</td><td class="editable-prose">nicht in A, bezogen auf die Grundmenge</td></tr>
-<tr><td>\(A\triangle B\)</td><td class="editable-prose">in genau einer der beiden Mengen</td></tr>
-</table>
-<div class="formula">\[A\triangle B=(A\setminus B)\cup(B\setminus A)=(A\cup B)\setminus(A\cap B)\]</div>
-<div class="formula">\[A\setminus B=A\cap B^\complement\]</div>
-<div class="formula">\[(A\cup B)^\complement=A^\complement\cap B^\complement,\qquad (A\cap B)^\complement=A^\complement\cup B^\complement\]</div>
-<h3 class="editable-prose">Potenzmenge</h3>
-<div class="formula">\[2^X=\mathcal P(X)=\{A:A\subseteq X\},\qquad |2^X|=2^{|X|}\]</div>
-<div class="editable-prose tip"><b>Wichtig:</b> \(A\in2^X\iff A\subseteq X\). Elemente von \(2^X\) sind selbst Mengen.</div>
-
-</div></details>
-
-<details data-edit-id="dm-06">
-<summary><span class="topic-head"><span class="topic-title">6. Quantoren &amp; Negation<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-06" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-06" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-06" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-06" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="formula">\[\forall x\in X:P(x)\qquad\text{„für alle \(x\) gilt \(P(x)\)“}\]</div>
-<div class="formula">\[\exists x\in X:P(x)\qquad\text{„es existiert mindestens ein \(x\) mit \(P(x)\)“}\]</div>
-<div class="formula">\[\neg(\forall x\in X:P(x))\equiv \exists x\in X:\neg P(x)\]</div>
-<div class="formula">\[\neg(\exists x\in X:P(x))\equiv \forall x\in X:\neg P(x)\]</div>
-<div class="editable-prose warn"><b>Reihenfolge zählt:</b> \(\forall x\,\exists y\) bedeutet im Allgemeinen etwas anderes als \(\exists y\,\forall x\).</div>
-<div class="editable-prose tip"><b>Negieren:</b> Quantor wechseln (\(\forall\leftrightarrow\exists\)) und die innere Aussage negieren.</div>
-
-</div></details>
-
-<details data-edit-id="dm-07">
-<summary><span class="topic-head"><span class="topic-title">7. Kardinalität &amp; Inklusion–Exklusion<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-07" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-07" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-07" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-07" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="formula">\[|A\cup B|=|A|+|B|-|A\cap B|\]</div>
-<div class="formula">\[|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|\]</div>
-<div class="formula">\[|A\times B|=|A|\,|B|,\qquad |A\setminus B|=|A|-|A\cap B|\]</div>
-<div class="editable-prose tip"><b>Schema Inklusion–Exklusion:</b> Einzelmengen \(+\), paarweise Schnitte \(-\), Dreifachschnitte \(+\), Vierfachschnitte \(-\), …</div>
-
-</div></details>
-
-<details data-edit-id="dm-08">
-<summary><span class="topic-head"><span class="topic-title">8. Zusammenhang Logik ↔ Mengen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-08" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-08" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-08" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-08" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<table class="compact-table"><tr><th>Logik</th><th>Mengen</th></tr>
-<tr><td>\(A\land B\)</td><td>\(A\cap B\)</td></tr>
-<tr><td>\(A\lor B\)</td><td>\(A\cup B\)</td></tr>
-<tr><td>\(\neg A\)</td><td>\(A^\complement\)</td></tr>
-<tr><td>true</td><td>Grundmenge \(U\)</td></tr>
-<tr><td>false</td><td>\(\varnothing\)</td></tr></table>
-<div class="editable-prose tip">Darum funktionieren De Morgan, Distributivität, Absorption usw. in Aussagenlogik und Mengenalgebra parallel.</div>
-
-</div></details>
-
-<details data-edit-id="dm-09">
-<summary><span class="topic-head"><span class="topic-title">9. Relationen — Eigenschaften mit Quantoren<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-09" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-09" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-09" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-09" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip">Für \(R\subseteq X\times X\): schreibe \(xRy\) für \((x,y)\in R\).</div>
-<table class="compact-table"><tr><th>Eigenschaft</th><th>Examensichere Formulierung</th></tr>
-<tr><td>reflexiv</td><td>\(\forall x\in X:\ xRx\)</td></tr>
-<tr><td>irreflexiv</td><td>\(\forall x\in X:\ \neg(xRx)\)</td></tr>
-<tr><td>symmetrisch</td><td>\(\forall x,y\in X:\ xRy\Rightarrow yRx\)</td></tr>
-<tr><td>antisymmetrisch</td><td>\(\forall x,y\in X:\ (xRy\land yRx)\Rightarrow x=y\)</td></tr>
-<tr><td>asymmetrisch</td><td>\(\forall x,y\in X:\ xRy\Rightarrow \neg(yRx)\)</td></tr>
-<tr><td>transitiv</td><td>\(\forall x,y,z\in X:\ (xRy\land yRz)\Rightarrow xRz\)</td></tr>
-</table>
-<div class="editable-prose warn"><b>Antisymmetrisch ≠ nicht symmetrisch.</b> Eine Relation kann symmetrisch und antisymmetrisch zugleich sein, z. B. Gleichheit.</div>
-
-</div></details>
-
-<details data-edit-id="dm-10">
-<summary><span class="topic-head"><span class="topic-title">10. Äquivalenzrelationen &amp; partielle/totale Ordnung<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-10" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-10" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-10" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-10" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="mini-grid">
-<div class="editable-prose mini-card"><b>Äquivalenzrelation</b><br/>reflexiv + symmetrisch + transitiv.<br/>\([x]_\sim=\{y\in X:x\sim y\}\)</div>
-<div class="editable-prose mini-card"><b>Partielle Ordnung</b><br/>reflexiv + antisymmetrisch + transitiv.</div>
+<div class="badge">Algebra · Induktion · Summen · Binomialkoeffizienten</div>
+<details data-edit-id="topic-17" open="">
+<summary><span class="topic-head"><span class="topic-title">Algebraische Grundwerkzeuge<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="topic-17" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="topic-17" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="topic-17" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="topic-17" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
+<div class="formula" data-formula-id="topic-17-formula-1" data-tex="a(b+c)=ab+ac">\[a(b+c)=ab+ac\]<button class="formula-edit-btn" data-edit-formula="topic-17-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-17-formula-2" data-tex="ab+ac=a(b+c)">\[ab+ac=a(b+c)\]<button class="formula-edit-btn" data-edit-formula="topic-17-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-17-formula-3" data-tex="-(a-b)=-a+b">\[-(a-b)=-a+b\]<button class="formula-edit-btn" data-edit-formula="topic-17-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-17-formula-4" data-tex="ab+ac+db+dc=(a+d)(b+c)">\[ab+ac+db+dc=(a+d)(b+c)\]<button class="formula-edit-btn" data-edit-formula="topic-17-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="editable-prose warn">Kürzen nur bei Faktoren, niemals über Plus oder Minus.</div>
 </div>
-<div class="formula">\[\text{totale Ordnung}=\text{partielle Ordnung}+\forall x,y\in X:\ xRy\lor yRx\]</div>
-<div class="editable-prose tip">Bei totaler Ordnung sind <b>alle</b> Paare vergleichbar; bei partieller Ordnung nicht unbedingt.</div>
-
-</div></details>
-
-<details data-edit-id="dm-11">
-<summary><span class="topic-head"><span class="topic-title">11. Abbildungen/Funktionen — Eigenschaften mit Quantoren<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-11" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-11" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-11" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-11" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip"><b>Funktion/Abbildung:</b> \(f:X\to Y\) ordnet jedem \(x\in X\) genau ein \(y\in Y\) zu.</div>
-<div class="formula">\[\forall x\in X\ \exists! y\in Y:\ f(x)=y\]</div>
-<table class="compact-table"><tr><th>Eigenschaft</th><th>Examensichere Formulierung</th></tr>
-<tr><td>injektiv</td><td>\(\forall x_1,x_2\in X:\ f(x_1)=f(x_2)\Rightarrow x_1=x_2\)</td></tr>
-<tr><td>surjektiv</td><td>\(\forall y\in Y\ \exists x\in X:\ f(x)=y\)</td></tr>
-<tr><td>bijektiv</td><td>injektiv und surjektiv</td></tr>
+</details>
+<details data-edit-id="topic-18">
+<summary><span class="topic-head"><span class="topic-title">Binomische Formeln &amp; Potenzen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="topic-18" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="topic-18" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="topic-18" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="topic-18" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
+<div class="formula" data-formula-id="topic-18-formula-1" data-tex="(a+b)^2=a^2+2ab+b^2">\[(a+b)^2=a^2+2ab+b^2\]<button class="formula-edit-btn" data-edit-formula="topic-18-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-18-formula-2" data-tex="(a-b)^2=a^2-2ab+b^2">\[(a-b)^2=a^2-2ab+b^2\]<button class="formula-edit-btn" data-edit-formula="topic-18-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-18-formula-3" data-tex="(a+b)(a-b)=a^2-b^2">\[(a+b)(a-b)=a^2-b^2\]<button class="formula-edit-btn" data-edit-formula="topic-18-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-18-formula-4" data-tex="a^m\cdot a^n=a^{m+n}\qquad|\qquad\frac{a^m}{a^n}=a^{m-n}">\[a^m\cdot a^n=a^{m+n}\qquad|\qquad\frac{a^m}{a^n}=a^{m-n}\]<button class="formula-edit-btn" data-edit-formula="topic-18-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-18-formula-5" data-tex="(a^m)^n=a^{mn}">\[(a^m)^n=a^{mn}\]<button class="formula-edit-btn" data-edit-formula="topic-18-formula-5" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-18-formula-6" data-tex="a^{n+1}=a\cdot a^n">\[a^{n+1}=a\cdot a^n\]<button class="formula-edit-btn" data-edit-formula="topic-18-formula-6" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+</div>
+</details>
+<details data-edit-id="topic-19">
+<summary><span class="topic-head"><span class="topic-title">Summen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="topic-19" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="topic-19" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="topic-19" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="topic-19" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
+<div class="formula" data-formula-id="topic-19-formula-1" data-tex="\sum_{k=1}^{n+1}f(k)=\sum_{k=1}^{n}f(k)+f(n+1)">\[\sum_{k=1}^{n+1}f(k)=\sum_{k=1}^{n}f(k)+f(n+1)\]<button class="formula-edit-btn" data-edit-formula="topic-19-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<table>
+<tr><th class="editable-prose">Summe</th><th class="editable-prose">Form</th></tr>
+<tr><td class="editable-prose">\(\sum k\)</td><td class="editable-prose">n(n+1)/2</td></tr>
+<tr><td class="editable-prose">\(\sum (2k-1)\)</td><td class="editable-prose">\(n^2\)</td></tr>
+<tr><td class="editable-prose">\(\sum k^2\)</td><td class="editable-prose">n(n+1)(2n+1)/6</td></tr>
+<tr><td class="editable-prose">\(\sum k^3\)</td><td class="editable-prose">\(\left[\frac{n(n+1)}{2}\right]^2\)</td></tr>
+<tr><td class="editable-prose">\(\sum q^k\)</td><td class="editable-prose">\(\frac{q^{n+1}-1}{q-1}\)</td></tr>
 </table>
-<div class="editable-prose tip"><b>Bei Surjektivität ist die Zielmenge Y entscheidend.</b> Dieselbe Vorschrift kann mit anderer Zielmenge surjektiv oder nicht surjektiv sein.</div>
-
-</div></details>
-
-<details data-edit-id="dm-12">
-<summary><span class="topic-head"><span class="topic-title">12. Wie liest man Relationen &amp; Funktionen?<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-12" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-12" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-12" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-12" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<table class="compact-table"><tr><th>Gegeben</th><th>So lesen</th></tr>
-<tr><td>\(R\subseteq X\times X\)</td><td class="editable-prose">Menge geordneter Paare; beide Komponenten liegen in \(X\).</td></tr>
-<tr><td>\(R=\{(x,y)\in\mathbb Z^2:x-y\equiv0\pmod3\}\)</td><td class="editable-prose">Ein Paar gehört genau dann zu \(R\), wenn die Bedingung rechts erfüllt ist.</td></tr>
-<tr><td>\(f:X\to Y,\ x\mapsto f(x)\)</td><td class="editable-prose">Definitionsmenge \(X\), Zielmenge \(Y\), Zuordnungsvorschrift.</td></tr>
-<tr><td>\(f\subseteq X\times Y\)</td><td class="editable-prose">Als Relation ist es nur dann eine Funktion, wenn zu jedem \(x\) genau ein \(y\) gehört.</td></tr>
-</table>
-<div class="editable-prose tip"><b>Immer zuerst markieren:</b> Grundmenge/Definitionsbereich, Zielmenge, freie Variablen, Quantoren und Bedingung nach „:“ bzw. „|“.</div>
-
-</div></details>
-
-<details data-edit-id="dm-13">
-<summary><span class="topic-head"><span class="topic-title">13. Algorithmus: Relation untersuchen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-13" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-13" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-13" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-13" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<ol class="steps">
-<li class="editable-prose"><b>Grundmenge X klären.</b> Eigenschaften wie reflexiv/symmetrisch sind für Relationen <b>auf derselben Menge</b> formuliert.</li>
-<li class="editable-prose"><b>Reflexiv:</b> setze \(y=x\). Zeige \(xRx\) für beliebiges \(x\).</li>
-<li class="editable-prose"><b>Symmetrisch:</b> nehme \(xRy\) an und leite \(yRx\) her. Zum Widerlegen reicht ein Gegenbeispiel.</li>
-<li class="editable-prose"><b>Antisymmetrisch:</b> nehme \(xRy\land yRx\) an und leite \(x=y\) her. Gegenbeispiel: \(x\neq y\) mit beiden Richtungen.</li>
-<li class="editable-prose"><b>Transitiv:</b> nehme \(xRy\land yRz\) an und leite \(xRz\) her. Bei aufgelisteten Paaren nach Ketten \(x\to y\to z\) suchen.</li>
-<li class="editable-prose">Danach Klassifikation: Äquivalenzrelation? partielle Ordnung? totale Ordnung?</li>
+</div>
+</details>
+<details data-edit-id="topic-20">
+<summary><span class="topic-head"><span class="topic-title">Fakultäten &amp; Binomialkoeffizienten<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="topic-20" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="topic-20" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="topic-20" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="topic-20" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
+<div class="formula" data-formula-id="topic-20-formula-1" data-tex="(n+1)!=(n+1)\cdot n!">\[(n+1)!=(n+1)\cdot n!\]<button class="formula-edit-btn" data-edit-formula="topic-20-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-20-formula-2" data-tex="\binom{n}{k}=\frac{n!}{k!(n-k)!}">\[\binom{n}{k}=\frac{n!}{k!(n-k)!}\]<button class="formula-edit-btn" data-edit-formula="topic-20-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-20-formula-3" data-tex="\binom{n}{k}=\binom{n}{n-k}">\[\binom{n}{k}=\binom{n}{n-k}\]<button class="formula-edit-btn" data-edit-formula="topic-20-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-20-formula-4" data-tex="\binom{n}{k}+\binom{n}{k+1}=\binom{n+1}{k+1}">\[\binom{n}{k}+\binom{n}{k+1}=\binom{n+1}{k+1}\]<button class="formula-edit-btn" data-edit-formula="topic-20-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-20-formula-5" data-tex="\sum_{k=0}^{n}\binom{n}{k}=2^n">\[\sum_{k=0}^{n}\binom{n}{k}=2^n\]<button class="formula-edit-btn" data-edit-formula="topic-20-formula-5" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-20-formula-6" data-tex="(x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k">\[(x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k\]<button class="formula-edit-btn" data-edit-formula="topic-20-formula-6" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+</div>
+</details>
+<details data-edit-id="topic-21">
+<summary><span class="topic-head"><span class="topic-title">Vollständige Induktion<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="topic-21" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="topic-21" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="topic-21" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="topic-21" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
+<ol>
+<li class="editable-prose">Induktionsanfang.</li>
+<li class="editable-prose">Induktionsvoraussetzung für festes n.</li>
+<li class="editable-prose">Behauptung für n+1 notieren.</li>
+<li class="editable-prose">Ausdruck für n+1 von links beginnen und IV sichtbar machen.</li>
+<li class="editable-prose">Schlusssatz.</li>
 </ol>
-<div class="editable-prose tip"><b>Lifehack bei Paarlisten:</b> Reflexiv = alle Diagonalpaare; symmetrisch = Spiegelpaare; transitiv = jede Zweierkette braucht die Abkürzung.</div>
-
-</div></details>
-
-<details data-edit-id="dm-14">
-<summary><span class="topic-head"><span class="topic-title">14. Algorithmus: Funktion analysieren<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-14" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-14" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-14" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-14" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<ol class="steps">
-<li class="editable-prose"><b>Ist es überhaupt eine Funktion?</b> Für jedes \(x\in X\) muss genau ein Bild existieren.</li>
-<li class="editable-prose"><b>Injektivität:</b> setze \(f(x_1)=f(x_2)\) und versuche \(x_1=x_2\) zu folgern. Oder finde zwei verschiedene Argumente mit gleichem Bild.</li>
-<li class="editable-prose"><b>Surjektivität:</b> sei \(y\in Y\) beliebig. Löse \(y=f(x)\) nach \(x\) und prüfe, ob das gefundene \(x\) immer in \(X\) liegt.</li>
-<li class="editable-prose"><b>Bijektivität:</b> nur wenn beide vorherigen Punkte erfüllt sind.</li>
-<li class="editable-prose"><b>Umkehrabbildung:</b> erst bei Bijektivität; \(y=f(x)\) nach \(x\) lösen.</li>
-</ol>
-<div class="editable-prose warn">Bei Funktionen wie \(x^2\), \(|x|\), \(\sin x\) immer Definitions- und Zielmenge beachten: sie entscheiden über Injektivität/Surjektivität.</div>
-
-</div></details>
-
-<details data-edit-id="dm-15">
-<summary><span class="topic-head"><span class="topic-title">15. Kombinatorik — Entscheidungsbaum &amp; Formeln<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-15" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-15" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-15" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-15" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip"><b>Erste zwei Fragen:</b> Ist die Reihenfolge wichtig? Darf ein Element mehrfach benutzt werden?</div>
-<table class="compact-table"><tr><th>Situation</th><th>Formel</th><th>Typischer Satz</th></tr>
-<tr><td>Permutation ohne Wiederholung</td><td>\(n!\)</td><td class="editable-prose">„Alle \(n\) verschiedenen Objekte anordnen.“</td></tr>
-<tr><td>Permutation mit Wiederholung</td><td>\(\frac{n!}{k_1!\cdots k_m!}\)</td><td class="editable-prose">„Wörter mit gleichen Buchstaben.“</td></tr>
-<tr><td>Variation ohne Wiederholung</td><td>\(\frac{n!}{(n-k)!}\)</td><td class="editable-prose">„\(k\) aus \(n\), Reihenfolge wichtig, ohne Zurücklegen.“</td></tr>
-<tr><td>Variation mit Wiederholung</td><td>\(n^k\)</td><td class="editable-prose">„Code der Länge \(k\) aus \(n\) Symbolen.“</td></tr>
-<tr><td>Kombination ohne Wiederholung</td><td>\(\binom nk\)</td><td class="editable-prose">„Team/Auswahl \(k\) aus \(n\), Reihenfolge egal.“</td></tr>
-<tr><td>Kombination mit Wiederholung</td><td>\(\binom{n+k-1}{k}\)</td><td class="editable-prose">„\(k\) identische Auswahlen aus \(n\) Sorten.“</td></tr>
-</table>
-<h3 class="editable-prose">Summen- und Produktregel</h3>
-<div class="editable-prose mini-card"><b>Summenregel:</b> disjunkte Fälle „Fall 1 <b>oder</b> Fall 2“ ⇒ Anzahlen addieren.</div>
-<div class="editable-prose mini-card"><b>Produktregel:</b> aufeinanderfolgende unabhängige Entscheidungen „Schritt 1 <b>und dann</b> Schritt 2“ ⇒ Möglichkeiten multiplizieren.</div>
-<h3 class="editable-prose">Stars and Bars</h3>
-<div class="formula">\[x_1+\cdots+x_k=n,\quad x_i\ge0:\qquad \binom{n+k-1}{k-1}\]</div>
-<div class="editable-prose tip">Bei \(x_i\ge1\): zuerst jedem Fach 1 geben, also \(n\mapsto n-k\), dann Stars and Bars.</div>
-
-</div></details>
-
-<details data-edit-id="dm-16">
-<summary><span class="topic-head"><span class="topic-title">16. Schubfachprinzip — schwach &amp; stark<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-16" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-16" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-16" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-16" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="formula">\[|X|>|Y|\Rightarrow \exists x'\neq x'':f(x')=f(x'')\]</div>
-<div class="formula">\[\exists y\in Y:\ |f^{-1}(\{y\})|\ge \left\lceil\frac{|X|}{|Y|}\right\rceil\]</div>
-<ol class="steps"><li class="editable-prose">Objekte = \(X\) bestimmen.</li><li class="editable-prose">Schubfächer/Kategorien = \(Y\) bestimmen.</li><li class="editable-prose">Zuordnung \(f:X\to Y\) gedanklich festlegen.</li><li class="editable-prose">Bei starker Form \(\lceil |X|/|Y|\rceil\) berechnen.</li></ol>
-<div class="editable-prose tip"><b>Typische Signale:</b> „mindestens zwei haben dieselbe …“, „mindestens \(r\) Objekte liegen in derselben Klasse“, Monate/Wochentage/Restklassen/Fächer.</div>
-
-</div></details>
-
-<details data-edit-id="dm-17">
-<summary><span class="topic-head"><span class="topic-title">17. Doppeltes Abzählen — Lifehacks<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-17" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-17" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-17" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-17" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip"><b>Idee:</b> Dieselbe Menge von Paaren/Beziehungen/Incidenzen auf zwei verschiedene Arten zählen und die Ergebnisse gleichsetzen.</div>
-<ol class="steps"><li class="editable-prose">Definiere explizit, <b>was</b> gezählt wird, meist Paare \((a,b)\).</li><li class="editable-prose">Zähle nach der ersten Komponente.</li><li class="editable-prose">Zähle nach der zweiten Komponente.</li><li class="editable-prose">Setze beide Summen gleich.</li></ol>
-<div class="formula">\[\sum_{v\in V}\deg(v)=2|E|\]</div>
-<div class="editable-prose tip"><b>Prüfungsfrage:</b> „Warum Faktor 2?“ — Jede ungerichtete Kante besitzt genau zwei Endpunkte und wird in der Gradsumme zweimal gezählt.</div>
-
-</div></details>
-
-<details data-edit-id="dm-18">
-<summary><span class="topic-head"><span class="topic-title">18. Eigenschaften von Bäumen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-18" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-18" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-18" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-18" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip"><b>Baum:</b> zusammenhängender und kreisfreier ungerichteter Graph.</div>
-<div class="formula">\[|E|=|V|-1\]</div>
-<ul>
-<li class="editable-prose">Zwischen je zwei Knoten existiert genau ein Pfad.</li>
-<li class="editable-prose">Entfernt man eine Kante, wird der Baum unzusammenhängend.</li>
-<li class="editable-prose">Fügt man eine neue Kante hinzu, entsteht genau ein Kreis.</li>
-<li class="editable-prose">Jeder Baum mit mindestens zwei Knoten besitzt mindestens zwei Blätter (\(\deg=1\)).</li>
-</ul>
-<div class="editable-prose tip"><b>Schnelltest:</b> Bei zusammenhängendem Graphen mit \(n\) Knoten reichen \(n-1\) Kanten, um Baum zu sein; äquivalent bei kreisfreiem Graphen ebenfalls.</div>
-
-</div></details>
-
-<details data-edit-id="dm-19">
-<summary><span class="topic-head"><span class="topic-title">19. Algorithmus: Teilgraph / spannend / induziert prüfen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-19" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-19" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-19" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-19" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<ol class="steps"><li class="editable-prose"><b>Teilgraph:</b> prüfe \(V_H\subseteq V_G\) und \(E_H\subseteq E_G\).</li><li class="editable-prose"><b>Schnelltest:</b> Für jeden gemeinsamen Knoten muss \(\deg_H(v)\le\deg_G(v)\) gelten.</li><li class="editable-prose"><b>Spannend:</b> zusätzlich \(V_H=V_G\).</li><li class="editable-prose"><b>Induziert durch \(V_H\):</b> alle Kanten aus \(G\), deren beide Endpunkte in \(V_H\) liegen, müssen in \(H\) enthalten sein.</li></ol>
-<div class="formula">\[E_H=\{\{u,v\}\in E_G:u,v\in V_H\}\qquad\text{(induzierter Teilgraph)}\]</div>
-
-</div></details>
-
-<details data-edit-id="dm-20">
-<summary><span class="topic-head"><span class="topic-title">20. Isomorphismus &amp; Automorphismus prüfen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-20" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-20" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-20" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-20" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="formula">\[\{u,v\}\in E_G\iff \{f(u),f(v)\}\in E_H\]</div>
-<ol class="steps"><li class="editable-prose">\(|V_G|=|V_H|\) prüfen.</li><li class="editable-prose">\(|E_G|=|E_H|\) prüfen.</li><li class="editable-prose">Sortierte Gradsequenzen vergleichen.</li><li class="editable-prose">Strukturinvarianten vergleichen: Nachbarschaftsgrade, Anzahl Dreiecke/Zyklen, Zusammenhang, besondere Knoten.</li><li class="editable-prose">Nur wenn alles passt: konkrete bijektive Zuordnung \(f\) angeben und Kantenstruktur prüfen.</li></ol>
-<div class="editable-prose warn">Gleiche Gradsequenz ist <b>notwendig, aber nicht hinreichend</b>.</div>
-<div class="editable-prose tip"><b>Automorphismus:</b> gleicher Test, aber \(G=H\); gesucht sind Umbenennungen \(f:V\to V\), die den Graphen unverändert lassen.</div>
-
-</div></details>
-
-<details data-edit-id="dm-21">
-<summary><span class="topic-head"><span class="topic-title">21. Algorithmus: Anzahl der Automorphismen bestimmen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-21" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-21" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-21" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-21" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<ol class="steps"><li class="editable-prose">Knoten nach unveränderlichen Merkmalen gruppieren: Grad, Nachbargrade, Lage in Zyklen, Distanz zu besonderen Knoten.</li><li class="editable-prose">Nur strukturell gleichartige Knoten dürfen vertauscht werden.</li><li class="editable-prose">Symmetrien erkennen: Spiegelungen, Rotationen, unabhängige Vertauschungen gleicher Teilstrukturen.</li><li class="editable-prose">Alle gültigen Permutationen zählen; jede muss die Kantenstruktur erhalten.</li></ol>
-<table class="compact-table"><tr><th>Graph</th><th>\(|Aut(G)|\)</th></tr><tr><td>\(P_n,\ n\ge2\)</td><td>2</td></tr><tr><td>\(C_n\)</td><td>\(2n\)</td></tr><tr><td>\(K_n\)</td><td>\(n!\)</td></tr></table>
-<div class="editable-prose tip">Wenn es mehrere <b>unabhängige</b> symmetrische Blöcke gibt, multiplizieren sich deren Möglichkeiten.</div>
-
-</div></details>
-
-<details data-edit-id="dm-22">
-<summary><span class="topic-head"><span class="topic-title">22. BFS — kürzestes Prüfungsprotokoll<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-22" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-22" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-22" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-22" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip"><b>BFS = Queue/FIFO, Ebene für Ebene.</b> In ungewichteten Graphen liefert \(dist\) die kürzeste Kantendistanz.</div>
-<ol class="steps"><li class="editable-prose">Start \(s\): \(dist(s)=0,\ pred(s)=\varnothing,\ Q=[s]\).</li><li class="editable-prose">Vorne \(v\) aus Q nehmen.</li><li class="editable-prose">Weiße Nachbarn \(u\) in vorgegebener Reihenfolge entdecken: \(dist(u)=dist(v)+1,\ pred(u)=v\), hinten an Q.</li><li class="editable-prose">Bis Q leer ist.</li></ol>
-<code>kurz notieren:
-Start: Q=[s]
-s -> entdecke a,b   Q=[a,b]
-a -> entdecke c     Q=[b,c]
-b -> nichts neu     Q=[c]
-c -> ...</code>
-<table class="compact-table"><tr><th>v</th><th>pred(v)</th><th>dist(v)</th></tr><tr><td>s</td><td>–</td><td>0</td></tr><tr><td>a</td><td>s</td><td>1</td></tr><tr><td>b</td><td>s</td><td>1</td></tr><tr><td>c</td><td>a</td><td>2</td></tr></table>
-<div class="editable-prose tip"><b>Entdeckungsreihenfolge</b> = Zeitpunkt, an dem ein Knoten erstmals grau/markiert wird, nicht wann er aus der Queue genommen wird.</div>
-
-</div></details>
-
-<details data-edit-id="dm-23">
-<summary><span class="topic-head"><span class="topic-title">23. DFS — kürzestes Prüfungsprotokoll<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-23" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-23" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-23" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-23" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip"><b>DFS = so tief wie möglich, dann Backtracking.</b> Weiß → grau beim Entdecken, grau → schwarz beim Abschließen.</div>
-<ol class="steps"><li class="editable-prose">Zeit \(t=0\), alle weiß, \(pred=\mathrm{NIL}\).</li><li class="editable-prose">Beim Entdecken von \(v\): \(t:=t+1,\ grau[v]=t\).</li><li class="editable-prose">Ersten weißen Nachbarn nehmen, \(pred[u]=v\), rekursiv weiter.</li><li class="editable-prose">Keine weißen Nachbarn mehr: \(t:=t+1,\ schwarz[v]=t\), zurück.</li><li class="editable-prose">Falls noch weiße Knoten existieren: kleinsten/laut Aufgabe nächsten Start wählen → neuer DFS-Baum.</li></ol>
-<code>kurz notieren:
-(1  (2  (4  4)  2)  (3  3)  1)
-grau:    1 2 3 ...
-schwarz: ...      </code>
-<div class="editable-prose tip"><b>Klammeridee:</b> „(v“ beim Entdecken, „v)“ beim Abschließen. Verschachtelung bedeutet Vorfahr–Nachfahr-Beziehung im DFS-Wald.</div>
-
-</div></details>
-
-<details data-edit-id="dm-24">
-<summary><span class="topic-head"><span class="topic-title">24. Klammerausdruck aus Baum / DFS-Baum<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="dm-24" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
-<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="dm-24" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="dm-24" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="dm-24" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – synchronisiert.</div>
-
-<div class="editable-prose tip">Gehe im Baum wie bei DFS: Beim <b>Betreten</b> eines Knotens öffnende Klammer mit Knotenname, nach allen Kindern schließende Klammer.</div>
-<div class="formula">\[\text{Baum: }1\text{ mit Kindern }2,3,\ \ 2\text{ mit Kind }4\]</div>
-<code>(1 (2 (4 4) 2) (3 3) 1)</code>
-<ol class="steps"><li class="editable-prose">Wurzel öffnen: \((1\)</li><li class="editable-prose">Erstes Kind vollständig abarbeiten: \((2(4\,4)2)\)</li><li class="editable-prose">Nächstes Kind: \((3\,3)\)</li><li class="editable-prose">Wurzel schließen: \(1)\)</li></ol>
-<div class="editable-prose warn">Die konkrete Reihenfolge der Geschwister hängt von der in der Aufgabe vorgegebenen Nachbarschaftsreihenfolge ab.</div>
-
-</div></details>
+<div class="editable-prose tip">Zielblick: rechte Seite für n+1 vor dem Rechnen aufschreiben.</div>
+</div>
+</details>
+<details data-edit-id="topic-22">
+<summary><span class="topic-head"><span class="topic-title">Teilbarkeit &amp; Ungleichungen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="topic-22" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="topic-22" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="topic-22" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="topic-22" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
+<div class="formula" data-formula-id="topic-22-formula-1" data-tex="d\mid F(n)\quad\Longleftrightarrow\quad F(n)=d\cdot q,\qquad q\in\mathbb Z">\[d\mid F(n)\quad\Longleftrightarrow\quad F(n)=d\cdot q,\qquad q\in\mathbb Z\]<button class="formula-edit-btn" data-edit-formula="topic-22-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-22-formula-2" data-tex="a^{n+1}-1=a(a^n-1)+(a-1)">\[a^{n+1}-1=a(a^n-1)+(a-1)\]<button class="formula-edit-btn" data-edit-formula="topic-22-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="topic-22-formula-3" data-tex="2n^2-(n+1)^2=n^2-2n-1">\[2n^2-(n+1)^2=n^2-2n-1\]<button class="formula-edit-btn" data-edit-formula="topic-22-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="editable-prose tip">Bei A <span class="math-inline">\(\ge\)</span> B oft A−B bilden und Nichtnegativität zeigen.</div>
+</div>
+</details>
 </section>
 <section class="subject" data-subject="ap">
 <h2>Algorithmen &amp; Programmierung</h2>
@@ -1599,7 +1310,7 @@ bfs (c:cs) visited
 </div></details>
 </section>
 </main>
-<div class="footer">Stand 31.08.2026 · Lernübersicht aus dem Spickzettel „Formeln &amp; Umformungen“</div>
+<div class="footer">Stand 30.08.2026 · Lernübersicht aus dem Spickzettel „Formeln &amp; Umformungen“</div>
 </div>
 <script>
   const tabs = [...document.querySelectorAll('.tab')];
