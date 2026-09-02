@@ -2451,6 +2451,110 @@ window.addEventListener('DOMContentLoaded', () => {
       if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise([note]).catch(console.warn);
     }
   }
+
+  const kruskalHeading=[...document.querySelectorAll('h3')]
+    .find(h=>h.textContent.trim()==='Kruskal — minimaler Spannbaum');
+  const kruskalSteps=kruskalHeading?.nextElementSibling;
+  const kruskalNote=kruskalSteps?.nextElementSibling;
+  if(kruskalNote && !document.querySelector('.kruskal-trace-example')){
+    const example=document.createElement('div');
+    example.className='kruskal-trace-example';
+    example.innerHTML=String.raw`
+      <h4 class="editable-prose">Beispiel: Kruskal-Ablauf notieren</h4>
+      <p class="editable-prose subtle"><b>Sortierte Kanten:</b> {AB:1}, {CF:2}, {AD:3}, {BC:4}, {EG:4}, {BD:5}, {BF:6}, {DE:6}, &hellip;</p>
+      <table class="compact-table">
+        <tr><th>Schritt</th><th>Kante</th><th>Gewicht</th><th>Zyklus?</th><th>Entscheidung</th><th>Gew&auml;hlte Kanten</th></tr>
+        <tr><td>1</td><td>{AB}</td><td>1</td><td>Nein</td><td>&#10003; aufnehmen</td><td>{AB}</td></tr>
+        <tr><td>2</td><td>{CF}</td><td>2</td><td>Nein</td><td>&#10003; aufnehmen</td><td>{AB}, {CF}</td></tr>
+        <tr><td>3</td><td>{AD}</td><td>3</td><td>Nein</td><td>&#10003; aufnehmen</td><td>{AB}, {CF}, {AD}</td></tr>
+        <tr><td>4</td><td>{BC}</td><td>4</td><td>Nein</td><td>&#10003; aufnehmen</td><td>{AB}, {CF}, {AD}, {BC}</td></tr>
+        <tr><td>5</td><td>{EG}</td><td>4</td><td>Nein</td><td>&#10003; aufnehmen</td><td>{AB}, {CF}, {AD}, {BC}, {EG}</td></tr>
+        <tr><td>6</td><td>{BD}</td><td>5</td><td>Ja</td><td>&#10007; verwerfen</td><td>unver&auml;ndert</td></tr>
+        <tr><td>7</td><td>{BF}</td><td>6</td><td>Ja</td><td>&#10007; verwerfen</td><td>unver&auml;ndert</td></tr>
+        <tr><td>8</td><td>{DE}</td><td>6</td><td>Nein</td><td>&#10003; aufnehmen</td><td>{AB}, {CF}, {AD}, {BC}, {EG}, {DE}</td></tr>
+      </table>
+      <div class="tip"><b>Zum Ausf&uuml;llen:</b> Kanten zuerst sortieren, dann der Reihe nach pr&uuml;fen. Bei &bdquo;Ja&ldquo; bleibt die letzte Spalte unver&auml;ndert; bei \(|V|-1\) gew&auml;hlten Kanten ist der Spannbaum fertig.</div>`;
+    kruskalNote.insertAdjacentElement('afterend',example);
+    window.studyHydrateInlineMath?.(example);
+    if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise([example]).catch(console.warn);
+  }
+
+  const primHeading=[...document.querySelectorAll('h3')]
+    .find(h=>h.textContent.trim()==='Prim — minimaler Spannbaum');
+  const primSteps=primHeading?.nextElementSibling;
+  const primNote=primSteps?.nextElementSibling;
+  if(primNote && !document.querySelector('.prim-trace-example')){
+    const example=document.createElement('div');
+    example.className='prim-trace-example';
+    example.innerHTML=String.raw`
+      <h4 class="editable-prose">Beispiel: Prim-Ablauf notieren</h4>
+      <p class="editable-prose subtle"><b>Kanten:</b> AB=2, AC=5, BC=1, BD=4, CD=3, CE=6, DE=2. <b>Start:</b> A</p>
+      <table class="compact-table">
+        <tr><th>Schritt</th><th>Bereits im Baum</th><th>M&ouml;gliche Kanten nach au&szlig;en</th><th>Gew&auml;hlt</th></tr>
+        <tr><td>0</td><td>{A}</td><td>AB(2), AC(5)</td><td><b>AB(2)</b></td></tr>
+        <tr><td>1</td><td>{A, B}</td><td>AC(5), BC(1), BD(4)</td><td><b>BC(1)</b></td></tr>
+        <tr><td>2</td><td>{A, B, C}</td><td>BD(4), CD(3), CE(6)</td><td><b>CD(3)</b></td></tr>
+        <tr><td>3</td><td>{A, B, C, D}</td><td>CE(6), DE(2)</td><td><b>DE(2)</b></td></tr>
+        <tr><td>4</td><td>{A, B, C, D, E}</td><td>&mdash;</td><td><b>fertig</b></td></tr>
+      </table>
+      <div class="tip"><b>Zum Ausf&uuml;llen:</b> In Spalte 3 nur Kanten eintragen, die genau einen Knoten im bisherigen Baum mit einem Knoten au&szlig;erhalb verbinden. Davon immer die billigste w&auml;hlen.</div>`;
+    primNote.insertAdjacentElement('afterend',example);
+  }
+
+  const makeMatrix=(title,rows)=>`<div class="mini-card"><b>${title}</b><table class="compact-table"><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th></tr>${rows.map((row,i)=>`<tr><th>${i+1}</th>${row.map(value=>`<td>${value}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  const dijkstraHeading=[...document.querySelectorAll('h3')]
+    .find(h=>h.textContent.trim().startsWith('Dijkstra —'));
+  const floydHeading=[...document.querySelectorAll('h3')]
+    .find(h=>h.textContent.trim().startsWith('Floyd–Warshall —'));
+  if(dijkstraHeading && floydHeading && !document.querySelector('.dijkstra-trace-example')){
+    const example=document.createElement('div');
+    example.className='dijkstra-trace-example';
+    example.innerHTML=String.raw`
+      <h4 class="editable-prose">Beispiel: Dijkstra ab Startknoten d</h4>
+      <p class="editable-prose subtle"><b>Gerichtete Kanten:</b> b&rarr;a(10), a&rarr;d(5), b&rarr;d(2), d&rarr;b(3), d&rarr;c(9), b&rarr;c(1), c&rarr;d(2), c&rarr;e(4), e&rarr;c(6).</p>
+      <table class="compact-table">
+        <tr><th>Fest gew&auml;hlt</th><th>d(a)</th><th>d(b)</th><th>d(c)</th><th>d(d)</th><th>d(e)</th><th>Neue Vorg&auml;nger</th></tr>
+        <tr><td>Start</td><td>&infin;</td><td>&infin;</td><td>&infin;</td><td>0</td><td>&infin;</td><td>&mdash;</td></tr>
+        <tr><td><b>d</b></td><td>&infin;</td><td>3</td><td>9</td><td>0</td><td>&infin;</td><td>pred(b)=d, pred(c)=d</td></tr>
+        <tr><td><b>b</b></td><td>13</td><td>3</td><td>4</td><td>0</td><td>&infin;</td><td>pred(a)=b, pred(c)=b</td></tr>
+        <tr><td><b>c</b></td><td>13</td><td>3</td><td>4</td><td>0</td><td>8</td><td>pred(e)=c</td></tr>
+        <tr><td><b>e</b></td><td>13</td><td>3</td><td>4</td><td>0</td><td>8</td><td>&mdash;</td></tr>
+        <tr><td><b>a</b></td><td>13</td><td>3</td><td>4</td><td>0</td><td>8</td><td>fertig</td></tr>
+      </table>
+      <div class="tip"><b>Ergebnis ab d:</b> d&rarr;b=3, d&rarr;b&rarr;c=4, d&rarr;b&rarr;c&rarr;e=8, d&rarr;b&rarr;a=13.</div>`;
+    floydHeading.insertAdjacentElement('beforebegin',example);
+  }
+
+  const warshallHeading=[...document.querySelectorAll('h3')]
+    .find(h=>h.textContent.trim().startsWith('Warshall —'));
+  if(floydHeading && warshallHeading && !document.querySelector('.floyd-matrix-example')){
+    const inf='&infin;';
+    const matrices=[
+      ['C<sup>0</sup>',[[0,inf,inf,2],[6,0,2,inf],[3,inf,0,-1],[2,inf,inf,0]]],
+      ['C<sup>1</sup>',[[0,inf,inf,2],[6,0,2,8],[3,inf,0,-1],[2,inf,inf,0]]],
+      ['C<sup>2</sup>',[[0,inf,inf,2],[6,0,2,8],[3,inf,0,-1],[2,inf,inf,0]]],
+      ['C<sup>3</sup>',[[0,inf,inf,2],[5,0,2,1],[3,inf,0,-1],[2,inf,inf,0]]],
+      ['C<sup>4</sup>',[[0,inf,inf,2],[3,0,2,1],[1,inf,0,-1],[2,inf,inf,0]]]
+    ];
+    const example=document.createElement('div');
+    example.className='floyd-matrix-example';
+    example.innerHTML=String.raw`
+      <h4 class="editable-prose">Beispiel: Floyd–Warshall als Matrizenfolge</h4>
+      <p class="editable-prose subtle"><b>Gerichtete Kanten:</b> 1&rarr;4(2), 2&rarr;1(6), 2&rarr;3(2), 3&rarr;1(3), 3&rarr;4(&minus;1), 4&rarr;1(2). In Schritt k darf Knoten k als Zwischenknoten verwendet werden.</p>
+      <div class="mini-grid">${matrices.map(([title,rows])=>makeMatrix(title,rows)).join('')}</div>
+      <div class="tip"><b>Beispielrechnung:</b> In Schritt 4 wird \(c_{21}^{4}=\min(5,\,c_{24}^{3}+c_{41}^{3})=\min(5,1+2)=3\).</div>
+      <h4 class="editable-prose">Variante: k&uuml;rzeste Wege mitspeichern</h4>
+      <p class="editable-prose subtle">Zus&auml;tzlich zu jedem endlichen Wert den zugeh&ouml;rigen Knotenweg notieren. Wird der Weg &uuml;ber k k&uuml;rzer, werden die beiden Teilwege zusammengesetzt; k nur einmal schreiben.</p>
+      <table class="compact-table">
+        <tr><th>P<sup>4</sup></th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+        <tr><th>1</th><td>[1]</td><td>&mdash;</td><td>&mdash;</td><td>[1,4]</td></tr>
+        <tr><th>2</th><td>[2,3,4,1]</td><td>[2]</td><td>[2,3]</td><td>[2,3,4]</td></tr>
+        <tr><th>3</th><td>[3,4,1]</td><td>&mdash;</td><td>[3]</td><td>[3,4]</td></tr>
+        <tr><th>4</th><td>[4,1]</td><td>&mdash;</td><td>&mdash;</td><td>[4]</td></tr>
+      </table>
+      <div class="tip"><b>Beispiel:</b> Der Wert 3 in Zelle (2,1) geh&ouml;rt zum Weg [2,3,4,1]. &bdquo;&mdash;&ldquo; bedeutet: kein gerichteter Weg vorhanden.</div>`;
+    warshallHeading.insertAdjacentElement('beforebegin',example);
+  }
 })();
 </script></body>
 </html>
