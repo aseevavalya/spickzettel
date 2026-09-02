@@ -2555,6 +2555,25 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="tip"><b>Beispiel:</b> Der Wert 3 in Zelle (2,1) geh&ouml;rt zum Weg [2,3,4,1]. &bdquo;&mdash;&ldquo; bedeutet: kein gerichteter Weg vorhanden.</div>`;
     warshallHeading.insertAdjacentElement('beforebegin',example);
   }
+
+  const dnfTopic=document.querySelector('[data-topic-id="dnf"] .content');
+  const dnfSteps=dnfTopic?.querySelector('ol.steps');
+  if(dnfSteps && !dnfTopic.querySelector('.logic-symbol-basics')){
+    const basics=document.createElement('div');
+    basics.className='logic-symbol-basics';
+    basics.innerHTML=String.raw`
+      <h3 class="editable-prose">Implikation und &Auml;quivalenz einfach umschreiben</h3>
+      <table class="compact-table">
+        <tr><th>Zeichen</th><th>Gelesen</th><th>Mit einfachen Zeichen</th><th>Bedeutung</th></tr>
+        <tr><td>\(a\to b\)</td><td>wenn a, dann b</td><td>\(\neg a\lor b\)</td><td>Nur falsch bei \(a=1,\ b=0\)</td></tr>
+        <tr><td>\(a\leftrightarrow b\)</td><td>a genau dann, wenn b</td><td>\((a\land b)\lor(\neg a\land\neg b)\)</td><td>Wahr, wenn beide gleich sind</td></tr>
+        <tr><td>\(a\leftrightarrow b\)</td><td>KNF-Variante</td><td>\((\neg a\lor b)\land(\neg b\lor a)\)</td><td>Beide Richtungen gelten</td></tr>
+      </table>
+      <div class="tip"><b>Merke:</b> \(\to\) durch \(\neg\) und \(\lor\) ersetzen. Bei \(\leftrightarrow\) f&uuml;r DNF die zweite Zeile, f&uuml;r KNF die dritte Zeile verwenden.</div>`;
+    dnfSteps.insertAdjacentElement('beforebegin',basics);
+    window.studyHydrateInlineMath?.(basics);
+    if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise([basics]).catch(console.warn);
+  }
 })();
 </script></body>
 </html>
