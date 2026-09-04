@@ -1206,7 +1206,20 @@ quadrateGerade xs = [x*x | x &lt;- xs, even x]</code><div class="editable-prose 
 <details data-edit-id="ap-04-types">
 <summary><span class="topic-head"><span class="topic-title">4. Produkt-, Summen- &amp; Recordtypen · Konstruktoren/Selektoren<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="ap-04-types" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
 <div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="ap-04-types" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="ap-04-types" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="ap-04-types" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Blockformeln und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – mit Supabase synchronisiert.</div>
-<div class="mini-grid"><div class="editable-prose mini-card"><b>Produkttyp</b><br/>Mehrere Bestandteile gehören <em>gleichzeitig</em> zu einem Wert.</div><div class="editable-prose mini-card"><b>Summentyp</b><br/>Ein Wert ist <em>eine von mehreren Alternativen</em>.</div></div><code>-- Produkttyp, positionsabhängig
+<div class="mini-grid"><div class="editable-prose mini-card"><b>Produkttyp</b><br/>Mehrere Bestandteile gehören <em>gleichzeitig</em> zu einem Wert.</div><div class="editable-prose mini-card"><b>Summentyp</b><br/>Ein Wert ist <em>eine von mehreren Alternativen</em>.</div></div>
+<p class="editable-prose"><b>Eigene Typen als Bestandteile:</b> Die Felder eines Produkttyps können sowohl vordefinierte Typen wie <code style="display:inline;padding:2px 5px">Int</code> oder <code style="display:inline;padding:2px 5px">String</code> als auch selbst definierte Typen enthalten. Im folgenden Beispiel ist <code style="display:inline;padding:2px 5px">Monat</code> ein eigener Summentyp und wird anschließend als Feldtyp im Produkttyp <code style="display:inline;padding:2px 5px">Datum</code> verwendet.</p>
+<code>data Monat = Januar | Februar | März | April | Mai | Juni
+           | Juli | August | September | Oktober | November | Dezember
+
+data Datum = Datum
+  { tag   :: Int
+  , monat :: Monat
+  , jahr  :: Int
+  }
+
+beispielDatum :: Datum
+beispielDatum = Datum { tag = 4, monat = September, jahr = 2026 }</code>
+<div class="editable-prose tip"><b>Leseregel:</b> Ein <code style="display:inline;padding:2px 5px">Datum</code> besteht aus drei Werten gleichzeitig: einem <code style="display:inline;padding:2px 5px">Int</code>, einem selbst definierten <code style="display:inline;padding:2px 5px">Monat</code> und einem weiteren <code style="display:inline;padding:2px 5px">Int</code>.</div><code>-- Produkttyp, positionsabhängig
 data Person = Person String Int
 
 -- Produkttyp als Record: Selektoren automatisch
@@ -1217,6 +1230,15 @@ data Ergebnis = Fehler String | Erfolg Int
 
 -- Aufzählungstyp = Summentyp ohne Parameter
 data Farbe = Rot | Gruen | Blau</code><p class="editable-prose"><b>Konstruktoren:</b> <code style="display:inline;padding:2px 5px">Person :: String -&gt; Int -&gt; Person</code>, <code style="display:inline;padding:2px 5px">Fehler :: String -&gt; Ergebnis</code>. <b>Selektoren:</b> bei Record-Syntax automatisch, z.B. <code style="display:inline;padding:2px 5px">name :: PersonR -&gt; String</code>; bei normaler Schreibweise selbst per Pattern Matching definieren.</p>
+<h3 class="editable-prose"><code style="display:inline;padding:2px 5px">data</code>, <code style="display:inline;padding:2px 5px">type</code> und <code style="display:inline;padding:2px 5px">newtype</code> im Vergleich</h3>
+<table class="compact-table"><tr><th class="editable-prose">Merkmal</th><th class="editable-prose"><code style="display:inline;padding:2px 5px">data</code></th><th class="editable-prose"><code style="display:inline;padding:2px 5px">type</code></th><th class="editable-prose"><code style="display:inline;padding:2px 5px">newtype</code></th></tr>
+<tr><td class="editable-prose"><b>Was macht es?</b></td><td class="editable-prose">Erzeugt einen neuen Typ.</td><td class="editable-prose">Gibt einem vorhandenen Typ nur einen neuen Namen.</td><td class="editable-prose">Erzeugt einen neuen Typ mit besonders einfacher Struktur.</td></tr>
+<tr><td class="editable-prose"><b>Konstruktoren</b></td><td class="editable-prose">Einer oder mehrere.</td><td class="editable-prose">Keine.</td><td class="editable-prose">Genau einer.</td></tr>
+<tr><td class="editable-prose"><b>Felder pro Konstruktor</b></td><td class="editable-prose">Keines, eines oder mehrere.</td><td class="editable-prose">–</td><td class="editable-prose">Genau eines.</td></tr>
+<tr><td class="editable-prose"><b>Wann verwenden?</b></td><td class="editable-prose">Für eigene Datenstrukturen und mehrere mögliche Formen.</td><td class="editable-prose">Für kürzere, besser lesbare Typsignaturen.</td><td class="editable-prose">Wenn ein eigener, vom Ursprungstyp getrennter Typ mit nur einem Feld gebraucht wird.</td></tr>
+<tr><td class="editable-prose"><b>Beispiel</b></td><td class="editable-prose"><code style="display:inline;padding:2px 5px">data Farbe = Rot | Blau</code></td><td class="editable-prose"><code style="display:inline;padding:2px 5px">type Name = String</code></td><td class="editable-prose"><code style="display:inline;padding:2px 5px">newtype Alter = Alter Int</code></td></tr>
+<tr><td class="editable-prose"><b>Wirklich neuer Typ?</b></td><td class="editable-prose">Ja.</td><td class="editable-prose">Nein.</td><td class="editable-prose">Ja.</td></tr></table>
+<div class="editable-prose tip"><b>Merke:</b> Bei <code style="display:inline;padding:2px 5px">type Name = String</code> sind <code style="display:inline;padding:2px 5px">Name</code> und <code style="display:inline;padding:2px 5px">String</code> austauschbar. <code style="display:inline;padding:2px 5px">newtype Alter = Alter Int</code> verhindert dagegen, dass <code style="display:inline;padding:2px 5px">Alter</code> versehentlich wie ein gewöhnlicher <code style="display:inline;padding:2px 5px">Int</code> benutzt wird.</div>
 </div></details>
 <details data-edit-id="ap-05-construct">
 <summary><span class="topic-head"><span class="topic-title">5. Werte mit Konstruktoren bauen — Beispiel Tree<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="ap-05-construct" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
