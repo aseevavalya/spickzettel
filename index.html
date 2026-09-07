@@ -672,6 +672,78 @@
   .compact-table.balanced-table{table-layout:fixed!important}
   .compact-table.balanced-table th,
   .compact-table.balanced-table td{width:auto!important}
+  /* Keep the unpacking decision guide readable at the actual topic width. */
+  details[data-edit-id="ap-13-unpack"] > .content{
+    container-type:inline-size;
+    container-name:unpack-guide;
+  }
+  details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods{
+    display:table;
+    width:100%;
+    table-layout:fixed;
+  }
+  details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods :is(th,td){
+    min-width:0!important;
+    text-align:left;
+    overflow-wrap:anywhere;
+    font-size:12px;
+  }
+  details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods code{
+    min-width:0;
+    max-width:100%;
+    box-sizing:border-box;
+    text-align:left;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+  }
+  details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods code:not([style]){
+    margin:8px 0;
+  }
+  @container unpack-guide (max-width:900px){
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods,
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods > tbody{
+      display:block;
+      width:100%;
+    }
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods tr:first-child{
+      display:none;
+    }
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods tr:not(:first-child){
+      display:block;
+      margin:12px 0;
+      padding:6px 12px;
+      border-radius:14px;
+      background:var(--surface);
+      box-shadow:3px 3px 8px var(--shadow-dark),-3px -3px 8px var(--shadow-light);
+    }
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td{
+      display:block;
+      width:100%!important;
+      box-sizing:border-box;
+      padding:10px 0;
+      font-size:12px;
+    }
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td:last-child{
+      border-bottom:0;
+    }
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td::before{
+      display:block;
+      margin-bottom:6px;
+      color:var(--accent);
+      font-weight:800;
+    }
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td:nth-child(1)::before{content:none}
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td:first-child,
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td:first-child code{color:var(--accent)}
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td:nth-child(2)::before{content:"Kurzes Beispiel"}
+    details[data-edit-id="ap-13-unpack"] .content > table.unpack-methods td:nth-child(3)::before{content:"Wann praktisch?"}
+  }
+  details[data-edit-id="ap-13-unpack"] > .content{font-size:12px}
+  details[data-edit-id="ap-13-unpack"] .content :is(p,.tip,.warn,code){font-size:12px}
+  details[data-edit-id="ap-13-unpack"] .content h3{font-size:15px}
+  details[data-edit-id="ap-13-unpack"] .content > table.unpack-situations{display:table;width:100%;table-layout:fixed}
+  details[data-edit-id="ap-13-unpack"] .unpack-situations :is(th,td){min-width:0!important;width:auto!important;text-align:left;font-size:12px;padding:6px;overflow-wrap:anywhere}
+  details[data-edit-id="ap-13-unpack"] .unpack-situations code{white-space:pre-wrap;overflow-wrap:anywhere}
 </style>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><script>
 window.MathJax = {
@@ -1391,118 +1463,86 @@ hinten x (Gruppe n xs) = Gruppe n (xs ++ [x])</code><div class="editable-prose w
 <details data-edit-id="ap-13-unpack">
 <summary><span class="topic-head"><span class="topic-title">13. Eigene Datentypen auspacken — wann, warum und wie?<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="ap-13-unpack" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
 <div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="ap-13-unpack" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="ap-13-unpack" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="ap-13-unpack" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Blockformeln und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden lokal und – nach Anmeldung – mit Supabase synchronisiert.</div>
-<div class="editable-prose tip"><b>Entscheidungsregel:</b> Die Typsignatur sagt nur, <b>welcher Typ</b> hereinkommt. Sie packt den Wert nicht aus. Einen eigenen Datentyp musst du mit seinem <b>Konstruktor</b> per Pattern Matching öffnen, wenn du an seine inneren Werte musst oder zwischen mehreren Konstruktoren unterscheiden willst.</div>
-<table class="compact-table"><tr><th class="editable-prose">Situation</th><th class="editable-prose">Auspacken?</th><th class="editable-prose">Typische Form</th></tr>
-<tr><td class="editable-prose">Wert nur weitergeben / unverändert zurückgeben</td><td class="editable-prose"><b>Nein</b></td><td class="editable-prose"><code style="display:inline;padding:2px 5px">f t = t</code></td></tr>
-<tr><td class="editable-prose">Record-Selektor ist vorhanden</td><td class="editable-prose">nicht zwingend</td><td class="editable-prose"><code style="display:inline;padding:2px 5px">alter p</code></td></tr>
-<tr><td class="editable-prose">Felder eines normalen Konstruktors werden gebraucht</td><td class="editable-prose"><b>Ja</b></td><td class="editable-prose"><code style="display:inline;padding:2px 5px">f (Person n a) = ...</code></td></tr>
-<tr><td class="editable-prose">Mehrere Konstruktorfälle müssen unterschieden werden</td><td class="editable-prose"><b>Ja</b></td><td class="editable-prose">Pattern Matching oder <code style="display:inline;padding:2px 5px">case ... of</code></td></tr>
-<tr><td class="editable-prose">Rekursive Bestandteile werden für Rekursion gebraucht</td><td class="editable-prose"><b>Ja</b></td><td class="editable-prose"><code style="display:inline;padding:2px 5px">Node _ l r</code></td></tr>
-<tr><td class="editable-prose">Konstruktor ist im Modul absichtlich nicht exportiert</td><td class="editable-prose"><b>Nein / nicht möglich</b></td><td class="editable-prose">exportierte Operation/Selektor benutzen</td></tr></table>
-<h3 class="editable-prose">Lifehack: ausgepackten Wert zurückgeben oder mit show / read umwandeln</h3>
-<p class="editable-prose">Nach dem Pattern Matching hat das innere Feld bereits seinen deklarierten Typ. Passt dieser zum Rückgabetyp, reicht der Feldname. Soll aus einem <b>Int ein String</b> werden, liefert <b>show n</b> direkt die fertige Zeichenkette.</p>
-<code class="editable-prose">data Ausdruck = Konstante Int | Variable String | Summe Ausdruck Ausdruck
+<h3 class="editable-prose">1. Muss ich überhaupt auspacken?</h3>
+<div class="editable-prose tip"><b>Typsignatur prüfen:</b> Was kommt hinein, was muss heraus? <b>Record-Definition prüfen:</b> Was steckt innen? Entscheidend ist, ob ich den Inhalt brauche – gleiche Ein- und Ausgabetypen allein sagen das nicht.</div>
+<table class="compact-table unpack-situations"><tr><th class="editable-prose">Situation</th><th class="editable-prose">Auspacken?</th></tr><tr><td class="editable-prose">Ganzen Wert unverändert weitergeben</td><td class="editable-prose"><b>Nein:</b> <code style="display:inline;padding:2px 5px">f z = z</code>.</td></tr><tr><td class="editable-prose">Inneres Feld lesen oder verändern</td><td class="editable-prose"><b>Ja:</b> Pattern Matching oder Selektor. Bei gleichem Rückgabetyp anschließend wieder einpacken.</td></tr><tr><td class="editable-prose">Je nach Konstruktor anders reagieren</td><td class="editable-prose"><b>Ja:</b> Fälle mit Funktionsgleichungen oder <code style="display:inline;padding:2px 5px">case</code> unterscheiden.</td></tr><tr><td class="editable-prose">Funktionsaufruf liefert eigenen Typ, gebraucht wird sein Inhalt</td><td class="editable-prose"><b>Ja:</b> Ergebnis zuerst auspacken, z. B. <code style="display:inline;padding:2px 5px">Bits → [Bit]</code>.</td></tr></table>
+<p class="editable-prose"><code style="display:inline;padding:2px 5px">show</code>, <code style="display:inline;padding:2px 5px">read</code> und <code style="display:inline;padding:2px 5px">readMaybe</code> sind <b>keine Auspackmethoden</b>, sondern wandeln den bereits erhaltenen Wert um: <code style="display:inline;padding:2px 5px">Int → String</code>: <code style="display:inline;padding:2px 5px">show</code>; <code style="display:inline;padding:2px 5px">String → Int</code>: <code style="display:inline;padding:2px 5px">read</code> (Fehler bei ungültigem Text). Sicherer: <code style="display:inline;padding:2px 5px">readMaybe</code> aus <code style="display:inline;padding:2px 5px">Text.Read</code>, hier mit Ergebnis <code style="display:inline;padding:2px 5px">Maybe Int</code> (<code style="display:inline;padding:2px 5px">Just n</code> oder <code style="display:inline;padding:2px 5px">Nothing</code>).</p>
+<h3 class="editable-prose">2. Wenn Auspacken nötig ist: Welche Möglichkeiten habe ich?</h3>
+<code class="editable-prose">data Zahl = Zahl
+  { zahlWert :: Int
+  }</code>
+<p class="editable-prose">Die fünf Beispiele sind Alternativen für <code style="display:inline;padding:2px 5px">f :: Zahl -&gt; Int</code>. Das kurze Pattern <code style="display:inline;padding:2px 5px">Zahl n</code> bindet <code style="display:inline;padding:2px 5px">n :: Int</code>.</p>
+<table class="compact-table unpack-methods"><tr><th class="editable-prose">Möglichkeit</th><th class="editable-prose">Kurzes Beispiel</th><th class="editable-prose">Wann praktisch?</th></tr>
+<tr><td class="editable-prose"><b>Pattern Matching im Funktionsargument</b></td><td class="editable-prose"><code class="editable-prose">f :: Zahl -&gt; Int
+f (Zahl n) = n</code></td><td class="editable-prose">Wenn der Wert direkt als Argument hereinkommt. Mehrere Konstruktoren lassen sich mit mehreren Gleichungen behandeln:<code class="editable-prose">f (Fehler msg) = ...
+f (Erfolg n)   = ...</code></td></tr>
+<tr><td class="editable-prose"><b>Lokales Pattern Matching mit <code style="display:inline;padding:2px 5px">let</code></b></td><td class="editable-prose"><code class="editable-prose">f z =
+  let Zahl n = z
+  in n</code></td><td class="editable-prose">Wenn der Wert schon lokal vorliegt oder erst durch einen Funktions-/Rekursionsaufruf berechnet wurde (Bits-Beispiel unten). <b>Keine vollständige Fallunterscheidung:</b> <code style="display:inline;padding:2px 5px">let Erfolg n = x</code> behandelt einen möglichen <code style="display:inline;padding:2px 5px">Fehler</code> nicht.<br><b>Namen merken:</b> Für innere Werte andere Namen als für die Argumente wählen, z. B. außen <code style="display:inline;padding:2px 5px">n, m</code>, innen <code style="display:inline;padding:2px 5px">a, b</code> → <code style="display:inline;padding:2px 5px">in a - b</code>. So verdecken die inneren Namen nicht die äußeren.</td></tr>
+<tr><td class="editable-prose"><b>Hilfsfunktion</b></td><td class="editable-prose"><code class="editable-prose">auspacken :: Zahl -&gt; Int
+auspacken (Zahl n) = n
 
-ausdruckNachString :: Ausdruck -&gt; String
-ausdruckNachString (Konstante n) = show n
-ausdruckNachString (Variable y) = y
-ausdruckNachString (Summe n m) =
-  "(" ++ ausdruckNachString n ++ " + " ++ ausdruckNachString m ++ ")"
+f z = auspacken z</code></td><td class="editable-prose">Wenn ich den Zugriff mehrfach brauche oder die Hauptfunktion übersichtlicher wird. </td></tr>
+<tr><td class="editable-prose"><b><code style="display:inline;padding:2px 5px">case ... of</code></b></td><td class="editable-prose"><code class="editable-prose">f z =
+  case z of
+    Zahl n -&gt; n</code></td><td class="editable-prose">Wenn ich einen Ausdruck direkt untersuchen möchte. Bei mehreren Konstruktoren kann ich den Fall erkennen und den Inhalt binden:<code class="editable-prose">case x of
+  Fehler msg -&gt; ...
+  Erfolg n   -&gt; ...</code><code style="display:inline;padding:2px 5px">case</code> ist für berechnete Werte keine Pflicht: Bei einem einzigen Konstruktor wie <code style="display:inline;padding:2px 5px">Bits</code> geht auch <code style="display:inline;padding:2px 5px">let</code>.</td></tr>
+<tr><td class="editable-prose"><b>Record-Selektor</b></td><td class="editable-prose"><code class="editable-prose">-- automatisch erzeugt:
+zahlWert :: Zahl -&gt; Int
 
--- ausdruckNachString (Konstante 42)  ergibt "42"
--- ausdruckNachString (Variable "x") ergibt "x"
--- n und m bei Summe sind Ausdruck: zuerst rekursiv umwandeln!
-
-data Zahl = Zahl Int
-
-zahlNachInt :: Zahl -&gt; Int
-zahlNachInt (Zahl n) = n
--- n ist schon Int: einfach zurückgeben.</code>
-<p class="editable-prose"><b>String → Int:</b> Enthält dein Typ eine Zeichenkette wie "42", reicht der Feldname allein nicht: Er bleibt ein String. Mit <code style="display:inline;padding:2px 5px">read s :: Int</code> wird der Text als Zahl gelesen; ungültiger Text führt zu einem Laufzeitfehler. <code style="display:inline;padding:2px 5px">readMaybe</code> liefert stattdessen <code style="display:inline;padding:2px 5px">Just n</code> oder <code style="display:inline;padding:2px 5px">Nothing</code>.</p>
-<code class="editable-prose">import Text.Read (readMaybe) -- oben im Modul, vor den Definitionen
-
-data ZahlText = ZahlText String
-
-textNachInt :: ZahlText -&gt; Int
-textNachInt (ZahlText s) = read s
--- Rückgabetyp legt Int fest; nur für gültigen Zahlentext!
-
-textNachIntSicher :: ZahlText -&gt; Maybe Int
-textNachIntSicher (ZahlText s) = readMaybe s
--- ZahlText "42" → Just 42; ZahlText "abc" → Nothing</code>
-<div class="editable-prose tip"><b>Merke:</b> Int → String: <b>show n</b>. Int → Int oder String → String: <b>direkt n bzw. s</b>. String → Int: <b>read s</b> bzw. sicher <b>readMaybe s</b>. Für <code style="display:inline;padding:2px 5px">show n</code> mit <code style="display:inline;padding:2px 5px">n :: Int</code> braucht der äußere Datentyp kein <code style="display:inline;padding:2px 5px">deriving Show</code>.</div>
-<h3 class="editable-prose">1. Auspacken direkt im Funktionsargument</h3>
-<code class="editable-prose">data Preis = Preis Int Int
-  deriving Show
-
-gesamtCent :: Preis -&gt; Int
-gesamtCent (Preis euro cent) =
-  euro * 100 + cent</code>
-<p class="editable-prose"><b>Warum muss hier ausgepackt werden?</b> Ein Parameter <code style="display:inline;padding:2px 5px">p :: Preis</code> ist zunächst ein kompletter <code style="display:inline;padding:2px 5px">Preis</code>-Wert. Die Namen <code style="display:inline;padding:2px 5px">euro</code> und <code style="display:inline;padding:2px 5px">cent</code> existieren erst, nachdem das Muster <code style="display:inline;padding:2px 5px">(Preis euro cent)</code> den Konstruktor geöffnet und seine beiden Felder gebunden hat.</p>
-<code class="editable-prose">-- Das reicht NICHT, wenn es keine Selektoren gibt:
-gesamtCent p = euro * 100 + cent
--- euro und cent sind hier gar nicht definiert.</code>
-<h3 class="editable-prose">2. Mehrere Konstruktoren: Pattern Matching in Funktionsgleichungen</h3>
+f z = zahlWert z</code></td><td class="editable-prose">Wenn ich nur ein bestimmtes Record-Feld brauche; häufig die kürzeste Lösung. <b>Kein eigenes Pattern Matching nötig.</b></td></tr>
+</table>
+<div class="editable-prose tip"><b>Merke:</b> Funktionsargument, <code style="display:inline;padding:2px 5px">let</code>, Hilfsfunktion und <code style="display:inline;padding:2px 5px">case ... of</code> benutzen alle Pattern Matching. Der Unterschied ist vor allem, <b>wo</b> ich auspacke. Der Record-Selektor kann ein Feld direkt holen.<br><b>Danach Typ prüfen:</b> Innerer Typ passt → direkt benutzen. Passt er nicht → danach umwandeln.</div>
+<p class="editable-prose">Die Konstruktorfälle in der Tabelle beziehen sich auf diesen Record-Typ; <code style="display:inline;padding:2px 5px">...</code> steht jeweils für die weitere Berechnung:</p>
 <code class="editable-prose">data Ergebnis
-  = Fehler String
-  | Erfolg Int
+  = Fehler { fehlermeldung :: String }
+  | Erfolg { ergebnisWert :: Int }</code>
+<h3 class="editable-prose">Typ-Check: Bit, [Bit], Bits und [Bits]</h3>
+<code class="editable-prose">data Bit = Null | Eins
 
-text :: Ergebnis -&gt; String
-text (Fehler msg) = "Fehler: " ++ msg
-text (Erfolg n)   = "Wert: " ++ show n</code>
-<p class="editable-prose">Hier muss der Typ geöffnet werden, weil die Funktion je nach Konstruktor etwas anderes tun soll. Gleichzeitig werden die enthaltenen Werte <code style="display:inline;padding:2px 5px">msg</code> bzw. <code style="display:inline;padding:2px 5px">n</code> verfügbar.</p>
-<h3 class="editable-prose">3. Wann case ... of?</h3>
-<div class="editable-prose tip"><b>Faustregel:</b> Wenn schon das <b>Funktionsargument selbst</b> untersucht werden soll, sind mehrere Funktionsgleichungen oft am klarsten. Wenn du <b>erst einen Ausdruck berechnest</b> und dessen Ergebnis mitten in der Funktion untersuchen musst, ist <code style="display:inline;padding:2px 5px">case ... of</code> praktisch.</div>
-<code class="editable-prose">verarbeite :: Eingabe -&gt; String
-verarbeite x =
-  case analysiere x of
-    Fehler msg -&gt; "Abbruch: " ++ msg
-    Erfolg n   -&gt; "Ergebnis: " ++ show (2 * n)</code>
-<p class="editable-prose">Das <code style="display:inline;padding:2px 5px">case</code> „packt“ hier den Rückgabewert von <code style="display:inline;padding:2px 5px">analysiere x</code> aus. Ohne Pattern Matching weißt du nicht, ob dort <code style="display:inline;padding:2px 5px">Fehler ...</code> oder <code style="display:inline;padding:2px 5px">Erfolg ...</code> steckt.</p>
-<h3 class="editable-prose">4. Mehrere eigene Werte gleichzeitig auspacken</h3>
-<code class="editable-prose">addiereErgebnisse :: Ergebnis -&gt; Ergebnis -&gt; Ergebnis
-addiereErgebnisse e1 e2 =
-  case (e1, e2) of
-    (Erfolg x, Erfolg y) -&gt; Erfolg (x + y)
-    (Fehler msg, _)      -&gt; Fehler msg
-    (_, Fehler msg)      -&gt; Fehler msg</code>
-<p class="editable-prose">Hier wird zuerst ein Tupel <code style="display:inline;padding:2px 5px">(e1,e2)</code> betrachtet und dann werden <b>beide</b> eigenen Werte im Muster gleichzeitig geöffnet. <code style="display:inline;padding:2px 5px">_</code> bedeutet: Dieser innere Wert interessiert mich in diesem Fall nicht.</p>
-<h3 class="editable-prose">5. Rekursiver Datentyp: Auspacken ist nötig, um an die Teilstrukturen zu kommen</h3>
+data Bits = Bits
+  { bitsListe :: [Bit]
+  }
+
+Null              :: Bit
+[Null, Eins]      :: [Bit]
+Bits [Null, Eins] :: Bits
+[Bits [Null]]     :: [Bits]</code>
+<p class="editable-prose"><code style="display:inline;padding:2px 5px">Bits ≠ [Bit]</code> und <code style="display:inline;padding:2px 5px">[Bits] ≠ [Bit]</code>: <code style="display:inline;padding:2px 5px">Bits</code> enthält eine Liste, ist selbst aber keine. Bei <code style="display:inline;padding:2px 5px">integer2Bits :: Integer -&gt; Bits</code> liefert auch jeder rekursive Aufruf <code style="display:inline;padding:2px 5px">Bits</code>. <code style="display:inline;padding:2px 5px">(++) :: [a] -&gt; [a] -&gt; [a]</code> braucht dagegen Listen.</p>
+<code class="editable-prose">-- Inneren Wert holen; danach ist xs :: [Bit]
+let Bits xs = integer2Bits ...
+in xs ++ [Eins]
+
+-- Alternativ mit Selektor:
+bitsListe (integer2Bits ...) ++ [Eins]</code>
+<p class="editable-prose">Soll am Ende wieder <code style="display:inline;padding:2px 5px">Bits</code> herauskommen, die fertige Liste einpacken: <code style="display:inline;padding:2px 5px">Bits (xs ++ [Eins])</code>. Diese Ausschnitte zeigen den Typzugriff, keinen vollständigen Umrechnungsalgorithmus.</p>
+<h3 class="editable-prose">Mini-Hinweise</h3>
+<p class="editable-prose"><b>Wildcard und Rekursion:</b> <code style="display:inline;padding:2px 5px">_</code> bedeutet: Der enthaltene Wert wird nicht gebraucht.</p>
 <code class="editable-prose">data Tree a
   = Empty
-  | Node a (Tree a) (Tree a)
+  | Node
+      { wert   :: a
+      , links  :: Tree a
+      , rechts :: Tree a
+      }
 
 size :: Tree a -&gt; Int
 size Empty = 0
 size (Node _ left right) =
   1 + size left + size right</code>
-<p class="editable-prose">Für die Rekursion brauchst du <code style="display:inline;padding:2px 5px">left</code> und <code style="display:inline;padding:2px 5px">right</code>. Deshalb muss <code style="display:inline;padding:2px 5px">Node</code> geöffnet werden. Der Knotenwert wird nicht gebraucht, deshalb steht dort <code style="display:inline;padding:2px 5px">_</code>.</p>
-<h3 class="editable-prose">6. Beispiel, bei dem NICHT ausgepackt werden muss</h3>
-<code class="editable-prose">identisch :: Tree a -&gt; Tree a
-identisch t = t</code>
-<p class="editable-prose">Hier wird der Baum weder untersucht noch verändert. Die Funktion braucht keine inneren Werte und muss deshalb keinen Konstruktor öffnen.</p>
-<h3 class="editable-prose">7. Recordtyp: Selektor kann das Auspacken übernehmen</h3>
-<code class="editable-prose">data Person = Person
-  { name  :: String
-  , alter :: Int
-  }
-
-istVolljaehrig :: Person -&gt; Bool
-istVolljaehrig p = alter p &gt;= 18</code>
-<p class="editable-prose">Weil die Record-Syntax automatisch <code style="display:inline;padding:2px 5px">alter :: Person -&gt; Int</code> erzeugt, musst du <code style="display:inline;padding:2px 5px">Person n a</code> hier nicht selbst öffnen. Pattern Matching wäre aber ebenfalls möglich.</p>
-<h3 class="editable-prose">8. Konstruktor im Modul verborgen</h3>
+<p class="editable-prose"><code style="display:inline;padding:2px 5px">Tree a</code> ist ein <b>rekursiver Datentyp</b>, weil seine Felder wieder <code style="display:inline;padding:2px 5px">Tree a</code> enthalten. <code style="display:inline;padding:2px 5px">Bits</code> ist kein rekursiver Datentyp; <code style="display:inline;padding:2px 5px">integer2Bits</code> kann aber eine <b>rekursive Funktion</b> sein.</p>
+<p class="editable-prose"><b>Mehrere Werte gleichzeitig:</b> Patterns lassen sich kombinieren, z. B. <code style="display:inline;padding:2px 5px">(Erfolg x, Erfolg y)</code> für zwei Erfolgswerte in einem Tupel.</p>
+<p class="editable-prose"><b>Verborgener Konstruktor:</b> Exportiert ein Modul nur den Typ, aber nicht seinen Konstruktor, kann ich außerhalb nicht mit diesem Konstruktor pattern-matchen. Dann nutze ich exportierte Funktionen bzw. Selektoren:</p>
 <code class="editable-prose">module Konto
   ( Konto
   , saldo
   ) where
 
--- Konstruktor Konto wird NICHT exportiert
-data Konto = Konto Int
-
-saldo :: Konto -&gt; Int
-saldo (Konto x) = x</code>
-<p class="editable-prose">Außerhalb dieses Moduls kennt anderer Code zwar den Typ <code style="display:inline;padding:2px 5px">Konto</code>, darf aber den verborgenen Konstruktor nicht pattern-matchen. Dann benutzt man nur die exportierten Operationen wie <code style="display:inline;padding:2px 5px">saldo</code>. Das ist genau die Idee eines abstrakten Datentyps.</p>
-<div class="editable-prose warn"><b>Prüfungscheck:</b> 1) Was ist der Typ des Ausdrucks? 2) Brauche ich Werte, die <em>im Konstruktor</em> stecken, oder muss ich Konstruktorfälle unterscheiden? → Dann auspacken. 3) Untersuche ich direkt ein Funktionsargument? → Pattern Matching links ist meist schön. 4) Untersuche ich das Ergebnis eines vorher berechneten Ausdrucks? → <code style="display:inline;padding:2px 5px">case ... of</code>.</div>
+data Konto = Konto
+  { saldo :: Int
+  }</code>
+<p class="editable-prose">Außerhalb: Zugriff über <code style="display:inline;padding:2px 5px">saldo</code>.</p>
 </div></details>
 <details data-edit-id="ap-12-sorting">
 <summary><span class="topic-head"><span class="topic-title">14. Sortieralgorithmen — Code, Aufwand &amp; Unterschiede<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="ap-12-sorting" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
