@@ -1311,6 +1311,33 @@ istStrengSteigend xs =
   null [(x,y) | (x,y) &lt;- zip xs (tail xs), x &gt;= y]
 
 quadrateGerade xs = [x*x | x &lt;- xs, even x]</code><div class="editable-prose tip"><b>Lifehack:</b> Wenn du aus einer List-Comprehension ein Bool brauchst, baue zuerst die Liste der „schlechten“ oder „guten“ Fälle und prüfe dann <code style="display:inline;padding:2px 5px">null</code>/<code style="display:inline;padding:2px 5px">not . null</code>. Bei <code style="display:inline;padding:2px 5px">tail []</code> gibt es einen Fehler → leere/einelementige Liste vorher behandeln.</div>
+<h3 class="editable-prose">Listen von Listen: xss → xs → x</h3>
+<p class="editable-prose"><b>Namens-Merker:</b> <code style="display:inline;padding:2px 5px">xss :: [[a]]</code> ist die ganze Liste von Listen, <code style="display:inline;padding:2px 5px">xs :: [a]</code> eine innere Liste und <code style="display:inline;padding:2px 5px">x :: a</code> ein Element daraus. <b>Das ist nur eine Namenskonvention!</b> Haskell erkennt die Ebenen an den Typen und Generatoren (<code style="display:inline;padding:2px 5px">&lt;-</code>), nicht an der Anzahl der Buchstaben.</p>
+<code class="editable-prose">-- Liste von Listen → eine Liste (wie concat)
+zusammenhaengen :: [[a]] -&gt; [a]
+zusammenhaengen xss = [x | xs &lt;- xss, x &lt;- xs]
+
+-- zusammenhaengen [[1,2], [], [3,4]] == [1,2,3,4]
+-- Gleiche Bedeutung mit anderen Namen:
+-- [element | liste &lt;- listen, element &lt;- liste]</code>
+<div class="editable-prose tip"><b>Von links nach rechts lesen:</b> Erst jede innere Liste <code style="display:inline;padding:2px 5px">xs</code> aus <code style="display:inline;padding:2px 5px">xss</code> holen, dann jedes <code style="display:inline;padding:2px 5px">x</code> daraus. Wie verschachtelte Schleifen: Der rechte Generator läuft innen. Leere innere Listen liefern keine Elemente. Jeder dieser Generatoren geht eine Listenebene tiefer.</div>
+<h3 class="editable-prose">Weitere Tricks mit Generatoren und Patterns</h3>
+<code class="editable-prose">-- Flach ausgeben oder Listenstruktur behalten:
+[x*2 | xs &lt;- [[1,2],[3]], x &lt;- xs]   -- [2,4,6]
+[[x*2 | x &lt;- xs] | xs &lt;- [[1,2],[3]]] -- [[2,4],[6]]
+
+-- Zwei Generatoren: alle Kombinationen; zip: paarweise
+[(x,y) | x &lt;- [1,2], y &lt;- [10,20]]
+-- [(1,10),(1,20),(2,10),(2,20)]
+[(x,y) | (x,y) &lt;- zip [1,2] [10,20]] -- [(1,10),(2,20)]
+
+-- Pattern direkt im Generator: nicht passende Werte fallen weg
+[x | (x:_) &lt;- [[],[1,2],[3]]] -- [1,3] (erste Elemente)
+[x | Just x &lt;- [Just 2, Nothing, Just 5]] -- [2,5]
+
+-- Zwischenwert mit let, ohne in; danach filtern
+[y | x &lt;- [1..4], let y = x*x, y &gt; 5] -- [9,16]</code>
+<p class="editable-prose"><b>Pattern-Merker:</b> <code style="display:inline;padding:2px 5px">(x:xs)</code> zerlegt eine nichtleere Liste in Kopf und Rest; <code style="display:inline;padding:2px 5px">_</code> ignoriert einen Wert. Auch hier sind die Namen frei gewählt. Spätere Generatoren und Filter dürfen zuvor gebundene Namen verwenden.</p>
 </div></details>
 <details data-edit-id="ap-04-types">
 <summary><span class="topic-head"><span class="topic-title">4. Produkt-, Summen- &amp; Recordtypen · Konstruktoren/Selektoren<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="ap-04-types" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
