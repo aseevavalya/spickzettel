@@ -106,7 +106,7 @@
 
   .topic-head{display:flex;align-items:flex-start;gap:8px;width:100%;position:relative;padding-right:70px}.topic-title{flex:1;min-width:0}
   .img-plus{width:28px;height:28px;border:0;border-radius:50%;cursor:pointer;background:var(--bg);color:var(--accent);font-size:20px;font-weight:800;box-shadow:3px 3px 7px var(--shadow-dark),-3px -3px 7px var(--shadow-light);display:inline-flex;align-items:center;justify-content:center}
-  .image-note{display:none}.user-images{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:10px}.user-img-card{position:relative;padding:8px;border-radius:14px;background:var(--bg);box-shadow:4px 4px 10px var(--shadow-dark),-4px -4px 10px var(--shadow-light)}.user-img-card img{width:100%;height:auto;display:block;border-radius:10px}.user-img-name{font-size:11px;color:var(--muted);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.delete-img{position:absolute;right:10px;top:10px;border:0;border-radius:50%;width:25px;height:25px;cursor:pointer;background:rgba(243,243,240,.95);color:var(--danger);font-weight:800}
+  .image-upload-hint,.user-img-name{display:none!important}.user-img-caption[hidden],.user-img-caption-text[hidden]{display:none}.user-img-caption-text{display:block;width:100%;border:0;background:transparent;color:var(--text);font:inherit;font-size:13px;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;padding:8px 0 0;cursor:pointer}.user-img-caption-text.is-empty{color:var(--muted);font-size:12px}.user-img-caption-text:focus-visible{outline:2px solid var(--accent);border-radius:4px}  .user-images:empty{display:none}.user-images:not(:empty){margin:0 0 16px}.user-img-card{min-width:0}.user-img-caption{display:block;box-sizing:border-box;width:100%;margin-top:8px;padding:8px;border:1px solid var(--muted);border-radius:8px;background:var(--surface);color:var(--text);font:inherit;font-size:13px;resize:vertical}.user-img-caption:focus{outline:2px solid var(--accent);outline-offset:2px}  .image-note{display:none}.user-images{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:10px}.user-img-card{position:relative;padding:8px;border-radius:14px;background:var(--bg);box-shadow:4px 4px 10px var(--shadow-dark),-4px -4px 10px var(--shadow-light)}.user-img-card img{width:100%;height:auto;display:block;border-radius:10px}.user-img-name{font-size:11px;color:var(--muted);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.delete-img{position:absolute;right:10px;top:10px;border:0;border-radius:50%;width:25px;height:25px;cursor:pointer;background:rgba(243,243,240,.95);color:var(--danger);font-weight:800}
   .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}.mini-card{padding:12px;border-radius:14px;background:var(--surface);box-shadow:3px 3px 8px rgba(176,176,171,.34),-3px -3px 8px rgba(255,255,255,.9)}.mini-card b{color:var(--accent)}.steps{counter-reset:s;list-style:none;padding:0}.steps li{counter-increment:s;position:relative;padding:9px 10px 9px 42px;margin:8px 0;border-radius:12px;background:var(--surface);box-shadow:2px 2px 6px rgba(176,176,171,.28),-2px -2px 6px rgba(255,255,255,.88)}.steps li:before{content:counter(s);position:absolute;left:10px;top:8px;width:23px;height:23px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent);font-weight:800;font-size:12px}.compact-table td,.compact-table th{padding:7px 8px;font-size:13px;vertical-align:top}.component-symbol{min-width:80px;display:inline-block;text-align:center;padding:9px;border:2px solid #8295aa;border-radius:8px;background:var(--surface);font-weight:800}.hierarchy{display:flex;flex-direction:column;gap:7px;margin:10px auto;max-width:520px}.hierarchy div{padding:10px 14px;border-radius:12px;text-align:center;background:var(--surface);box-shadow:2px 2px 6px rgba(176,176,171,.28),-2px -2px 6px rgba(255,255,255,.88)}.hierarchy div:nth-child(1){width:45%;align-self:center}.hierarchy div:nth-child(2){width:58%;align-self:center}.hierarchy div:nth-child(3){width:72%;align-self:center}.hierarchy div:nth-child(4){width:88%;align-self:center}.hierarchy div:nth-child(5){width:100%;align-self:center}.subtle{color:var(--muted);font-size:13px}@media(max-width:700px){.mini-grid{grid-template-columns:1fr}.user-images{grid-template-columns:1fr}}
   .boolean-laws{table-layout:fixed}
   .boolean-laws th:first-child,.boolean-laws td:first-child{width:115px}
@@ -888,7 +888,7 @@ window.MathJax = {
 <input accept="image/*" class="topic-image-input" data-topic="timing" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="timing"></div></div></details><details class="dt-topic" data-edit-id="speicher" data-topic-id="speicher"><summary><span class="topic-head"><span class="topic-title">10. Speicherarten &amp; Speicherhierarchie<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="speicher" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="speicher" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="speicher" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="speicher" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="speicher" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
 <div class="hierarchy"><div><b>Register</b><br/><span class="subtle">klein · extrem schnell</span></div><div><b>L1/L2/L3 Cache (SRAM)</b></div><div><b>RAM (DRAM)</b></div><div><b>SSD / Flash</b></div><div><b>HDD / Massenspeicher</b></div></div><div class="editable-prose tip">Nach unten: Kapazität ↑, Zugriffszeit ↑, Kosten/Bit ↓. Nach oben: Geschwindigkeit ↑.</div><table class="compact-table"><tr><th class="editable-prose">Typ</th><th class="editable-prose">Flüchtig?</th><th class="editable-prose">Merkmal</th></tr><tr><td class="editable-prose">SRAM</td><td class="editable-prose">ja</td><td class="editable-prose">sehr schnell, teuer, kein Refresh <span class="math-inline">\(\to\)</span> Cache</td></tr><tr><td class="editable-prose">DRAM</td><td class="editable-prose">ja</td><td class="editable-prose">Refresh nötig, hohe Dichte <span class="math-inline">\(\to\)</span> RAM</td></tr><tr><td class="editable-prose">ROM</td><td class="editable-prose">nein</td><td class="editable-prose">dauerhafte Inhalte/Firmware</td></tr><tr><td class="editable-prose">Flash</td><td class="editable-prose">nein</td><td class="editable-prose">elektrisch löschbar <span class="math-inline">\(\to\)</span> SSD/Firmware</td></tr></table><p class="editable-prose">Cache überbrückt Geschwindigkeitsunterschied CPU<span class="math-inline">\(\leftrightarrow\)</span>RAM und nutzt zeitliche/räumliche Lokalität.</p>
 <input accept="image/*" class="topic-image-input" data-topic="speicher" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="speicher"></div></div></details><details class="dt-topic" data-edit-id="mips" data-topic-id="mips"><summary><span class="topic-head"><span class="topic-title">11. MIPS-Architektur / Datenpfad<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="mips" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="mips" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="mips" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="mips" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="mips" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
-<div class="editable-prose tip"><b>Hier dein Vorlesungsbild ergänzen:</b> ＋ im Titel. Es bleibt lokal gespeichert.</div><ul><li class="editable-prose"><b>PC</b>: Adresse der Instruktion.</li><li class="editable-prose"><b>Instruction Memory</b>: Instruktion.</li><li class="editable-prose"><b>Register File</b>: typ. zwei Leseports, ein Schreibport.</li><li class="editable-prose"><b>ALU</b>: Rechnen, Vergleich, Adressbildung.</li><li class="editable-prose"><b>Data Memory</b>: lw/sw.</li><li class="editable-prose"><b>MUXe</b>: Datenquelle/Ziel auswählen.</li><li class="editable-prose"><b>Control Unit</b>: RegWrite, MemRead/MemWrite, ALUSrc, Branch usw.</li><li class="editable-prose"><b>Sign Extension/Immediate</b>, Addierer für PC+4/Branch.</li></ul><div class="formula" data-formula-id="mips-formula-1" data-tex="\text{R-Typ:}\qquad \text{Register lesen}\to\mathrm{ALU}\to\text{Register schreiben}">\[\text{R-Typ:}\qquad \text{Register lesen}\to\mathrm{ALU}\to\text{Register schreiben}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="mips-formula-2" data-tex="\mathrm{lw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory lesen}\to\text{Register}">\[\mathrm{lw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory lesen}\to\text{Register}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="mips-formula-3" data-tex="\mathrm{sw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory schreiben}">\[\mathrm{sw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory schreiben}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="mips-formula-4" data-tex="\mathrm{beq}:\qquad \text{Register vergleichen}\to\text{PC-Auswahl}">\[\mathrm{beq}:\qquad \text{Register vergleichen}\to\text{PC-Auswahl}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="editable-prose tip image-upload-hint" hidden><b>Hier dein Vorlesungsbild ergänzen:</b> ＋ im Titel. Es bleibt lokal gespeichert.</div><ul><li class="editable-prose"><b>PC</b>: Adresse der Instruktion.</li><li class="editable-prose"><b>Instruction Memory</b>: Instruktion.</li><li class="editable-prose"><b>Register File</b>: typ. zwei Leseports, ein Schreibport.</li><li class="editable-prose"><b>ALU</b>: Rechnen, Vergleich, Adressbildung.</li><li class="editable-prose"><b>Data Memory</b>: lw/sw.</li><li class="editable-prose"><b>MUXe</b>: Datenquelle/Ziel auswählen.</li><li class="editable-prose"><b>Control Unit</b>: RegWrite, MemRead/MemWrite, ALUSrc, Branch usw.</li><li class="editable-prose"><b>Sign Extension/Immediate</b>, Addierer für PC+4/Branch.</li></ul><div class="formula" data-formula-id="mips-formula-1" data-tex="\text{R-Typ:}\qquad \text{Register lesen}\to\mathrm{ALU}\to\text{Register schreiben}">\[\text{R-Typ:}\qquad \text{Register lesen}\to\mathrm{ALU}\to\text{Register schreiben}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="mips-formula-2" data-tex="\mathrm{lw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory lesen}\to\text{Register}">\[\mathrm{lw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory lesen}\to\text{Register}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="mips-formula-3" data-tex="\mathrm{sw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory schreiben}">\[\mathrm{sw}:\qquad \text{Register}+\text{Immediate}\to\text{Adresse}\to\text{Memory schreiben}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="mips-formula-4" data-tex="\mathrm{beq}:\qquad \text{Register vergleichen}\to\text{PC-Auswahl}">\[\mathrm{beq}:\qquad \text{Register vergleichen}\to\text{PC-Auswahl}\]<button class="formula-edit-btn" data-edit-formula="mips-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
 <input accept="image/*" class="topic-image-input" data-topic="mips" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="mips"></div></div></details><details class="dt-topic" data-edit-id="befehl" data-topic-id="befehl"><summary><span class="topic-head"><span class="topic-title">12. Befehlszyklus — Fetch, Decode, Execute<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="befehl" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="befehl" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="befehl" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="befehl" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="befehl" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
 <ol class="steps"><li class="editable-prose">Fetch</li><li class="editable-prose">Decode</li><li class="editable-prose">Operand Fetch</li><li class="editable-prose">Execute</li><li class="editable-prose">Memory bei Load/Store</li><li class="editable-prose">Write Back</li></ol><h3 class="editable-prose">Generischer Fetch mit MAR/MBR/IR</h3><div class="formula" data-formula-id="befehl-formula-1" data-tex="\mathrm{MAR}\leftarrow\mathrm{PC}">\[\mathrm{MAR}\leftarrow\mathrm{PC}\]<button class="formula-edit-btn" data-edit-formula="befehl-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="befehl-formula-2" data-tex="\mathrm{MBR}\leftarrow M[\mathrm{MAR}]">\[\mathrm{MBR}\leftarrow M[\mathrm{MAR}]\]<button class="formula-edit-btn" data-edit-formula="befehl-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="befehl-formula-3" data-tex="\mathrm{IR}\leftarrow\mathrm{MBR}">\[\mathrm{IR}\leftarrow\mathrm{MBR}\]<button class="formula-edit-btn" data-edit-formula="befehl-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="formula" data-formula-id="befehl-formula-4" data-tex="\mathrm{PC}\leftarrow\mathrm{PC}+\text{Instruktionslänge}">\[\mathrm{PC}\leftarrow\mathrm{PC}+\text{Instruktionslänge}\]<button class="formula-edit-btn" data-edit-formula="befehl-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><p class="editable-prose"><b>MAR</b>=Adresse, <b>MBR/MDR</b>=gelesener/zu schreibender Speicherwert, <b>IR</b>=aktuelle Instruktion, <b>PC</b>=Instruktionsadresse.</p><div class="editable-prose tip">Welche Transfers parallel in einem Takt laufen, hängt vom Datenpfad ab. Fetch erfolgt einmal pro Maschinenbefehl, nicht vor jeder Mikrooperation.</div>
 <input accept="image/*" class="topic-image-input" data-topic="befehl" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="befehl"></div></div></details><details class="dt-topic" data-edit-id="mikro" data-topic-id="mikro"><summary><span class="topic-head"><span class="topic-title">13. Mikroprogrammsequenz aus Schaltbild<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="mikro" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="mikro" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="mikro" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="mikro" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="mikro" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
@@ -1954,8 +1954,40 @@ bfs (c:cs) visited
   async function saveDTImage(topic,file){const db=await openDTDB();const dataUrl=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=()=>rej(fr.error);fr.readAsDataURL(file);});const rec={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),topic,name:file.name,dataUrl,created:Date.now()};await new Promise((res,rej)=>{const tx=db.transaction(DT_STORE,'readwrite');tx.objectStore(DT_STORE).put(rec);tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});return rec;}
   async function getDTImages(topic){const db=await openDTDB();return new Promise((res,rej)=>{const tx=db.transaction(DT_STORE,'readonly');const r=tx.objectStore(DT_STORE).index('topic').getAll(topic);r.onsuccess=()=>res(r.result.sort((a,b)=>a.created-b.created));r.onerror=()=>rej(r.error);});}
   async function deleteDTImage(id){const db=await openDTDB();return new Promise((res,rej)=>{const tx=db.transaction(DT_STORE,'readwrite');tx.objectStore(DT_STORE).delete(id);tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});}
-  function imageCard(rec){const c=document.createElement('div');c.className='user-img-card';const im=document.createElement('img');im.src=rec.dataUrl;im.alt=rec.name||'Referenzbild';const n=document.createElement('div');n.className='user-img-name';n.textContent=rec.name||'Bild';const b=document.createElement('button');b.className='delete-img';b.type='button';b.textContent='×';b.title='Bild löschen';b.onclick=async e=>{e.stopPropagation();if(confirm('Dieses lokal gespeicherte Bild löschen?')){await deleteDTImage(rec.id);c.remove();}};c.append(im,n,b);return c;}
+  function imageCard(rec){const c=document.createElement('div');c.className='user-img-card';const im=document.createElement('img');im.src=rec.dataUrl;im.alt='Referenzbild';const n=document.createElement('div');n.className='user-img-name';n.textContent=rec.name||'Bild';const b=document.createElement('button');b.className='delete-img';b.type='button';b.textContent='×';b.title='Bild löschen';b.onclick=async e=>{e.stopPropagation();if(confirm('Dieses lokal gespeicherte Bild löschen?')){await deleteDTImage(rec.id);c.remove();}};c.append(im,n,b);window.addImageCaption(c,im,'local:'+rec.id);return c;}
   async function renderTopicGallery(topic){const g=document.querySelector(`[data-gallery="${topic}"]`);if(!g)return;g.innerHTML='';try{(await getDTImages(topic)).forEach(x=>g.appendChild(imageCard(x)));}catch(e){console.warn(e)}}
+  window.addImageCaption=function(card,img,key){
+    card.querySelectorAll('.user-img-name').forEach(node=>node.remove());
+    const label=document.createElement('button');
+    label.type='button';label.className='user-img-caption-text';
+    label.title='Bildunterschrift bearbeiten';
+    const field=document.createElement('textarea');
+    field.className='user-img-caption'; field.rows=2;
+    field.placeholder='Bildunterschrift hinzufügen …';
+    field.setAttribute('aria-label','Bildunterschrift');
+    field.title='Wird automatisch in diesem Browser gespeichert';
+    const storageKey='study-image-caption:'+key;
+    try{field.value=localStorage.getItem(storageKey)||'';}catch(e){console.warn(e);}
+    const originalAlt=img.alt;
+    img.alt=field.value||originalAlt;
+    field.addEventListener('input',()=>{
+      img.alt=field.value||originalAlt;
+      try{localStorage.setItem(storageKey,field.value);field.setCustomValidity('');}
+      catch(e){field.setCustomValidity('Bildunterschrift konnte nicht gespeichert werden.');field.reportValidity();}
+    });
+    field.refreshCaption=()=>{
+      label.textContent=field.value.trim()||'Bildunterschrift hinzufügen …';
+      label.classList.toggle('is-empty',!field.value.trim());
+      field.hidden=true;label.hidden=false;
+    };
+    label.addEventListener('click',()=>{label.hidden=true;field.hidden=false;field.focus();});
+    field.addEventListener('blur',()=>field.refreshCaption());
+    field.addEventListener('keydown',event=>{
+      if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing){event.preventDefault();field.blur();}
+    });
+    card.append(label,field);
+    field.refreshCaption();
+  };
   // Give every topic card the same image controls. The original markup only
   // contained them in Digitaltechnik, so the other subjects missed the button.
   document.querySelectorAll('.image-note').forEach(note=>note.remove());
@@ -1979,7 +2011,10 @@ bfs (c:cs) visited
   });
   document.querySelectorAll('[data-add-image]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();document.querySelector(`.topic-image-input[data-topic="${b.dataset.addImage}"]`)?.click();}));
   document.querySelectorAll('.topic-image-input').forEach(inp=>inp.addEventListener('change',async()=>{for(const f of inp.files)if(f.type.startsWith('image/'))await saveDTImage(inp.dataset.topic,f);inp.value='';await renderTopicGallery(inp.dataset.topic);}));
-  document.querySelectorAll('[data-gallery]').forEach(g=>renderTopicGallery(g.dataset.gallery));
+  document.querySelectorAll('[data-gallery]').forEach(g=>{
+    g.parentElement.prepend(g);
+    renderTopicGallery(g.dataset.gallery);
+  });
 
 </script>
 <script>
@@ -2381,8 +2416,14 @@ window.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem(cacheKey(rec.topic_id),JSON.stringify(rec.payload));
       }
     }
-    await loadAllCloudImages();
-    setSyncStatus('ok','Synchronisiert');
+    try{
+      await loadAllCloudImages();
+      await Promise.all(captionWrites.values());
+      const pending=Object.keys(localStorage).some(key=>key.startsWith('study-image-caption-pending:'+session.user.id+'/'));
+      setSyncStatus(pending?'bad':'ok',pending?'Bildunterschriften noch nicht synchronisiert — erneut synchronisieren':'Synchronisiert');
+    }catch(error){
+      console.error(error);setSyncStatus('bad','Synchronisierung fehlgeschlagen');
+    }
   }
 
   async function resetTopicCloud(det){
@@ -2399,13 +2440,53 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 
   // ---------- Cloud image storage ----------
+  const captionPrefix='image-caption:';
+  const cloudCaptions=new Map();
+  const captionWrites=new Map();
+  function captionPendingKey(path){return 'study-image-caption-pending:'+path;}
+  function saveCaptionCloud(path,value){
+    const userId=session?.user.id;
+    if(!userId || !path.startsWith(userId+'/')){
+      setSyncStatus('warn','Bildunterschrift lokal gespeichert — bitte anmelden');
+      return Promise.resolve();
+    }
+    const previous=captionWrites.get(path)||Promise.resolve();
+    const task=previous.catch(()=>{}).then(async()=>{
+      setSyncStatus('warn','Bildunterschrift speichern…');
+      try{
+        const {error}=await sb.from(TABLE).upsert({
+          user_id:userId,topic_id:captionPrefix+path,
+          payload:{caption:value},updated_at:new Date().toISOString()
+        },{onConflict:'user_id,topic_id'});
+        if(error)throw error;
+        cloudCaptions.set(path,value);
+        if(localStorage.getItem(captionPendingKey(path))===value){
+          localStorage.removeItem(captionPendingKey(path));
+        }
+        setSyncStatus('ok','Bildunterschrift online gespeichert');
+      }catch(error){
+        console.error(error);
+        setSyncStatus('bad','Bildunterschrift nicht synchronisiert — erneut synchronisieren');
+      }
+    });
+    captionWrites.set(path,task);
+    return task;
+  }
+  async function loadCloudCaptions(){
+    cloudCaptions.clear();
+    const {data,error}=await sb.from(TABLE).select('topic_id,payload').eq('user_id',session.user.id).like('topic_id',captionPrefix+'%');
+    if(error)throw error;
+    for(const rec of data||[]){
+      cloudCaptions.set(rec.topic_id.slice(captionPrefix.length),rec.payload?.caption||'');
+    }
+  }
   function cloudGallery(topic){
     return q(`[data-gallery="${CSS.escape(topic)}"]`);
   }
 
   function makeCloudImageCard(topic,name,url,path){
     const card=document.createElement('div'); card.className='user-img-card'; card.dataset.cloudPath=path;
-    const img=document.createElement('img'); img.src=url; img.alt=name||'Eigenes Referenzbild';
+    const img=document.createElement('img'); img.src=url; img.alt='Eigenes Referenzbild';
     const nm=document.createElement('div'); nm.className='user-img-name'; nm.textContent=name||'Bild';
     const del=document.createElement('button'); del.type='button'; del.className='delete-img'; del.textContent='×'; del.title='Bild löschen';
     del.addEventListener('click',async e=>{
@@ -2416,7 +2497,31 @@ window.addEventListener('DOMContentLoaded', async () => {
       if(error){console.error(error);setSyncStatus('bad','Bild konnte nicht gelöscht werden')}
       else{card.remove();setSyncStatus('ok','Bild gelöscht')}
     });
-    card.append(img,nm,del); return card;
+    card.append(img,nm,del); window.addImageCaption(card,img,'cloud:'+path);
+    const field=card.querySelector('.user-img-caption');
+    field.title='Wird automatisch zwischen deinen Geräten synchronisiert';
+    const pending=localStorage.getItem(captionPendingKey(path));
+    if(pending!==null){field.value=pending;}
+    else if(cloudCaptions.has(path)){field.value=cloudCaptions.get(path);}
+    localStorage.setItem('study-image-caption:cloud:'+path,field.value);
+    img.alt=field.value||'Eigenes Referenzbild';
+    field.refreshCaption();
+    let timer;
+    const flush=()=>{
+      clearTimeout(timer);
+      if(localStorage.getItem(captionPendingKey(path))!==null)saveCaptionCloud(path,field.value);
+    };
+    field.addEventListener('input',()=>{
+      localStorage.setItem(captionPendingKey(path),field.value);
+      setSyncStatus('warn','Bildunterschrift noch nicht synchronisiert');
+      clearTimeout(timer);timer=setTimeout(flush,500);
+    });
+    field.addEventListener('change',flush);
+    // Migrate captions previously saved only in this browser.
+    if(pending!==null || (!cloudCaptions.has(path)&&field.value)){
+      localStorage.setItem(captionPendingKey(path),field.value);flush();
+    }
+    return card;
   }
 
   async function uploadCloudImage(topic,file){
@@ -2447,6 +2552,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
   async function loadAllCloudImages(){
     if(!session)return;
+    await Promise.all(captionWrites.values());
+    await loadCloudCaptions();
     for(const g of qa('[data-gallery]')) await loadCloudImages(g.dataset.gallery);
   }
 
