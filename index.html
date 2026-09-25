@@ -6,7 +6,7 @@
 <link href="./apple-touch-icon.png" rel="icon" type="image/png"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Prüfungsvorbereitung SS 2026</title>
+<title>Spickzettel · Semester &amp; Fächer</title>
 <style>
   :root{
     --bg:#f3f3f0;
@@ -759,6 +759,13 @@
     details[data-edit-id="bauteile"] .compact-table tr{grid-template-columns:minmax(0,1fr);gap:12px}
     details[data-edit-id="bauteile"] .compact-table td:first-child{grid-row:auto}
   }
+.semester-nav{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;padding-bottom:18px;border-bottom:1px solid #ccd5df}
+.subject-tabs{display:flex;gap:12px;flex-wrap:wrap}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.empty-subject{padding:20px 0;color:var(--muted)}
+.empty-subject p{margin:6px 0}
+.no-results{grid-column:1/-1;padding:24px;color:var(--muted)}
+@media(max-width:760px){.subject-tabs{display:none}.semester-nav{margin-top:18px;gap:10px}.semester-nav .tab{flex:1;padding:12px}.search{min-width:0;width:100%}}
 </style>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><script>
 window.MathJax = {
@@ -774,19 +781,17 @@ window.MathJax = {
 <body>
 <div class="wrap">
 <section class="hero">
-<div class="badge">PRÜFUNGSVORBEREITUNG SS 2026</div>
-<h1>Formeln · Logik · Algorithmen</h1>
-<div class="subtitle">Kompakter Lernbegleiter im Neomorphism-Stil für Digitaltechnik, Diskrete Mathematik und Algorithmen &amp; Programmierung.</div>
-<div class="toolbar"><div class="mobile-subject-select"><label for="mobileSubjectSelect">Fach</label><select aria-label="Fach auswählen" id="mobileSubjectSelect"><option value="dt">Digitaltechnik</option><option value="dm">Diskrete Mathematik</option><option value="ap">Algorithmen &amp; Programmierung</option></select></div>
-<button class="tab active" data-filter="all">Alle</button>
-<button class="tab" data-filter="dt">Digitaltechnik</button>
-<button class="tab" data-filter="dm">Diskrete Mathematik</button>
-<button class="tab" data-filter="ap">Algorithmen &amp; Programmierung</button>
+<div class="badge" id="semesterBadge">5. SEMESTER</div>
+<h1>Deine Spickzettel</h1>
+<div class="subtitle">Nach Semestern und Fächern geordnet. Wähle dein Semester und öffne den passenden Spickzettel.</div>
+<nav class="semester-nav" aria-label="Semester auswählen" id="semesterNav"></nav>
+<div class="toolbar"><div class="mobile-subject-select"><label for="mobileSubjectSelect">Fach</label><select aria-label="Fach auswählen" id="mobileSubjectSelect"></select></div>
+<div class="subject-tabs" id="subjectTabs" role="group" aria-label="Fach auswählen"></div>
 <input aria-autocomplete="none" aria-label="Thema suchen" autocapitalize="off" autocomplete="new-password" autocorrect="off" class="search" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" id="search" inputmode="search" name="topic_query_not_username" placeholder="Thema suchen, z. B. De Morgan, Induktion, Mergesort …" readonly="" spellcheck="false" type="search"/>
 </div>
 <button aria-label="Synchronisierung öffnen" class="sync-sidebar-open" id="syncSidebarOpen" title="Synchronisierung" type="button">☁</button></section>
 <main class="grid">
-<section class="subject" data-subject="dt"><h2>Digitaltechnik</h2><div class="badge">Zahlendarstellung · Logik · BDD · Schaltungen · Automaten · Timing · Speicher · Datenpfad · MIPS · Leistung</div><details class="dt-topic" data-edit-id="zahlen" data-topic-id="zahlen"><summary><span class="topic-head"><span class="topic-title">1. Zahlensysteme, Komplement &amp; Gleitkomma<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="zahlen" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="zahlen" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="zahlen" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="zahlen" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="zahlen" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
+<section class="subject" data-semester="4" data-subject="dt"><h2>Digitaltechnik</h2><div class="badge">Zahlendarstellung · Logik · BDD · Schaltungen · Automaten · Timing · Speicher · Datenpfad · MIPS · Leistung</div><details class="dt-topic" data-edit-id="zahlen" data-topic-id="zahlen"><summary><span class="topic-head"><span class="topic-title">1. Zahlensysteme, Komplement &amp; Gleitkomma<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="zahlen" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="zahlen" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="zahlen" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="zahlen" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="zahlen" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
 <div class="editable-prose tip"><b>Prüfungsblick:</b> Immer zuerst Basis, Bitbreite und Interpretation klären: unsigned/signed, Festkomma/Gleitkomma.</div>
 <h3 class="editable-prose">Ganzzahlen</h3><table class="compact-table"><tr><th class="editable-prose">Richtung</th><th class="editable-prose">Algorithmus</th></tr><tr><td class="editable-prose">Dezimal <span class="math-inline">\(\to\)</span> Basis b</td><td class="editable-prose">Ganzzahl wiederholt durch b teilen; Reste von unten nach oben lesen.</td></tr><tr><td class="editable-prose">Basis b <span class="math-inline">\(\to\)</span> Dezimal</td><td class="editable-prose">\(\sum_i d_i\,b^i\)</td></tr><tr><td class="editable-prose">Binär <span class="math-inline">\(\leftrightarrow\)</span> Hex</td><td class="editable-prose">Vom Binärpunkt in 4er-Gruppen; 0000…1111 <span class="math-inline">\(\leftrightarrow\)</span> 0…F.</td></tr><tr><td class="editable-prose">Binär <span class="math-inline">\(\leftrightarrow\)</span> Oktal</td><td class="editable-prose">Vom Binärpunkt in 3er-Gruppen.</td></tr></table>
 <div class="formula" data-formula-id="zahlen-formula-1" data-tex="101101_2=1\cdot2^5+1\cdot2^3+1\cdot2^2+1=45_{10}">\[101101_2=1\cdot2^5+1\cdot2^3+1\cdot2^2+1=45_{10}\]<button class="formula-edit-btn" data-edit-formula="zahlen-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
@@ -898,7 +903,7 @@ window.MathJax = {
 <input accept="image/*" class="topic-image-input" data-topic="leistung" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="leistung"></div></div></details><details class="dt-topic" data-edit-id="optimierung" data-topic-id="optimierung"><summary><span class="topic-head"><span class="topic-title">15. Rechner schneller machen — alle Stellschrauben<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="optimierung" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="optimierung" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="optimierung" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="optimierung" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="optimierung" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div>
 <div class="formula" data-formula-id="optimierung-formula-1" data-tex="t_{\mathrm{Programm}}=\frac{N\cdot\overline{\mathrm{CPI}}}{f}">\[t_{\mathrm{Programm}}=\frac{N\cdot\overline{\mathrm{CPI}}}{f}\]<button class="formula-edit-btn" data-edit-formula="optimierung-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="mini-grid"><div class="editable-prose mini-card"><b>Instruktionsanzahl ↓</b><br/>besserer Algorithmus/Compiler, passende ISA, weniger unnötige Speicherzugriffe.</div><div class="editable-prose mini-card"><b>CPI ↓</b><br/>Pipelining, Forwarding, Branch Prediction, Cache, Parallelität.</div><div class="editable-prose mini-card"><b>f ↑</b><br/>kritischen Pfad verkürzen, kleinere Pipeline-Stufen, schnellere Technologie; Grenzen: Wärme/Leistung/Overhead.</div><div class="editable-prose mini-card"><b>Speicher schneller</b><br/>Cache-Hierarchie, Lokalität, Prefetching, weniger Misses.</div></div><p class="editable-prose"><b>Pipelining</b> verbessert vor allem den Durchsatz, nicht zwingend die Latenz einer einzelnen Instruktion.</p><table class="compact-table"><tr><th class="editable-prose">Hazard</th><th class="editable-prose">Lösung</th></tr><tr><td class="editable-prose">Struktur</td><td class="editable-prose">Ressource duplizieren/anders organisieren/Stall</td></tr><tr><td class="editable-prose">Daten RAW</td><td class="editable-prose">Forwarding, sonst Stall</td></tr><tr><td class="editable-prose">Kontrollhazard</td><td class="editable-prose">Branch Prediction, frühe Entscheidung, Flush/Stall</td></tr></table>
 <input accept="image/*" class="topic-image-input" data-topic="optimierung" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="optimierung"></div></div></details><details class="dt-topic" data-edit-id="si" data-topic-id="si"><summary><span class="topic-head"><span class="topic-title">16. SI-Präfixe<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="si" title="Abschnitt bearbeiten" type="button">✎</button><button class="img-plus" data-add-image="si" title="Bild hinzufügen" type="button">+</button></span></summary><div class="content"><div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="si" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="si" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="si" type="button">↺ Original wiederherstellen</button></div><div class="edit-hint">Text direkt anklicken und ändern. Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx. Änderungen werden gespeichert und nach Anmeldung synchronisiert.</div><table class="compact-table"><tr><th class="editable-prose">Präfix</th><th class="editable-prose">Symbol</th><th class="editable-prose">Faktor</th></tr><tr><td class="editable-prose">Tera</td><td class="editable-prose">T</td><td class="editable-prose">\(10^{12}\)</td></tr><tr><td class="editable-prose">Giga</td><td class="editable-prose">G</td><td class="editable-prose">\(10^{9}\)</td></tr><tr><td class="editable-prose">Mega</td><td class="editable-prose">M</td><td class="editable-prose">\(10^{6}\)</td></tr><tr><td class="editable-prose">Kilo</td><td class="editable-prose">k</td><td class="editable-prose">\(10^{3}\)</td></tr><tr><td class="editable-prose">Milli</td><td class="editable-prose">m</td><td class="editable-prose">\(10^{-3}\)</td></tr><tr><td class="editable-prose">Mikro</td><td class="editable-prose">µ</td><td class="editable-prose">\(10^{-6}\)</td></tr><tr><td class="editable-prose">Nano</td><td class="editable-prose">n</td><td class="editable-prose">\(10^{-9}\)</td></tr><tr><td class="editable-prose">Piko</td><td class="editable-prose">p</td><td class="editable-prose">\(10^{-12}\)</td></tr></table><div class="formula" data-formula-id="si-formula-1" data-tex="3{,}5\,\mathrm{MHz}=3{,}5\cdot10^6\,\mathrm{Hz}\qquad|\qquad250\,\mu\mathrm{s}=2{,}5\cdot10^{-4}\,\mathrm{s}">\[3{,}5\,\mathrm{MHz}=3{,}5\cdot10^6\,\mathrm{Hz}\qquad|\qquad250\,\mu\mathrm{s}=2{,}5\cdot10^{-4}\,\mathrm{s}\]<button class="formula-edit-btn" data-edit-formula="si-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div><div class="editable-prose warn">M=Mega, m=Milli.</div><input accept="image/*" class="topic-image-input" data-topic="si" hidden="" multiple="" type="file"/><div class="image-note">＋ im Titel: eigenes Vorlesungsbild / Screenshot hinzufügen. Es wird lokal in diesem Browser gespeichert.</div><div class="user-images" data-gallery="si"></div></div></details></section>
-<section class="subject" data-subject="dm">
+<section class="subject" data-semester="4" data-subject="dm">
 <h2>Diskrete Mathematik</h2>
 <div class="badge">Rechnen · Logik · Mengen · Relationen · Funktionen · Kombinatorik · Graphen · BFS · DFS</div>
 
@@ -1263,7 +1268,7 @@ schwarz: ...      </code>
 
 </div></details>
 </section>
-<section class="subject" data-subject="ap">
+<section class="subject" data-semester="4" data-subject="ap">
 <h2>Algorithmen &amp; Programmierung</h2>
 <div class="badge">Haskell · Datentypen · Sortierung · Aufwand · Terminierung · Bäume · AVL · Heaps · Graphalgorithmen · Hashing</div>
 <details data-edit-id="ap-01-module">
@@ -1922,33 +1927,11 @@ bfs (c:cs) visited
 <tr><td class="editable-prose">double hashing</td><td class="editable-prose"><code style="display:inline;padding:2px 5px">[22,12,13,–,28,5,6,18,11,–,15]</code></td></tr></table><div class="editable-prose tip"><b>Мини-пример коллизии:</b> Linear bei k=28: h=6, Platz 6 ist schon durch 6 belegt → g₁(28)=7, also 28 auf Index 7. Double Hashing: h₂(28)=9 → g₁(28)=(6+9) mod 11=4.</div><div class="editable-prose mini-card"><b>Сравнение:</b> Linear = самые простые вычисления, но кластеры. Quadratisch = прыжки растут квадратично. Double Hashing = у каждого ключа обычно своя шаговая последовательность и поэтому меньше кластеров. Separate Chaining = вообще не ищем другой слот, а кладём в список при h(k).</div>
 </div></details>
 </section>
+<p class="hidden no-results" id="noResults" role="status">Keine passenden Themen gefunden.</p>
 </main>
-<div class="footer">Stand 31.08.2026 · Lernübersicht aus dem Spickzettel „Formeln &amp; Umformungen“</div>
+<div class="footer">Deine Lernübersicht · Semester für Semester</div>
 </div>
 <script>
-  const tabs = [...document.querySelectorAll('.tab')];
-  const subjects = [...document.querySelectorAll('.subject')];
-  const search = document.getElementById('search');
-  let filter = 'all';
-
-  function applyFilter(){
-    const q = search.value.trim().toLowerCase();
-    subjects.forEach(s => {
-      const matchesTab = filter === 'all' || s.dataset.subject === filter;
-      const matchesSearch = !q || s.innerText.toLowerCase().includes(q);
-      s.classList.toggle('hidden', !(matchesTab && matchesSearch));
-    });
-  }
-
-  tabs.forEach(btn => btn.addEventListener('click', () => {
-    tabs.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    filter = btn.dataset.filter;
-    applyFilter();
-  }));
-
-  search.addEventListener('input', applyFilter);
-
   const DT_DB='pruefung_dt_images', DT_STORE='images';
   function openDTDB(){return new Promise((res,rej)=>{const r=indexedDB.open(DT_DB,1);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains(DT_STORE)){const s=d.createObjectStore(DT_STORE,{keyPath:'id'});s.createIndex('topic','topic',{unique:false});}};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
   async function saveDTImage(topic,file){const db=await openDTDB();const dataUrl=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=()=>rej(fr.error);fr.readAsDataURL(file);});const rec={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),topic,name:file.name,dataUrl,created:Date.now()};await new Promise((res,rej)=>{const tx=db.transaction(DT_STORE,'readwrite');tx.objectStore(DT_STORE).put(rec);tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});return rec;}
@@ -2683,30 +2666,6 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(()=>{ if(search.value.includes('@')) search.value=''; }, 500);
   }
 
-  const select = document.getElementById('mobileSubjectSelect');
-  const subjects = [...document.querySelectorAll('.subject[data-subject]')];
-
-  function activateMobileSubject(id){
-    subjects.forEach(s => s.classList.toggle('mobile-active', s.dataset.subject === id));
-    if(select && select.value !== id) select.value = id;
-  }
-
-  if(select){
-    activateMobileSubject(select.value || 'dt');
-    select.addEventListener('change', () => {
-      activateMobileSubject(select.value);
-      window.scrollTo({top:0, behavior:'smooth'});
-    });
-  }
-
-  // Desktop filter buttons keep working, but also sync the mobile dropdown.
-  document.querySelectorAll('.tab[data-filter]').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const f=btn.dataset.filter;
-      if(f && f !== 'all' && select) select.value=f;
-    });
-  });
-
   const backdrop = document.getElementById('syncSidebarBackdrop');
   const openBtn = document.getElementById('syncSidebarOpen');
   const closeBtn = document.getElementById('syncSidebarClose');
@@ -2719,17 +2678,7 @@ window.addEventListener('DOMContentLoaded', () => {
   backdrop?.addEventListener('click', e=>{ if(e.target===backdrop) closeSidebar(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeSidebar(); });
 
-  // On resize, ensure desktop state isn't polluted by mobile-only display classes.
-  const mq = window.matchMedia('(max-width:760px)');
-  function syncMode(){
-    if(mq.matches){
-      activateMobileSubject(select?.value || 'dt');
-    }else{
-      subjects.forEach(s=>s.classList.remove('mobile-active'));
-    }
-  }
-  mq.addEventListener?.('change', syncMode);
-  syncMode();
+
 });
 </script><script>
 window.addEventListener('DOMContentLoaded', () => {
@@ -3007,5 +2956,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if(columnCount>=2 && longestCell<=24)table.classList.add('balanced-table');
   });
 })();
-</script></body>
+</script><script src="./navigation.js"></script>
+</body>
 </html>
