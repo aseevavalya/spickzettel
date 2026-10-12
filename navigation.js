@@ -8,7 +8,7 @@ const semesters = [
   { id: '5', subjects: [
     { id: 's5-ti', title: 'Theoretische Informatik' },
     { id: 's5-db', title: 'Datenbanken' },
-    { id: 's5-grn', title: 'Grundlagen der Rechnernetze' }
+    { id: 's5-st1', title: 'Systemtheorie I' }
   ] }
 ];
 

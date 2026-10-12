@@ -1930,6 +1930,226 @@ bfs (c:cs) visited
 <tr><td class="editable-prose">double hashing</td><td class="editable-prose"><code style="display:inline;padding:2px 5px">[22,12,13,–,28,5,6,18,11,–,15]</code></td></tr></table><div class="editable-prose tip"><b>Мини-пример коллизии:</b> Linear bei k=28: h=6, Platz 6 ist schon durch 6 belegt → g₁(28)=7, also 28 auf Index 7. Double Hashing: h₂(28)=9 → g₁(28)=(6+9) mod 11=4.</div><div class="editable-prose mini-card"><b>Сравнение:</b> Linear = самые простые вычисления, но кластеры. Quadratisch = прыжки растут квадратично. Double Hashing = у каждого ключа обычно своя шаговая последовательность и поэтому меньше кластеров. Separate Chaining = вообще не ищем другой слот, а кладём в список при h(k).</div>
 </div></details>
 </section>
+<section class="subject hidden" data-semester="5" data-subject="s5-st1">
+<h2>Systemtheorie I</h2><div class="badge">Grundlagen · Komplexe Zahlen · Algebra · Trigonometrie</div>
+<details data-edit-id="st1-komplexe-zahlen" data-topic-id="st1-komplexe-zahlen">
+<summary><span class="topic-head"><span class="topic-title">Grundlagen – Komplexe Zahlen<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="st1-komplexe-zahlen" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content">
+<div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="st1-komplexe-zahlen" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="st1-komplexe-zahlen" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="st1-komplexe-zahlen" type="button">↺ Original wiederherstellen</button></div>
+<div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx.</div>
+<h3 class="editable-prose">1. Algebraische Form</h3>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-1" data-tex="\boxed{z=x+jy}">\[\boxed{z=x+jy}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<ul><li class="editable-prose"><span class="math-inline">\(x=\operatorname{Re}(z)\)</span> — Realteil</li><li class="editable-prose"><span class="math-inline">\(y=\operatorname{Im}(z)\)</span> — Imaginärteil</li><li class="editable-prose"><span class="math-inline">\(j\)</span> — imaginäre Einheit:</li></ul>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-2" data-tex="\boxed{j^2=-1}">\[\boxed{j^2=-1}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<h3 class="editable-prose">2. Komplex konjugierte Zahl</h3>
+<p class="editable-prose">Für <span class="math-inline">\(z=x+jy\)</span> gilt:</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-3" data-tex="\boxed{z^{*}=x-jy}">\[\boxed{z^{*}=x-jy}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Wichtige Eigenschaft:</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-4" data-tex="\boxed{z\cdot z^{*}=x^2+y^2}">\[\boxed{z\cdot z^{*}=x^2+y^2}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Beim Dividieren komplexer Zahlen erweitert man mit der <strong>konjugiert komplexen Zahl des Nenners</strong>.</p>
+<h3 class="editable-prose">3. Betrag einer komplexen Zahl</h3>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-5" data-tex="\boxed{|z|=\sqrt{x^2+y^2}}">\[\boxed{|z|=\sqrt{x^2+y^2}}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-5" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Der Betrag entspricht dem Abstand des Punktes <span class="math-inline">\((x,y)\)</span> vom Ursprung in der Gaußschen Zahlenebene.</p>
+<h3 class="editable-prose">4. Eulersche Formel</h3>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-6" data-tex="\boxed{e^{j\varphi}=\cos\varphi+j\sin\varphi}">\[\boxed{e^{j\varphi}=\cos\varphi+j\sin\varphi}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-6" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Damit kann eine komplexe Zahl auch in <strong>Exponentialform</strong> geschrieben werden:</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-7" data-tex="\boxed{z=r e^{j\varphi}}">\[\boxed{z=r e^{j\varphi}}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-7" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Mit <span class="math-inline">\(r=|z|\)</span> und <span class="math-inline">\(\varphi\)</span> als Winkel zur positiven reellen Achse.</p>
+<h3 class="editable-prose">5. Umrechnung der Darstellungsformen</h3>
+<p class="editable-prose">Exponentialform → algebraische Form:</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-8" data-tex="\boxed{re^{j\varphi}=r\cos\varphi+jr\sin\varphi}">\[\boxed{re^{j\varphi}=r\cos\varphi+jr\sin\varphi}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-8" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Also:</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-9" data-tex="x=r\cos\varphi,\qquad y=r\sin\varphi.">\[x=r\cos\varphi,\qquad y=r\sin\varphi.\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-9" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Algebraische Form → Exponentialform:</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-10" data-tex="\boxed{r=\sqrt{x^2+y^2}}">\[\boxed{r=\sqrt{x^2+y^2}}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-10" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Gesucht ist <span class="math-inline">\(z=re^{j\varphi}\)</span> aus <span class="math-inline">\(z=x+jy\)</span>. Der Winkel <span class="math-inline">\(\varphi\)</span> wird von der positiven reellen Achse gegen den Uhrzeigersinn gemessen.</p>
+<ol class="steps"><li class="editable-prose"><strong>Real- und Imaginärteil ablesen:</strong> <span class="math-inline">\(x=\operatorname{Re}(z)\)</span>, <span class="math-inline">\(y=\operatorname{Im}(z)\)</span>.</li><li class="editable-prose"><strong>Betrag berechnen:</strong> <span class="math-inline">\(r=\sqrt{x^2+y^2}\)</span>.</li><li class="editable-prose"><strong>Quadranten bestimmen:</strong> anhand der Vorzeichen von <span class="math-inline">\(x\)</span> und <span class="math-inline">\(y\)</span>.</li><li class="editable-prose"><strong>Bezugswinkel berechnen:</strong> für <span class="math-inline">\(x\ne0\)</span> gilt <span class="math-inline">\(\beta=\arctan\left(\frac{|y|}{|x|}\right)\)</span>. Anschließend den Winkel passend zum Quadranten einsetzen.</li></ol>
+<table class="compact-table"><thead><tr><th>Lage</th><th>Vorzeichen</th><th>Winkel <span class="math-inline">\(\varphi\)</span></th></tr></thead><tbody>
+<tr><td>I</td><td><span class="math-inline">\(x>0,\ y>0\)</span></td><td><span class="math-inline">\(\beta\)</span></td></tr>
+<tr><td>II</td><td><span class="math-inline">\(x&lt;0,\ y>0\)</span></td><td><span class="math-inline">\(\pi-\beta\)</span></td></tr>
+<tr><td>III</td><td><span class="math-inline">\(x&lt;0,\ y&lt;0\)</span></td><td><span class="math-inline">\(\pi+\beta\)</span></td></tr>
+<tr><td>IV</td><td><span class="math-inline">\(x>0,\ y&lt;0\)</span></td><td><span class="math-inline">\(2\pi-\beta\)</span></td></tr>
+</tbody></table>
+<p class="editable-prose subtle">Die Tabelle liefert <span class="math-inline">\(0\le\varphi&lt;2\pi\)</span>. In Grad entsprechen <span class="math-inline">\(\pi\)</span> und <span class="math-inline">\(2\pi\)</span> den Winkeln <span class="math-inline">\(180^\circ\)</span> und <span class="math-inline">\(360^\circ\)</span>.</p>
+<p class="editable-prose warn"><strong>Quadranten beachten:</strong> <span class="math-inline">\(\arctan(y/x)\)</span> allein unterscheidet gegenüberliegende Quadranten nicht. Für die Exponentialform den Winkel im <strong>Bogenmaß</strong> verwenden (Taschenrechner: RAD).</p>
+<p class="editable-prose"><strong>Direkt mit atan2:</strong> Falls verfügbar, berechnet <span class="math-inline">\(\varphi=\operatorname{atan2}(y,x)\)</span> den Winkel unter Berücksichtigung des Quadranten. Ein negatives Ergebnis kann durch Addieren von <span class="math-inline">\(2\pi\)</span> in den Bereich der Tabelle gebracht werden.</p>
+<p class="editable-prose"><strong>Auf den Achsen:</strong> positive reelle Achse: <span class="math-inline">\(\varphi=0\)</span>; positive imaginäre Achse: <span class="math-inline">\(\varphi=\pi/2\)</span>; negative reelle Achse: <span class="math-inline">\(\varphi=\pi\)</span>; negative imaginäre Achse: <span class="math-inline">\(\varphi=3\pi/2\)</span>. Bei <span class="math-inline">\(z=0\)</span> ist der Winkel nicht definiert.</p>
+<p class="editable-prose"><strong>Beispiel:</strong> <span class="math-inline">\(z=-\sqrt{3}+j\)</span>. Damit <span class="math-inline">\(x=-\sqrt{3}\)</span>, <span class="math-inline">\(y=1\)</span>: II. Quadrant.</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-15" data-tex="r=\sqrt{(-\sqrt{3})^2+1^2}=2">\[r=\sqrt{(-\sqrt{3})^2+1^2}=2\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-15" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-16" data-tex="\beta=\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{\pi}{6}">\[\beta=\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{\pi}{6}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-16" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-17" data-tex="\varphi=\pi-\frac{\pi}{6}=\frac{5\pi}{6}">\[\varphi=\pi-\frac{\pi}{6}=\frac{5\pi}{6}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-17" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-18" data-tex="\boxed{z=2e^{j\frac{5\pi}{6}}}">\[\boxed{z=2e^{j\frac{5\pi}{6}}}\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-18" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose tip"><strong>Probe:</strong> <span class="math-inline">\(2\cos(5\pi/6)=-\sqrt{3}\)</span> und <span class="math-inline">\(2\sin(5\pi/6)=1\)</span>. Winkel, die sich um <span class="math-inline">\(2\pi k\)</span> mit <span class="math-inline">\(k\in\mathbb{Z}\)</span> unterscheiden, stellen dieselbe komplexe Zahl dar.</p>
+<h3 class="editable-prose">6. Gaußsche Zahlenebene</h3>
+<ul><li class="editable-prose">Horizontale Achse: <span class="math-inline">\(\operatorname{Re}(z)\)</span></li><li class="editable-prose">Vertikale Achse: <span class="math-inline">\(\operatorname{Im}(z)\)</span></li></ul>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-11" data-tex="z=x+jy\quad\longleftrightarrow\quad (x,y)">\[z=x+jy\quad\longleftrightarrow\quad (x,y)\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-11" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<h3 class="editable-prose">7. Wurzeln negativer Zahlen</h3>
+<p class="editable-prose">Mit der imaginären Einheit lässt sich die Hauptwurzel einer negativen reellen Zahl schreiben als:</p>
+<div class="formula" data-formula-id="st1-komplexe-zahlen-formula-14" data-tex="\sqrt{-a}=\sqrt{a}\,j\qquad (a>0)">\[\sqrt{-a}=\sqrt{a}\,j\qquad (a>0)\]<button class="formula-edit-btn" data-edit-formula="st1-komplexe-zahlen-formula-14" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+</div></details>
+<details data-edit-id="st1-algebra" data-topic-id="st1-algebra">
+<summary><span class="topic-head"><span class="topic-title">Grundlagen – Algebra<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="st1-algebra" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content">
+<div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="st1-algebra" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="st1-algebra" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="st1-algebra" type="button">↺ Original wiederherstellen</button></div>
+<div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx.</div>
+<h3 class="editable-prose">Nullstellen quadratischer Gleichungen</h3>
+<p class="editable-prose">Für eine quadratische Gleichung gilt:</p>
+<div class="formula" data-formula-id="st1-algebra-formula-1" data-tex="ax^2+bx+c=0\qquad (a\ne0)">\[ax^2+bx+c=0\qquad (a\ne0)\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-algebra-formula-2" data-tex="\boxed{x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}">\[\boxed{x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Die Diskriminante <span class="math-inline">\(D=b^2-4ac\)</span> bestimmt die Art der Lösungen (bei reellen Koeffizienten):</p>
+<ul><li class="editable-prose"><span class="math-inline">\(D>0\)</span>: zwei verschiedene reelle Nullstellen.</li><li class="editable-prose"><span class="math-inline">\(D=0\)</span>: eine doppelte reelle Nullstelle.</li><li class="editable-prose"><span class="math-inline">\(D&lt;0\)</span>: zwei komplex konjugierte Nullstellen; <span class="math-inline">\(\sqrt{D}=j\sqrt{-D}\)</span>.</li></ul>
+<h3 class="editable-prose">Nullstellen kubischer Gleichungen</h3>
+<div class="formula" data-formula-id="st1-algebra-formula-3" data-tex="f(x)=ax^3+bx^2+cx+d=0\qquad(a\ne0)">\[f(x)=ax^3+bx^2+cx+d=0\qquad(a\ne0)\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Bei reellen Koeffizienten gibt es mindestens eine reelle Nullstelle. Insgesamt gibt es drei komplexe Nullstellen, wenn man ihre Vielfachheiten mitzählt. Kennt man eine Nullstelle <span class="math-inline">\(x_1\)</span>, lässt sich der Faktor <span class="math-inline">\((x-x_1)\)</span> abspalten; übrig bleibt eine quadratische Gleichung.</p>
+<h4 class="editable-prose">1. Gemeinsamen Faktor ausklammern</h4>
+<p class="editable-prose">Wenn <span class="math-inline">\(d=0\)</span>, kann man <span class="math-inline">\(x\)</span> ausklammern. Nach dem Satz vom Nullprodukt ist mindestens einer der Faktoren null.</p>
+<div class="formula" data-formula-id="st1-algebra-formula-4" data-tex="x^3-4x=x(x^2-4)=x(x-2)(x+2)=0">\[x^3-4x=x(x^2-4)=x(x-2)(x+2)=0\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-algebra-formula-5" data-tex="\boxed{x_1=0,\quad x_2=2,\quad x_3=-2}">\[\boxed{x_1=0,\quad x_2=2,\quad x_3=-2}\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-5" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose warn">Nicht einfach durch <span class="math-inline">\(x\)</span> teilen: Sonst geht die Nullstelle <span class="math-inline">\(x=0\)</span> verloren.</p>
+<h4 class="editable-prose">2. Nullstelle testen → Polynomdivision / Horner → quadratisch lösen</h4>
+<ol class="steps"><li class="editable-prose">Bei ganzzahligen Koeffizienten mögliche rationale Nullstellen testen: <span class="math-inline">\(p/q\)</span>, wobei <span class="math-inline">\(p\)</span> ein Teiler von <span class="math-inline">\(d\)</span> und <span class="math-inline">\(q\)</span> ein Teiler von <span class="math-inline">\(a\)</span> ist (Bruch vollständig gekürzt). Bei <span class="math-inline">\(a=1\)</span> kommen nur ganzzahlige Teiler von <span class="math-inline">\(d\)</span> infrage.</li><li class="editable-prose">Für einen Kandidaten <span class="math-inline">\(x_1\)</span> prüfen, ob <span class="math-inline">\(f(x_1)=0\)</span>.</li><li class="editable-prose">Durch <span class="math-inline">\((x-x_1)\)</span> dividieren und den quadratischen Restfaktor lösen.</li></ol>
+<p class="editable-prose"><strong>Beispiel:</strong> <span class="math-inline">\(f(x)=x^3-2x^2-5x+6\)</span>. Kandidaten: <span class="math-inline">\(\pm1,\pm2,\pm3,\pm6\)</span>.</p>
+<div class="formula" data-formula-id="st1-algebra-formula-6" data-tex="f(1)=1-2-5+6=0\quad\Rightarrow\quad x_1=1">\[f(1)=1-2-5+6=0\quad\Rightarrow\quad x_1=1\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-6" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose"><strong>Horner-Schema für die Division durch <span class="math-inline">\((x-1)\)</span>:</strong> Ersten Koeffizienten herunterziehen; jeweils mit 1 multiplizieren und zum nächsten Koeffizienten addieren.</p>
+<table class="compact-table"><thead><tr><th>Schritt</th><th><span class="math-inline">\(x^3\)</span></th><th><span class="math-inline">\(x^2\)</span></th><th><span class="math-inline">\(x\)</span></th><th>Konst.</th></tr></thead><tbody>
+<tr><td>Koeffizienten</td><td>1</td><td>−2</td><td>−5</td><td>6</td></tr>
+<tr><td>× 1</td><td>—</td><td>1</td><td>−1</td><td>−6</td></tr>
+<tr><td>Summe</td><td>1</td><td>−1</td><td>−6</td><td>0</td></tr>
+</tbody></table>
+<p class="editable-prose">Die ersten drei Summen sind die Koeffizienten des Restfaktors; die letzte ist der Divisionsrest (hier 0).</p>
+<div class="formula" data-formula-id="st1-algebra-formula-7" data-tex="\frac{x^3-2x^2-5x+6}{x-1}=x^2-x-6">\[\frac{x^3-2x^2-5x+6}{x-1}=x^2-x-6\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-7" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-algebra-formula-8" data-tex="x^2-x-6=0\quad\Rightarrow\quad x_{2,3}=\frac{1\pm\sqrt{1+24}}{2}">\[x^2-x-6=0\quad\Rightarrow\quad x_{2,3}=\frac{1\pm\sqrt{1+24}}{2}\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-8" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-algebra-formula-9" data-tex="f(x)=(x-1)(x-3)(x+2)\quad\Rightarrow\quad\boxed{x=1,\ 3,\ -2}">\[f(x)=(x-1)(x-3)(x+2)\quad\Rightarrow\quad\boxed{x=1,\ 3,\ -2}\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-9" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose subtle">Es muss keine rationale Nullstelle geben. Wenn keiner der Kandidaten passt, verwendet man z. B. ein numerisches Verfahren.</p>
+<h4 class="editable-prose">3. Verschobenen Kubus erkennen (Substitution)</h4>
+<p class="editable-prose">Manchmal lässt sich der Ausdruck als Kubus zusammenfassen. Beispiel:</p>
+<div class="formula" data-formula-id="st1-algebra-formula-10" data-tex="x^3-6x^2+12x-10=(x-2)^3-2=0">\[x^3-6x^2+12x-10=(x-2)^3-2=0\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-10" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Mit <span class="math-inline">\(u=x-2\)</span> folgt <span class="math-inline">\(u^3=2\)</span>. Die reelle Nullstelle ist:</p>
+<div class="formula" data-formula-id="st1-algebra-formula-11" data-tex="\boxed{x=2+\sqrt[3]{2}}">\[\boxed{x=2+\sqrt[3]{2}}\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-11" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose subtle">Falls auch die komplexen Nullstellen gesucht sind: <span class="math-inline">\(x_k=2+\sqrt[3]{2}\,e^{j2\pi k/3}\)</span> für <span class="math-inline">\(k=0,1,2\)</span>.</p>
+<h4 class="editable-prose">4. Numerisch: Newton-Verfahren</h4>
+<p class="editable-prose">Wenn sich keine einfache Nullstelle finden lässt, kann man eine reelle Nullstelle näherungsweise berechnen. Startwert wählen und wiederholt einsetzen:</p>
+<div class="formula" data-formula-id="st1-algebra-formula-12" data-tex="x_{n+1}=x_n-\frac{f(x_n)}{f^{\prime}(x_n)}">\[x_{n+1}=x_n-\frac{f(x_n)}{f^{\prime}(x_n)}\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-12" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose"><strong>Beispiel:</strong> <span class="math-inline">\(f(x)=x^3-x-1\)</span>, <span class="math-inline">\(f^{\prime}(x)=3x^2-1\)</span>, Startwert <span class="math-inline">\(x_0=1{,}5\)</span>.</p>
+<div class="formula" data-formula-id="st1-algebra-formula-13" data-tex="x_1=1{,}5-\frac{0{,}875}{5{,}75}\approx1{,}347826">\[x_1=1{,}5-\frac{0{,}875}{5{,}75}\approx1{,}347826\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-13" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-algebra-formula-14" data-tex="x_2\approx1{,}325200,\qquad x_3\approx1{,}324718">\[x_2\approx1{,}325200,\qquad x_3\approx1{,}324718\]<button class="formula-edit-btn" data-edit-formula="st1-algebra-formula-14" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Damit liegt die reelle Nullstelle bei <span class="math-inline">\(x\approx1{,}324718\)</span>. Die Näherung durch Einsetzen in <span class="math-inline">\(f(x)\)</span> prüfen.</p>
+<p class="editable-prose warn">Newton benötigt <span class="math-inline">\(f^{\prime}(x_n)\ne0\)</span>; die Konvergenz hängt vom Startwert ab. Als robuste Alternative kann bei einem Vorzeichenwechsel auf einem Intervall die Intervallhalbierung verwendet werden.</p>
+</div></details>
+<details data-edit-id="st1-polynomdivision" data-topic-id="st1-polynomdivision">
+<summary><span class="topic-head"><span class="topic-title">Grundlagen – Algebra: Polynomdivision<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="st1-polynomdivision" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content">
+<div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="st1-polynomdivision" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="st1-polynomdivision" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="st1-polynomdivision" type="button">↺ Original wiederherstellen</button></div>
+<div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx.</div>
+<p class="editable-prose">Polynomdivision funktioniert wie schriftliches Dividieren. Man zerlegt ein Polynom <span class="math-inline">\(P(x)\)</span> in <strong>Divisor × Quotient + Rest</strong>:</p>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-1" data-tex="P(x)=D(x)\,Q(x)+R(x)">\[P(x)=D(x)\,Q(x)+R(x)\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<h3 class="editable-prose">Ablauf: Teilen → Multiplizieren → Subtrahieren</h3>
+<ol class="steps"><li class="editable-prose">Beide Polynome nach absteigenden Potenzen ordnen. Fehlende Potenzen mit Koeffizient 0 ergänzen, z. B. <span class="math-inline">\(x^3+0x^2-4x+0\)</span>.</li><li class="editable-prose">Den führenden Term des aktuellen Restes durch den führenden Term des Divisors teilen. Das Ergebnis ist der nächste Term des Quotienten.</li><li class="editable-prose">Den gesamten Divisor mit diesem Term multiplizieren.</li><li class="editable-prose">Das Produkt vom aktuellen Rest subtrahieren; dabei alle Vorzeichen in der Klammer beachten. Den nächsten Term herunterziehen.</li><li class="editable-prose">Wiederholen, bis der Rest 0 ist oder sein Grad kleiner als der Grad des Divisors ist.</li></ol>
+<h3 class="editable-prose">Beispiel in drei Schritten</h3>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-2" data-tex="(x^3-2x^2-5x+6):(x-1)">\[(x^3-2x^2-5x+6):(x-1)\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose"><strong>1.</strong> Führende Terme teilen: <span class="math-inline">\(x^3:x=x^2\)</span>. Multiplizieren: <span class="math-inline">\(x^2(x-1)=x^3-x^2\)</span>. Subtrahieren:</p>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-3" data-tex="(x^3-2x^2)-(x^3-x^2)=-x^2">\[(x^3-2x^2)-(x^3-x^2)=-x^2\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Den nächsten Term <span class="math-inline">\(-5x\)</span> herunterziehen → <span class="math-inline">\(-x^2-5x\)</span>.</p>
+<p class="editable-prose"><strong>2.</strong> <span class="math-inline">\(-x^2:x=-x\)</span>. Multiplizieren: <span class="math-inline">\(-x(x-1)=-x^2+x\)</span>. Subtrahieren:</p>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-4" data-tex="(-x^2-5x)-(-x^2+x)=-6x">\[(-x^2-5x)-(-x^2+x)=-6x\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose">Die <span class="math-inline">\(+6\)</span> herunterziehen → <span class="math-inline">\(-6x+6\)</span>.</p>
+<p class="editable-prose"><strong>3.</strong> <span class="math-inline">\(-6x:x=-6\)</span>. Multiplizieren: <span class="math-inline">\(-6(x-1)=-6x+6\)</span>. Subtrahieren:</p>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-5" data-tex="(-6x+6)-(-6x+6)=0">\[(-6x+6)-(-6x+6)=0\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-5" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<h3 class="editable-prose">Schriftliche Anordnung</h3>
+<pre style="overflow-x:auto;font-size:13px;line-height:1.7"><code> (x³ − 2x² − 5x + 6) : (x − 1) = x² − x − 6
+−(x³ −  x²)
+ ──────────
+      −x² − 5x
+    −(−x² +  x)
+      ─────────
+            −6x + 6
+          −(−6x + 6)
+            ───────
+                   0</code></pre>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-6" data-tex="\boxed{Q(x)=x^2-x-6,\qquad R(x)=0}">\[\boxed{Q(x)=x^2-x-6,\qquad R(x)=0}\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-6" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose"><strong>Probe:</strong> Divisor × Quotient + Rest muss wieder das ursprüngliche Polynom ergeben.</p>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-7" data-tex="(x-1)(x^2-x-6)=x^3-2x^2-5x+6">\[(x-1)(x^2-x-6)=x^3-2x^2-5x+6\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-7" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<h3 class="editable-prose">Was passiert bei einem Rest?</h3>
+<p class="editable-prose">Beispiel: <span class="math-inline">\((x^2+1):(x-1)\)</span> ergibt Quotient <span class="math-inline">\(x+1\)</span> und Rest 2:</p>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-8" data-tex="x^2+1=(x-1)(x+1)+2">\[x^2+1=(x-1)(x+1)+2\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-8" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-polynomdivision-formula-9" data-tex="\frac{x^2+1}{x-1}=x+1+\frac{2}{x-1}\qquad(x\ne1)">\[\frac{x^2+1}{x-1}=x+1+\frac{2}{x-1}\qquad(x\ne1)\]<button class="formula-edit-btn" data-edit-formula="st1-polynomdivision-formula-9" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose tip">Bei Division durch <span class="math-inline">\((x-x_1)\)</span> ist der Rest <span class="math-inline">\(P(x_1)\)</span>. Ist <span class="math-inline">\(x_1\)</span> eine Nullstelle, muss der Rest 0 sein. Dann ist <span class="math-inline">\((x-x_1)\)</span> ein Faktor des Polynoms.</p>
+</div></details>
+<details data-edit-id="st1-trigonometrie" data-topic-id="st1-trigonometrie">
+<summary><span class="topic-head"><span class="topic-title">Grundlagen – Trigonometrie<span class="edited-badge">bearbeitet</span></span><button class="edit-topic-btn" data-edit-topic="st1-trigonometrie" title="Abschnitt bearbeiten" type="button">✎</button></span></summary>
+<div class="content">
+<div class="edit-toolbar"><button class="edit-action primary" data-edit-action="save" data-edit-target="st1-trigonometrie" type="button">✓ Speichern</button><button class="edit-action" data-edit-action="cancel" data-edit-target="st1-trigonometrie" type="button">↶ Abbrechen</button><button class="edit-action danger" data-edit-action="reset" data-edit-target="st1-trigonometrie" type="button">↺ Original wiederherstellen</button></div>
+<div class="edit-hint">Text direkt anklicken und ändern. Block- und Inline-Formeln haben im Bearbeitungsmodus ein eigenes ƒx.</div>
+<h3 class="editable-prose">1. Grad ↔ Radiant (Bogenmaß)</h3>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-1" data-tex="\varphi_{\mathrm{rad}}=\frac{\varphi_{\mathrm{Grad}}}{180^\circ}\cdot\pi">\[\varphi_{\mathrm{rad}}=\frac{\varphi_{\mathrm{Grad}}}{180^\circ}\cdot\pi\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-1" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-2" data-tex="\varphi_{\mathrm{Grad}}=\varphi_{\mathrm{rad}}\cdot\frac{180^\circ}{\pi}">\[\varphi_{\mathrm{Grad}}=\varphi_{\mathrm{rad}}\cdot\frac{180^\circ}{\pi}\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-2" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose subtle">Merke: <span class="math-inline">\(\pi\,\mathrm{rad}=180^\circ\)</span>, <span class="math-inline">\(\frac{\pi}{2}\,\mathrm{rad}=90^\circ\)</span>, <span class="math-inline">\(2\pi\,\mathrm{rad}=360^\circ\)</span>.</p>
+<h3 class="editable-prose">2. Sinus und Kosinus am Einheitskreis</h3>
+<p class="editable-prose">Der Einheitskreis hat den Radius <span class="math-inline">\(r=1\)</span>. Der Winkel <span class="math-inline">\(\varphi\)</span> wird von der positiven x-Achse aus gegen den Uhrzeigersinn gemessen.</p>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-3" data-tex="P=(\cos\varphi,\sin\varphi)">\[P=(\cos\varphi,\sin\varphi)\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-3" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<ul><li class="editable-prose"><strong>Kosinus = x-Koordinate</strong> (horizontal).</li><li class="editable-prose"><strong>Sinus = y-Koordinate</strong> (vertikal).</li></ul>
+<p class="editable-prose subtle">Bei einem Kreis mit Radius <span class="math-inline">\(r\)</span> gilt: <span class="math-inline">\(x=r\cos\varphi\)</span>, <span class="math-inline">\(y=r\sin\varphi\)</span>.</p>
+<h3 class="editable-prose">3. Vorzeichen in den Quadranten</h3>
+<p class="editable-prose">Die Koordinatenachsen teilen die Ebene in vier Quadranten. Rechts ist Kosinus positiv, links negativ; oben ist Sinus positiv, unten negativ.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 380" role="img" aria-labelledby="trig-quadrants-title trig-quadrants-desc" style="display:block;width:100%;max-width:440px;height:auto;margin:14px auto;font-family:inherit">
+<title id="trig-quadrants-title">Vorzeichen von Sinus und Kosinus in den vier Quadranten</title>
+<desc id="trig-quadrants-desc">I oben rechts: Kosinus positiv, Sinus positiv. II oben links: Kosinus negativ, Sinus positiv. III unten links: beide negativ. IV unten rechts: Kosinus positiv, Sinus negativ.</desc>
+<rect x="20" y="20" width="400" height="340" rx="18" fill="#dbe7f2" fill-opacity=".4"/>
+<circle cx="220" cy="190" r="138" fill="none" stroke="#8295aa" stroke-width="1.5" stroke-dasharray="5 5"/>
+<path d="M35 190H405 M220 350V30" stroke="#315f8c" stroke-width="2"/>
+<path d="m405 190-10-5v10z M220 30l-5 10h10z" fill="#315f8c"/>
+<g fill="#315f8c" font-size="16"><text x="410" y="184">x</text><text x="230" y="34">y</text><text x="206" y="210">0</text></g>
+<g text-anchor="middle" font-size="17">
+<g transform="translate(290 115)"><text fill="#315f8c" font-size="25" font-weight="800">I</text><text y="29" fill="#2d6a4f">cos +</text><text y="53" fill="#2d6a4f">sin +</text></g>
+<g transform="translate(150 115)"><text fill="#315f8c" font-size="25" font-weight="800">II</text><text y="29" fill="#8c3b3b">cos −</text><text y="53" fill="#2d6a4f">sin +</text></g>
+<g transform="translate(150 235)"><text fill="#315f8c" font-size="25" font-weight="800">III</text><text y="29" fill="#8c3b3b">cos −</text><text y="53" fill="#8c3b3b">sin −</text></g>
+<g transform="translate(290 235)"><text fill="#315f8c" font-size="25" font-weight="800">IV</text><text y="29" fill="#2d6a4f">cos +</text><text y="53" fill="#8c3b3b">sin −</text></g>
+</g></svg>
+<p class="editable-prose subtle">Auf den Achsen ist jeweils eine Koordinate null: <span class="math-inline">\(\sin 0^\circ=0\)</span>, <span class="math-inline">\(\cos 90^\circ=0\)</span>.</p>
+<h3 class="editable-prose">4. Bezugswinkel: große Winkel einfach berechnen</h3>
+<p class="editable-prose">Der <strong>Bezugswinkel</strong> <span class="math-inline">\(\beta\)</span> ist der Winkel zur nächstgelegenen x-Achse. Mit ihm bestimmt man die Beträge von Sinus und Kosinus; das <strong>Vorzeichen ergibt sich aus dem Quadranten</strong>.</p>
+<ol class="steps"><li class="editable-prose">Winkel außerhalb eines Umlaufs durch Addieren oder Subtrahieren von <span class="math-inline">\(360^\circ\)</span> (bzw. <span class="math-inline">\(2\pi\)</span>) auf <span class="math-inline">\(0^\circ\le\alpha&lt;360^\circ\)</span> bringen.</li><li class="editable-prose">Quadranten bestimmen und den Bezugswinkel <span class="math-inline">\(\beta\)</span> berechnen.</li><li class="editable-prose">Sinus und Kosinus von <span class="math-inline">\(\beta\)</span> berechnen, dann die Vorzeichen des Quadranten einsetzen.</li></ol>
+<table class="compact-table"><thead><tr><th>Quadrant</th><th>Bezugswinkel</th><th>Beispiel</th></tr></thead><tbody>
+<tr><td>I</td><td><span class="math-inline">\(\beta=\alpha\)</span></td><td><span class="math-inline">\(40^\circ\to40^\circ\)</span></td></tr>
+<tr><td>II</td><td><span class="math-inline">\(\beta=180^\circ-\alpha\)</span></td><td><span class="math-inline">\(150^\circ\to30^\circ\)</span></td></tr>
+<tr><td>III</td><td><span class="math-inline">\(\beta=\alpha-180^\circ\)</span></td><td><span class="math-inline">\(210^\circ\to30^\circ\)</span></td></tr>
+<tr><td>IV</td><td><span class="math-inline">\(\beta=360^\circ-\alpha\)</span></td><td><span class="math-inline">\(330^\circ\to30^\circ\)</span></td></tr>
+</tbody></table>
+<p class="editable-prose subtle">Im Bogenmaß ersetzt man <span class="math-inline">\(180^\circ\)</span> durch <span class="math-inline">\(\pi\)</span> und <span class="math-inline">\(360^\circ\)</span> durch <span class="math-inline">\(2\pi\)</span>. Winkel auf den Achsen direkt am Einheitskreis ablesen.</p>
+<p class="editable-prose tip">Die Winkel <span class="math-inline">\(30^\circ\)</span>, <span class="math-inline">\(150^\circ\)</span>, <span class="math-inline">\(210^\circ\)</span> und <span class="math-inline">\(330^\circ\)</span> haben denselben Bezugswinkel <span class="math-inline">\(30^\circ\)</span>.</p>
+<p class="editable-prose"><strong>Beispiel:</strong> <span class="math-inline">\(690^\circ-360^\circ=330^\circ\)</span> liegt im IV. Quadranten. Bezugswinkel: <span class="math-inline">\(360^\circ-330^\circ=30^\circ\)</span>. Sinus negativ, Kosinus positiv:</p>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-4" data-tex="\sin690^\circ=\sin330^\circ=-\sin30^\circ=-\frac{1}{2}">\[\sin690^\circ=\sin330^\circ=-\sin30^\circ=-\frac{1}{2}\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-5" data-tex="\cos690^\circ=\cos330^\circ=\cos30^\circ=\frac{\sqrt{3}}{2}">\[\cos690^\circ=\cos330^\circ=\cos30^\circ=\frac{\sqrt{3}}{2}\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-5" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<h3 class="editable-prose">5. Sinus- und Kosinuswerte wichtiger Winkel</h3>
+<table class="compact-table"><thead><tr><th>Grad</th><th>Radiant</th><th><span class="math-inline">\(\sin\varphi\)</span></th><th><span class="math-inline">\(\cos\varphi\)</span></th></tr></thead><tbody>
+<tr><td><span class="math-inline">\(0^\circ\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1\)</span></td></tr>
+<tr><td><span class="math-inline">\(30^\circ\)</span></td><td><span class="math-inline">\(\pi/6\)</span></td><td><span class="math-inline">\(1/2\)</span></td><td><span class="math-inline">\(\sqrt{3}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(45^\circ\)</span></td><td><span class="math-inline">\(\pi/4\)</span></td><td><span class="math-inline">\(\sqrt{2}/2\)</span></td><td><span class="math-inline">\(\sqrt{2}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(60^\circ\)</span></td><td><span class="math-inline">\(\pi/3\)</span></td><td><span class="math-inline">\(\sqrt{3}/2\)</span></td><td><span class="math-inline">\(1/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(90^\circ\)</span></td><td><span class="math-inline">\(\pi/2\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(0\)</span></td></tr>
+<tr><td><span class="math-inline">\(120^\circ\)</span></td><td><span class="math-inline">\(2\pi/3\)</span></td><td><span class="math-inline">\(\sqrt{3}/2\)</span></td><td><span class="math-inline">\(-1/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(135^\circ\)</span></td><td><span class="math-inline">\(3\pi/4\)</span></td><td><span class="math-inline">\(\sqrt{2}/2\)</span></td><td><span class="math-inline">\(-\sqrt{2}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(150^\circ\)</span></td><td><span class="math-inline">\(5\pi/6\)</span></td><td><span class="math-inline">\(1/2\)</span></td><td><span class="math-inline">\(-\sqrt{3}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(180^\circ\)</span></td><td><span class="math-inline">\(\pi\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(-1\)</span></td></tr>
+<tr><td><span class="math-inline">\(210^\circ\)</span></td><td><span class="math-inline">\(7\pi/6\)</span></td><td><span class="math-inline">\(-1/2\)</span></td><td><span class="math-inline">\(-\sqrt{3}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(225^\circ\)</span></td><td><span class="math-inline">\(5\pi/4\)</span></td><td><span class="math-inline">\(-\sqrt{2}/2\)</span></td><td><span class="math-inline">\(-\sqrt{2}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(240^\circ\)</span></td><td><span class="math-inline">\(4\pi/3\)</span></td><td><span class="math-inline">\(-\sqrt{3}/2\)</span></td><td><span class="math-inline">\(-1/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(270^\circ\)</span></td><td><span class="math-inline">\(3\pi/2\)</span></td><td><span class="math-inline">\(-1\)</span></td><td><span class="math-inline">\(0\)</span></td></tr>
+<tr><td><span class="math-inline">\(300^\circ\)</span></td><td><span class="math-inline">\(5\pi/3\)</span></td><td><span class="math-inline">\(-\sqrt{3}/2\)</span></td><td><span class="math-inline">\(1/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(315^\circ\)</span></td><td><span class="math-inline">\(7\pi/4\)</span></td><td><span class="math-inline">\(-\sqrt{2}/2\)</span></td><td><span class="math-inline">\(\sqrt{2}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(330^\circ\)</span></td><td><span class="math-inline">\(11\pi/6\)</span></td><td><span class="math-inline">\(-1/2\)</span></td><td><span class="math-inline">\(\sqrt{3}/2\)</span></td></tr>
+<tr><td><span class="math-inline">\(360^\circ\)</span></td><td><span class="math-inline">\(2\pi\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1\)</span></td></tr>
+</tbody></table>
+<p class="editable-prose tip"><strong>Merke für 0°, 30°, 45°, 60°, 90°:</strong> Sinus: <span class="math-inline">\(\frac{\sqrt{0}}{2},\frac{\sqrt{1}}{2},\frac{\sqrt{2}}{2},\frac{\sqrt{3}}{2},\frac{\sqrt{4}}{2}\)</span> — beim Kosinus ist die Reihenfolge umgekehrt. Für die übrigen Quadranten die Vorzeichen beachten.</p>
+<h3 class="editable-prose">6. Formelsammlung: komplexe Exponentialdarstellung</h3>
+<p class="editable-prose"><strong>Eulersche Formel</strong></p>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-6" data-tex="\boxed{e^{jx}=\cos x+j\sin x}">\[\boxed{e^{jx}=\cos x+j\sin x}\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-6" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose"><strong>Kosinusdarstellung</strong></p>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-7" data-tex="\boxed{\cos x=\frac{e^{jx}+e^{-jx}}{2}}">\[\boxed{\cos x=\frac{e^{jx}+e^{-jx}}{2}}\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-7" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose"><strong>Sinusdarstellung</strong></p>
+<div class="formula" data-formula-id="st1-trigonometrie-formula-8" data-tex="\boxed{\sin x=\frac{e^{jx}-e^{-jx}}{2j}}">\[\boxed{\sin x=\frac{e^{jx}-e^{-jx}}{2j}}\]<button class="formula-edit-btn" data-edit-formula="st1-trigonometrie-formula-8" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
+<p class="editable-prose subtle">Dabei ist <span class="math-inline">\(j^2=-1\)</span>; Winkel werden im Bogenmaß eingesetzt. Alle drei Formeln gelten auch für andere Argumente: Ersetze <span class="math-inline">\(x\)</span> überall durch denselben Ausdruck, z. B. <span class="math-inline">\(x-y\)</span>, <span class="math-inline">\(x+y\)</span> oder <span class="math-inline">\(3x\)</span>.</p>
+</div></details></section>
 <p class="hidden no-results" id="noResults" role="status">Keine passenden Themen gefunden.</p>
 </main>
 <div class="footer">Deine Lernübersicht · Semester für Semester</div>
