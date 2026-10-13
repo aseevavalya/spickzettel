@@ -2094,6 +2094,23 @@ bfs (c:cs) visited
 <p class="editable-prose"><span class="math-inline">\(C\)</span> ist die Integrationskonstante: Konstanten verschwinden beim Ableiten. Beispiel:</p>
 <div class="formula" data-formula-id="st1-integrale-formula-4" data-tex="\int 2x\,dx=x^2+C\qquad\text{denn }(x^2+C)^{\prime}=2x">\[\int 2x\,dx=x^2+C\qquad\text{denn }(x^2+C)^{\prime}=2x\]<button class="formula-edit-btn" data-edit-formula="st1-integrale-formula-4" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
 <h3 class="editable-prose">3. Wichtigste Integrationsregeln</h3>
+<h4 class="editable-prose">Typische Stammfunktionen auf einen Blick</h4>
+<p class="editable-prose">Jede Stammfunktion enthält die Integrationskonstante <span class="math-inline">\(C\)</span>. Die Formeln gelten auf Intervallen, auf denen der jeweilige Integrand definiert ist.</p>
+<table class="compact-table">
+<tr><th class="editable-prose">Funktion <span class="math-inline">\(f(x)\)</span></th><th class="editable-prose">Stammfunktion <span class="math-inline">\(F(x)+C\)</span></th></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(\sin x\)</span></td><td class="editable-prose"><span class="math-inline">\(-\cos x+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(\cos x\)</span></td><td class="editable-prose"><span class="math-inline">\(\sin x+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(c\)</span> (konstant)</td><td class="editable-prose"><span class="math-inline">\(cx+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(x^p\)</span>, <span class="math-inline">\(p\ne-1\)</span></td><td class="editable-prose"><span class="math-inline">\(\frac{x^{p+1}}{p+1}+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(\frac{1}{x}\)</span>, <span class="math-inline">\(x\ne0\)</span></td><td class="editable-prose"><span class="math-inline">\(\ln|x|+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(\frac{1}{\sqrt{x}}\)</span>, <span class="math-inline">\(x>0\)</span></td><td class="editable-prose"><span class="math-inline">\(2\sqrt{x}+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(e^x\)</span></td><td class="editable-prose"><span class="math-inline">\(e^x+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(a^x\)</span>, <span class="math-inline">\(a>0,\ a\ne1\)</span></td><td class="editable-prose"><span class="math-inline">\(\frac{a^x}{\ln a}+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(\frac{1}{1+x^2}\)</span></td><td class="editable-prose"><span class="math-inline">\(\arctan x+C\)</span></td></tr>
+<tr><td class="editable-prose"><span class="math-inline">\(\frac{1}{\sqrt{1-x^2}}\)</span>, <span class="math-inline">\(|x|<1\)</span></td><td class="editable-prose"><span class="math-inline">\(\arcsin x+C\)</span></td></tr>
+</table>
+<p class="editable-prose tip"><strong>Merke:</strong> Sinus integrieren ergibt <strong>minus Kosinus</strong>; Kosinus integrieren ergibt <strong>Sinus</strong>. Zur Kontrolle die Stammfunktion ableiten.</p>
+<h4 class="editable-prose">Regeln mit konstanten Faktoren und innerer Funktion</h4>
 <p class="editable-prose">Konstanten <span class="math-inline">\(c,k,b\)</span> hängen nicht von <span class="math-inline">\(x\)</span> ab. Winkel in Sinus und Kosinus werden im Bogenmaß verwendet.</p>
 <div class="formula" data-formula-id="st1-integrale-formula-5" data-tex="\int c\,dx=cx+C">\[\int c\,dx=cx+C\]<button class="formula-edit-btn" data-edit-formula="st1-integrale-formula-5" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
 <div class="formula" data-formula-id="st1-integrale-formula-6" data-tex="\int x^p\,dx=\frac{x^{p+1}}{p+1}+C\qquad(p\ne-1)">\[\int x^p\,dx=\frac{x^{p+1}}{p+1}+C\qquad(p\ne-1)\]<button class="formula-edit-btn" data-edit-formula="st1-integrale-formula-6" title="MathJax-/LaTeX-Formel bearbeiten" type="button">ƒx</button></div>
