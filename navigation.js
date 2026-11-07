@@ -21,6 +21,17 @@ const semesters = [
   const mobile = window.matchMedia('(max-width:760px)');
   let semester;
   let subject = 'all';
+  let view = 'formulas';
+  const switcher = document.createElement('div');
+  switcher.className = 'view-switch';
+  switcher.setAttribute('aria-label', 'Ansicht');
+  switcher.setAttribute('role', 'group');
+  [['formulas', 'Formeln'], ['checklists', 'Чек-листы ДЗ']].forEach(([id, label]) => {
+    const tab = button(label, () => { view = id; applyFilter(); writeUrl(); });
+    tab.dataset.view = id;
+    switcher.append(tab);
+  });
+  search.closest('.hero').append(switcher);
 
   semesters.forEach(entry => entry.subjects.forEach(course => {
     if (grid.querySelector(`[data-subject="${course.id}"]`)) return;
@@ -54,9 +65,14 @@ const semesters = [
     const query = search.value.trim().toLowerCase();
     let visible = 0;
     sections.forEach(section => {
+      const formulas = section.querySelector('.formula-panel');
+      const checklists = section.querySelector('.checklist-panel');
+      formulas?.classList.toggle('hidden', view !== 'formulas');
+      checklists?.classList.toggle('hidden', view !== 'checklists');
+      const activePanel = view === 'checklists' ? checklists : formulas;
       const matches = section.dataset.semester === semester.id &&
         (subject === 'all' || section.dataset.subject === subject) &&
-        (!query || section.textContent.toLowerCase().includes(query));
+        (!query || (section.querySelector('h2').textContent + (activePanel || section).textContent).toLowerCase().includes(query));
       section.classList.toggle('hidden', !matches);
       section.classList.toggle('mobile-active', matches);
       if (matches) visible++;
@@ -68,6 +84,11 @@ const semesters = [
       tab.setAttribute('aria-pressed', String(active));
     });
     select.value = subject;
+    switcher.querySelectorAll('button').forEach(tab => {
+      const active = tab.dataset.view === view;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-pressed', String(active));
+    });
   }
 
   function chooseSemester(id, updateUrl = true, requestedSubject) {
@@ -98,6 +119,7 @@ const semesters = [
     const url = new URL(location.href);
     url.searchParams.set('semester', semester.id);
     url.searchParams.set('subject', subject);
+    url.searchParams.set('view', view);
     history.pushState(null, '', url);
   }
   function chooseSubject(id) {
@@ -107,6 +129,7 @@ const semesters = [
   }
   function readUrl() {
     const params = new URLSearchParams(location.search);
+    view = params.get('view') === 'checklists' ? 'checklists' : 'formulas';
     chooseSemester(params.get('semester'), false, params.get('subject'));
   }
   semesters.forEach(entry => {
@@ -118,4 +141,8 @@ const semesters = [
   search.addEventListener('input', applyFilter);
   window.addEventListener('popstate', readUrl);
   readUrl();
+  const script = document.createElement('script');
+  script.src = './checklists.js';
+  script.onload = applyFilter;
+  document.body.append(script);
 })();

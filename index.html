@@ -8,6 +8,9 @@
 <link href="./desktop-512.png?v=20261003" rel="icon" type="image/png" sizes="512x512"/>
 <link href="./site.webmanifest?v=20261003" rel="manifest"/>
 <meta charset="utf-8"/>
+<link rel="stylesheet" href="./checklists.css"/>
+<script src="./checklist-data.js"></script>
+<script src="./checklist-data-more.js"></script>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Spickzettel · Semester &amp; Fächer</title>
 <style>
@@ -2712,6 +2715,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
   window.studySupabase = sb;
+  window.dispatchEvent(new Event('study-supabase-ready'));
 
   const originals = new Map();
   let session = null;
@@ -2819,6 +2823,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   async function loadCloudEdits(){
     if(!session)return;
+    await window.studyChecklistSync?.();
     setSyncStatus('warn','Synchronisieren…');
     const {data,error}=await sb.from(TABLE).select('topic_id,payload,updated_at').eq('user_id',session.user.id);
     if(error){
